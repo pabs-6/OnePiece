@@ -38,5 +38,22 @@ export const CHAPTERS = [
   {
     number: '1', title: 'El Romance Dawn Empieza Lentamente', arc: 'El Amanecer Mítico de la Aventura', date: 'Julio 1997', icon: '⚓', color: 'from-cyan-500 to-blue-500',
     description: 'La trastienda emotivamente sangrienta dramática fundadora leal e inspiradora de brazos sacrificados crueles desprendidos dentados letales mordidos por el tirano inmenso señor de la orilla local marina hacia al pacífico noble sonriente pelirrojo, y el heredado peso atípicamente enorme gigantesco en la diminuta frente y minúsculo cráneo jovial soñador inexperto que portaba el gigantesco mítico legado Sombrero inquebrantable.', rating: 10, impact: 'LA BIBLIA GÉNESIS'
+  },
+  {
+    number: '511', title: 'Sentomaru y el Desastre Total', arc: 'Archipiélago Sabaody', date: 'Julio 2008', icon: '🖐️', color: 'from-orange-700 to-red-800',
+    description: 'La primera gran derrota aplastante de los Mugiwaras. Kuma los hace desaparecer uno a uno mientras Luffy llora impotente en el suelo.', rating: 10, impact: 'DESESPERACIÓN ABSOLUTA'
+  },
+  {
+    number: '1053', title: 'Los Nuevos Emperadores', arc: 'Post-Wano', date: 'Junio 2022', icon: '🏴‍☠️', color: 'from-pink-500 to-red-600',
+    description: 'Se revelan los nuevos 4 Yonkos tras la caída de Kaido y Big Mom: Luffy, Shanks, Barbanegra y... ¡Buggy el Payaso!', rating: 10, impact: 'SHOCK MUNDIAL'
+  },
+  {
+    number: '1121', title: 'La Voz de la Nueva Era', arc: 'Egghead', date: 'Julio 2024', icon: '📢', color: 'from-yellow-400 to-amber-600',
+    description: 'El clímax de la transmisión de Vegapunk. Se muestra un panel épico con todos los candidatos actuales al trono de Rey de los Piratas.', rating: 10, impact: 'ÉPICO Y REVELADOR'
+  },
+  {
+    number: '485', title: 'No pasó nada', arc: 'Thriller Bark', date: 'Octubre 2007', icon: '🩸', color: 'from-red-900 to-black',
+    description: 'Zoro recibe todo el dolor y fatiga de Luffy de manos de Kuma. Se mantiene en pie bañado en sangre, diciendo la frase más legendaria: "No pasó nada".', rating: 10, impact: 'SACRIFICIO SUPREMO'
   }
 ];
+

@@ -33,11 +33,11 @@ import { DEVIL_FRUITS } from '../../data/devil-fruits';
             
             <!-- Fruit Image / Graphics -->
             <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
-              <div class="relative w-64 h-64 md:w-80 md:h-80 transition-transform duration-700 hover:scale-110">
-                <div class="absolute inset-0 rounded-full blur-2xl opacity-40 bg-gradient-to-tr" [ngClass]="fruit.color"></div>
+              <div class="relative w-72 h-72 md:w-96 md:h-96 transition-transform duration-700 hover:scale-105 rounded-full overflow-hidden border-8 border-white/5 shadow-2xl flex items-center justify-center bg-black/40">
+                <div class="absolute inset-0 rounded-full blur-3xl opacity-30 bg-gradient-to-tr" [ngClass]="fruit.color"></div>
                 <img [src]="fruit.img" [alt]="fruit.name" 
                      (error)="$any($event.target).src='https://via.placeholder.com/400?text=Akuma+no+Mi'"
-                     class="relative z-10 w-full h-full object-contain filter drop-shadow-2xl hover:rotate-6 transition-all duration-500">
+                     class="relative z-10 w-full h-full object-cover filter brightness-110 drop-shadow-2xl hover:rotate-6 transition-all duration-500">
               </div>
             </div>
 

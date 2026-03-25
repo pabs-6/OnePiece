@@ -10,138 +10,217 @@ export interface Faction {
   key_members: string[];
 }
 
+const w = (filename: string) => `https://onepiece.fandom.com/wiki/Special:FilePath/${filename.replace(/'/g, '%27')}`;
+
 export const FACTIONS: Faction[] = [
   {
     id: 1, name: 'Piratas del Sombrero de Paja', type: 'Tripulación Yonko',
-    jolly_roger: 'https://static.wikia.nocookie.net/onepiece/images/5/52/Straw_Hat_Pirates_Jolly_Roger.png',
+    jolly_roger: w("Straw_Hat_Pirates'_Jolly_Roger.png"),
     color: 'text-red-500', bg_gradient: 'from-red-900/40 to-black', leader: 'Monkey D. Luffy',
-    description: 'Una de las tripulaciones piratas más famosas e infames de la actualidad. Viajan en el acorazado "Thousand Sunny".',
-    key_members: ['Luffy', 'Zoro', 'Nami', 'Usopp', 'Sanji', 'Chopper', 'Robin', 'Franky', 'Brook', 'Jinbe', 'Vivi (Honoraria)']
+    description: 'La tripulación que está cambiando el mundo, liderada por el hombre que liberará a todos.',
+    key_members: ['Luffy', 'Zoro', 'Nami', 'Usopp', 'Sanji', 'Chopper', 'Robin', 'Franky', 'Brook', 'Jinbe']
   },
   {
     id: 8, name: 'Piratas de Roger', type: 'Tripulación Legendaria',
-    jolly_roger: 'https://static.wikia.nocookie.net/onepiece/images/a/ab/Roger_Pirates_Jolly_Roger.png',
+    jolly_roger: w("Roger_Pirates'_Jolly_Roger.png"),
     color: 'text-yellow-600', bg_gradient: 'from-amber-900/40 to-black', leader: 'Gol D. Roger',
-    description: 'Los únicos que conquistaron la última isla de Grand Line bautizada "Laugh Tale", encontrando la verdad del mundo entero y coronando a Roger como su único Rey en la mítica nave Oro Jackson.',
-    key_members: ['Roger', 'Silvers Rayleigh', 'Scopper Gaban', 'Croco', 'Shanks', 'Buggy', 'Oden Kozuki', 'Inuarashi', 'Nekomamushi']
+    description: 'La única tripulación en conquistar el Grand Line y llegar a Laugh Tale.',
+    key_members: ['Roger', 'Rayleigh', 'Gaban', 'Shanks', 'Buggy', 'Oden']
   },
   {
-    id: 9, name: 'Piratas de Rocks', type: 'Sujetos Históricos Borrados',
-    jolly_roger: 'https://static.wikia.nocookie.net/onepiece/images/2/23/Rocks_Pirates_Jolly_Roger.png',
+    id: 9, name: 'Piratas de Rocks', type: 'Sujetos Históricos',
+    jolly_roger: w("Rocks_Pirates'_Jolly_Roger.png"),
     color: 'text-gray-400', bg_gradient: 'from-gray-800/40 to-black', leader: 'Rocks D. Xebec',
-    description: 'Borrados de la historia tras el oscuro Incidente de God Valley por la unión militar atípica de Roger y Garp. Esta tripulación unió a las potencias futuras más peligrosas y asesinas a fuerza brutal.',
-    key_members: ['Rocks', 'Whitebeard', 'Big Mom', 'Kaido', 'Shiki', 'Capitán John', 'Ochoku']
+    description: 'La tripulación más peligrosa de la historia, borrada de los registros.',
+    key_members: ['Rocks', 'Whitebeard', 'Big Mom', 'Kaido', 'Shiki']
   },
   {
     id: 10, name: 'Piratas de Barbablanca', type: 'Antigua Tripulación Yonko',
-    jolly_roger: 'https://static.wikia.nocookie.net/onepiece/images/6/65/Whitebeard_Pirates_Jolly_Roger.png',
-    color: 'text-blue-300', bg_gradient: 'from-blue-900/40 to-black', leader: 'Edward Newgate (Barbablanca)',
-    description: 'Anteriormente conocidos como la banda más implacable y temida navegando con flotas gigantes en el Moby Dick. Su estructura era "familiar" ya que cada división trataba a Newgate como su "Oyaji".',
-    key_members: ['Newgate', 'Marco', 'Ace', 'Jozu', 'Thatch', 'Vista', 'Izo', 'Rakuyo']
+    jolly_roger: w("Whitebeard_Pirates'_Jolly_Roger.png"),
+    color: 'text-blue-300', bg_gradient: 'from-blue-900/40 to-black', leader: 'Edward Newgate',
+    description: 'Navegaron bajo la bandera del "Hombre más fuerte del mundo".',
+    key_members: ['Newgate', 'Marco', 'Ace', 'Jozu', 'Vista', 'Izo']
   },
   {
-    id: 2, name: 'La Marina', type: 'Fuerza Militar Mundial Central',
-    jolly_roger: 'https://static.wikia.nocookie.net/onepiece/images/7/7b/Marine_Logo.png',
-    color: 'text-blue-500', bg_gradient: 'from-blue-800/40 to-black', leader: 'Akainu (Almirante de Flota)',
-    description: 'Los encargados de mantener la Justicia Absoluta mediante sus temibles SSG (Pacifistas y Seraphim), las Flotas Navales Globales y el poder imparable de tres Almirantes.',
-    key_members: ['Akainu', 'Kizaru', 'Fujitora', 'Ryokugyu', 'Garp', 'Sengoku', 'Smoker', 'Koby']
+    id: 2, name: 'La Marina', type: 'Justicia Absoluta',
+    jolly_roger: w('Marine_Logo.png'),
+    color: 'text-blue-500', bg_gradient: 'from-blue-800/40 to-black', leader: 'Akainu',
+    description: 'La fuerza militar global del Gobierno Mundial.',
+    key_members: ['Akainu', 'Kizaru', 'Fujitora', 'Garp', 'Sengoku']
   },
   {
-    id: 3, name: 'Ejército Revolucionario', type: 'Grupo Militar Rebelde Global',
-    jolly_roger: 'https://static.wikia.nocookie.net/onepiece/images/b/b3/Revolutionary_Army_Logo.png',
+    id: 3, name: 'Ejército Revolucionario', type: 'Rebeldes',
+    jolly_roger: w('Revolutionary_Army_Logo.png'),
     color: 'text-green-500', bg_gradient: 'from-green-900/40 to-black', leader: 'Monkey D. Dragon',
-    description: 'No atacan a piratas, tienen la gran tarea de liberar progresivamente y desde las raíces el abuso político y esclavista directo generado por los crueles Dragones Celestiales.',
-    key_members: ['Dragon', 'Sabo', 'Ivankov', 'Kuma', 'Morley', 'Belo Betty', 'Karasu', 'Lindbergh']
+    description: 'Buscando derrocar el sistema corrupto de los Dragones Celestiales.',
+    key_members: ['Dragon', 'Sabo', 'Ivankov', 'Kuma', 'Koala']
   },
   {
-    id: 4, name: 'Cross Guild', type: 'Sindicato / Yonko Colectivo',
-    jolly_roger: 'https://static.wikia.nocookie.net/onepiece/images/3/30/Cross_Guild_Jolly_Roger.png',
-    color: 'text-amber-500', bg_gradient: 'from-yellow-900/40 to-black', leader: 'Buggy (Figura Principal)',
-    description: 'El peor modelo imaginable para los oficiales. Los piratas ponen recompenas estelares y caza directa en las cabezas uniformadas del Gobierno.',
-    key_members: ['Buggy', 'Dracule Mihawk', 'Sir Crocodile', 'Galdino', 'Cabaji', 'Richie']
+    id: 4, name: 'Cross Guild', type: 'Sindicato Yonko',
+    jolly_roger: w('Cross_Guild_Jolly_Roger.png'),
+    color: 'text-amber-500', bg_gradient: 'from-yellow-900/40 to-black', leader: 'Buggy',
+    description: 'La peligrosa alianza que pone precio a las cabezas de la Marina.',
+    key_members: ['Buggy', 'Mihawk', 'Crocodile', 'Galdino']
   },
   {
     id: 5, name: 'Piratas de Barbanegra', type: 'Tripulación Yonko',
-    jolly_roger: 'https://static.wikia.nocookie.net/onepiece/images/a/a2/Blackbeard_Pirates_Jolly_Roger.png',
+    jolly_roger: w("Blackbeard_Pirates'_Jolly_Roger.png"),
     color: 'text-purple-600', bg_gradient: 'from-purple-900/40 to-black', leader: 'Marshall D. Teach',
-    description: 'Se especializan en saquear y exterminar para conseguir frutos místicos robados (Kurohige Hunt). Es un modelo capitaneado por 10 capitanes titánicos y con Kuzan infiltrado.',
-    key_members: ['Teach', 'Shiryu', 'Kuzan', 'Burgess', 'Van Augur', 'Doc Q', 'San Juan Wolf', 'Pizarro']
+    description: 'Cazadores de frutas del diablo y caos en el Nuevo Mundo.',
+    key_members: ['Teach', 'Shiryu', 'Kuzan', 'Laffitte', 'Augur']
   },
   {
     id: 11, name: 'Piratas del Pelirrojo', type: 'Tripulación Yonko',
-    jolly_roger: 'https://static.wikia.nocookie.net/onepiece/images/c/c5/Red_Hair_Pirates_Jolly_Roger.png',
+    jolly_roger: w("Red_Hair_Pirates'_Jolly_Roger.png"),
     color: 'text-red-700', bg_gradient: 'from-red-950/40 to-black', leader: 'Shanks',
-    description: 'Basa su influencia letal sin necesitar Frutas. Poseen un balanceo insuperable mediante armas bañadas en haki destructivo protegiendo directamente la Isla Elbaf de incursiones.',
-    key_members: ['Shanks', 'Benn Beckman', 'Lucky Roux', 'Yasopp', 'Monster', 'Bonk Punch']
+    description: 'La tripulación más equilibrada y con el Haki más poderoso.',
+    key_members: ['Shanks', 'Beckman', 'Roux', 'Yasopp']
   },
   {
     id: 6, name: 'Piratas de las Bestias', type: 'Antigua Tripulación Yonko',
-    jolly_roger: 'https://static.wikia.nocookie.net/onepiece/images/2/29/Beasts_Pirates_Jolly_Roger.png',
-    color: 'text-purple-400', bg_gradient: 'from-gray-800/40 to-black', leader: 'Kaido (Antiguamente)',
-    description: 'Su jerarquía solo se basaba en el salvajismo individual. Las subfacciones incluían All-Stars, Tobi Roppo, Headliners cubiertos de bestias mitológicas artificiales SMILE.',
-    key_members: ['Kaido', 'King', 'Queen', 'Jack', 'Ulti', 'Page One', 'Who is Who', 'Black Maria', 'Sasaki']
+    jolly_roger: w("Beasts_Pirates'_Jolly_Roger.png"),
+    color: 'text-purple-400', bg_gradient: 'from-gray-800/40 to-black', leader: 'Kaido',
+    description: 'Ejército de usuarios Zoan que dominó Wano con puño de hierro.',
+    key_members: ['Kaido', 'King', 'Queen', 'Jack', 'Yamato (Ex)']
   },
   {
     id: 7, name: 'Piratas de Big Mom', type: 'Antigua Tripulación Yonko',
-    jolly_roger: 'https://static.wikia.nocookie.net/onepiece/images/e/ea/Big_Mom_Pirates_Jolly_Roger.png',
+    jolly_roger: w("Big_Mom_Pirates'_Jolly_Roger.png"),
     color: 'text-pink-500', bg_gradient: 'from-pink-900/40 to-black', leader: 'Charlotte Linlin',
-    description: 'Operaban territorialmente Totto Land con cientos de razas distintas y Homies vivientes armados. Consiste de casi absolutamente sólo ministros hijos biológicos letales.',
-    key_members: ['Big Mom', 'Katakuri', 'Smoothie', 'Cracker', 'Perospero', 'Oven', 'Daifuku', 'Pudding']
+    description: 'Una familia unida por la sangre y el terror en Totto Land.',
+    key_members: ['Big Mom', 'Katakuri', 'Smoothie', 'Cracker', 'Perospero']
   },
   {
-    id: 12, name: 'Donquixote Family', type: 'Sindicato y Reyes de Dressrosa',
-    jolly_roger: 'https://static.wikia.nocookie.net/onepiece/images/2/23/Donquixote_Pirates_Jolly_Roger.png',
+    id: 12, name: 'Donquixote Family', type: 'Mafia / Sindicato',
+    jolly_roger: w("Donquixote_Pirates'_Jolly_Roger.png"),
     color: 'text-pink-400', bg_gradient: 'from-rose-900/40 to-black', leader: 'Donquixote Doflamingo',
-    description: 'Actuaron cruel y financieramente como "Joker" monopolizando todo el tráfico ilícito mercantil del SAD mediante el control dictatorial clandestino de Smile y armas para el bajo mundo.',
-    key_members: ['Doflamingo', 'Rosinante', 'Trebol', 'Diamante', 'Pica', 'Sugar', 'Vergo', 'Señor Pink']
+    description: 'Controlaron el bajo mundo y el reino de Dressrosa.',
+    key_members: ['Doflamingo', 'Trébol', 'Diamante', 'Pica', 'Sugar']
   },
   {
-    id: 13, name: 'Baroque Works', type: 'Sindicato Secreto de Asesinos',
-    jolly_roger: 'https://static.wikia.nocookie.net/onepiece/images/d/df/Baroque_Works_Logo.png',
-    color: 'text-amber-600', bg_gradient: 'from-amber-900/40 to-black', leader: 'Mr. 0 (Sir Crocodile)',
-    description: 'Sus miembros en código jamás conocían la fachada de nadie. Provocaron minuciosamente con agentes letales la inminente e inevitable guerra sanguinaria civil total en Arabasta.',
-    key_members: ['Crocodile', 'Nico Robin', 'Daz Bones (Mr. 1)', 'Bon Clay (Mr. 2)', 'Galdino (Mr. 3)', 'Miss Doublefinger']
+    id: 13, name: 'Baroque Works', type: 'Organización Secreta',
+    jolly_roger: w('Baroque_Works_Logo.png'),
+    color: 'text-amber-600', bg_gradient: 'from-amber-900/40 to-black', leader: 'Sir Crocodile',
+    description: 'Intentaron conquistar Arabasta desde las sombras.',
+    key_members: ['Crocodile', 'Robin', 'Daz Bones', 'Bon Kurei']
   },
   {
-    id: 14, name: 'CP9 / CP0 (Aegis)', type: 'Inteligencia Asesina Marina',
-    jolly_roger: 'https://static.wikia.nocookie.net/onepiece/images/c/c2/Cipher_Pol_Logo.png',
-    color: 'text-gray-300', bg_gradient: 'from-slate-900/40 to-black', leader: 'Líderes Gorosei',
-    description: 'Agentes maestros del mortífero estilo físico Rokushiki y Zoans letales con extrema inmunidad. Reportan en directo y personalmente sus infiltraciones a la máxima élite Aristocrática Celestial.',
-    key_members: ['Rob Lucci', 'Kaku', 'Stussy', 'Kalifa', 'Jabura', 'Blueno', 'Guernica', 'Spandam']
+    id: 14, name: 'CP9 / CP0', type: 'Inteligencia Naval',
+    jolly_roger: w('Cipher_Pol_Logo.png'),
+    color: 'text-gray-300', bg_gradient: 'from-slate-900/40 to-black', leader: 'Rob Lucci',
+    description: 'Los asesinos oficiales del Gobierno Mundial.',
+    key_members: ['Lucci', 'Kaku', 'Stussy', 'Kalifa']
   },
   {
-    id: 15, name: 'Piratas Heart', type: 'Alianza y Subordinados Rookies',
-    jolly_roger: 'https://static.wikia.nocookie.net/onepiece/images/c/ca/Heart_Pirates_Jolly_Roger.png',
-    color: 'text-yellow-500', bg_gradient: 'from-yellow-800/40 to-black', leader: 'Trafalgar D. Law',
-    description: 'La super banda médica aliada nacida en el extinto North Blue bajo honor en la muerte traumática de Corazón, surcando con su distintivo gigantesco Polar Tang dorado en las profundidades.',
-    key_members: ['Law', 'Bepo', 'Penguin', 'Shachi', 'Jean Bart', 'Ikkaku']
+    id: 15, name: 'Piratas Heart', type: 'Aliados',
+    jolly_roger: w("Heart_Pirates'_Jolly_Roger.png"),
+    color: 'text-yellow-500', bg_gradient: 'from-yellow-800/40 to-black', leader: 'Trafalgar Law',
+    description: 'Tripulación médica liderada por el Cirujano de la Muerte.',
+    key_members: ['Law', 'Bepo', 'Shachi', 'Penguin']
   },
   {
-    id: 16, name: 'Piratas de Kid', type: 'Banda Rookie Violenta',
-    jolly_roger: 'https://static.wikia.nocookie.net/onepiece/images/e/ea/Kid_Pirates_Jolly_Roger.png',
-    color: 'text-red-600', bg_gradient: 'from-red-800/40 to-black', leader: 'Eustass "Captain" Kid',
-    description: 'Temerarios agresivos que arrasan masacrando civiles durante sus aventuras de la Peor Generación. Comprometidos fiel e implacablemente tras forjarse desde un origen común miserable y criminal.',
+    id: 16, name: 'Piratas de Kid', type: 'Tripulación Violenta',
+    jolly_roger: w("Kid_Pirates'_Jolly_Roger.png"),
+    color: 'text-red-600', bg_gradient: 'from-red-800/40 to-black', leader: 'Eustass Kid',
+    description: 'Piratas temidos por su brutalidad y poder magnético.',
     key_members: ['Kid', 'Killer', 'Heat', 'Wire']
   },
   {
-    id: 17, name: 'Piratas de Thriller Bark', type: 'Zombies / Extintos',
-    jolly_roger: 'https://static.wikia.nocookie.net/onepiece/images/2/2f/Thriller_Bark_Pirates_Jolly_Roger.png',
+    id: 17, name: 'Thriller Bark', type: 'Ejército de Zombies',
+    jolly_roger: w("Thriller_Bark_Pirates'_Jolly_Roger.png"),
     color: 'text-green-800', bg_gradient: 'from-green-950/40 to-black', leader: 'Gecko Moria',
-    description: 'El masivo e imponente barco-isla terrorífica habitada. Robaban agresivamente sombras mortales del Florian Triangle para infundirlas mágicamente en macabros soldados muertos.',
-    key_members: ['Moria', 'Dr. Hogback', 'Absalom', 'Perona', 'Ryuma (Zombie)', 'Oars']
+    description: 'Navegaban en la isla flotante más grande del mundo.',
+    key_members: ['Moria', 'Perona', 'Absalom', 'Hogback']
   },
   {
-    id: 18, name: 'Piratas Kuja', type: 'Reino Femenino',
-    jolly_roger: 'https://static.wikia.nocookie.net/onepiece/images/9/90/Kuja_Pirates_Jolly_Roger.png',
+    id: 18, name: 'Piratas Kuja', type: 'Guerreras Amazonas',
+    jolly_roger: w("Kuja_Pirates'_Jolly_Roger.png"),
     color: 'text-pink-600', bg_gradient: 'from-rose-800/40 to-black', leader: 'Boa Hancock',
-    description: 'Las legendarias nativas feroces de Amazon Lily que jamás ven el exterior varonil salvo para saquear letalmente rodeadas del cinturón paralizador rocoso Calm Belt y serpientes enormes mortales.',
-    key_members: ['Hancock', 'Marigold', 'Sandersonia', 'Marguerite', 'Nyon', 'Sweet Pea']
+    description: 'Las poderosas guerreras de Amazon Lily.',
+    key_members: ['Hancock', 'Marigold', 'Sandersonia']
   },
   {
-    id: 19, name: 'Piratas del Sol', type: 'Liberación Gyojin (Extinta/Separada)',
-    jolly_roger: 'https://static.wikia.nocookie.net/onepiece/images/a/ab/Sun_Pirates_Jolly_Roger.png',
+    id: 19, name: 'Piratas del Sol', type: 'Liberación Gyojin',
+    jolly_roger: w("Sun_Pirates'_Jolly_Roger.png"),
     color: 'text-red-500', bg_gradient: 'from-red-900/40 to-black', leader: 'Fisher Tiger / Jinbe',
-    description: 'Ocultaron dramáticamente las infames cicatrices estigmatizadas de esclavos celestiales de la marca de los Tenryubitos de Mariejois, marcándose el fuego radiante protector de un tatuaje del sol carmesí.',
-    key_members: ['Fisher Tiger', 'Jinbe', 'Arlong', 'Aladine', 'Macro', 'Wadatsumi', 'Koala (Temporal)']
+    description: 'Luchadores por la libertad y la igualdad de los hombres pez.',
+    key_members: ['Tiger', 'Jinbe', 'Arlong']
+  },
+  {
+    id: 20, name: 'Piratas Fire Tank', type: 'Tripulación de la Peor Generación',
+    jolly_roger: w("Fire_Tank_Pirates'_Jolly_Roger.png"),
+    color: 'text-gray-400', bg_gradient: 'from-gray-800/40 to-black', leader: 'Capone Bege',
+    description: 'Estructura similar a la mafia que utiliza la fruta fortaleza.',
+    key_members: ['Capone Bege', 'Chiffon', 'Gotti', 'Vito']
+  },
+  {
+    id: 21, name: 'Piratas de Hawkins', type: 'Tripulación de la Peor Generación',
+    jolly_roger: w("Hawkins_Pirates'_Jolly_Roger.png"),
+    color: 'text-yellow-600', bg_gradient: 'from-yellow-900/40 to-black', leader: 'Basil Hawkins',
+    description: 'Banda que utiliza la adivinación y el vudú.',
+    key_members: ['Basil Hawkins', 'Faust']
+  },
+  {
+    id: 22, name: 'Piratas Drake', type: 'Ex-Tripulación (SWORD)',
+    jolly_roger: w("Drake_Pirates'_Jolly_Roger.png"),
+    color: 'text-red-700', bg_gradient: 'from-red-900/40 to-black', leader: 'X Drake',
+    description: 'Infiltrados bajo la fachada de desertores.',
+    key_members: ['X Drake']
+  },
+  {
+    id: 23, name: 'Piratas On-Air', type: 'Tripulación de la Peor Generación',
+    jolly_roger: w("On_Air_Pirates'_Jolly_Roger.png"),
+    color: 'text-orange-500', bg_gradient: 'from-orange-900/40 to-black', leader: 'Scratchmen Apoo',
+    description: 'Utilizan el poder de la música destructiva.',
+    key_members: ['Scratchmen Apoo']
+  },
+  {
+    id: 24, name: 'Piratas del Monje Caído', type: 'Tripulación de la Peor Generación',
+    jolly_roger: w("Fallen_Monk_Pirates'_Jolly_Roger.png"),
+    color: 'text-gray-500', bg_gradient: 'from-gray-700 to-black', leader: 'Urouge',
+    description: 'Provenientes de una isla del cielo.',
+    key_members: ['Urouge']
+  },
+  {
+    id: 25, name: 'Piratas de Arlong', type: 'Tripulación Gyojin (Ex)',
+    jolly_roger: w("Arlong_Pirates'_Jolly_Roger.png"),
+    color: 'text-blue-600', bg_gradient: 'from-blue-900 to-black', leader: 'Arlong',
+    description: 'Buscaban establecer el Imperio Gyojin en el East Blue.',
+    key_members: ['Arlong', 'Hatchan', 'Chew', 'Kuroobi']
+  },
+  {
+    id: 26, name: 'Piratas de Krieg', type: 'Flota del East Blue (Ex)',
+    jolly_roger: w("Krieg_Pirates'_Jolly_Roger.png"),
+    color: 'text-yellow-600', bg_gradient: 'from-yellow-900 to-black', leader: 'Don Krieg',
+    description: 'Llegaron a tener 50 barcos bajo su mando.',
+    key_members: ['Don Krieg', 'Gin', 'Pearl']
+  },
+  {
+    id: 27, name: 'Piratas del Gato Negro', type: 'Piratas (Ex)',
+    jolly_roger: w("Black_Cat_Pirates'_Jolly_Roger.png"),
+    color: 'text-gray-400', bg_gradient: 'from-gray-800 to-black', leader: 'Kuro',
+    description: 'Conocidos por su velocidad y tácticas despiadadas.',
+    key_members: ['Kuro', 'Jango', 'Sham', 'Buchi']
+  },
+  {
+    id: 28, name: 'Piratas de Buggy', type: 'Piratas (Cross Guild)',
+    jolly_roger: w("Buggy_Pirates'_Jolly_Roger.png"),
+    color: 'text-red-500', bg_gradient: 'from-red-900 to-black', leader: 'Buggy',
+    description: 'La tripulación del "Payaso Estrella", ahora parte de Cross Guild.',
+    key_members: ['Buggy', 'Alvida', 'Mohji', 'Cabaji']
+  },
+  {
+    id: 29, name: 'Piratas Rumbar', type: 'Tripulación Histórica',
+    jolly_roger: w("Rumbar_Pirates'_Jolly_Roger.png"),
+    color: 'text-amber-500', bg_gradient: 'from-amber-900 to-black', leader: 'Yorki / Brook',
+    description: 'Antigua tripulación que navegaba con música y alegría.',
+    key_members: ['Yorki', 'Brook', 'Laboon']
+  },
+  {
+    id: 30, name: 'Piratas del Gigante Guerrero', type: 'Tripulación Legendaria',
+    jolly_roger: w("Giant_Warrior_Pirates'_Jolly_Roger.png"),
+    color: 'text-red-800', bg_gradient: 'from-red-950 to-black', leader: 'Dorry y Brogy',
+    description: 'Los legendarios gigantes de Elbaf que trajeron terror al mar.',
+    key_members: ['Dorry', 'Brogy', 'Oimo', 'Kashi']
   }
 ];

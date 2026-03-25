@@ -54,9 +54,34 @@ export const THEORIES = [
     evidence: ['Vegeta... Vegapunk confesó mundialmente por Den Den que aquel viejo extenso maravilloso globo original habitable mundial y próspero en tierra pacífica anterior está trágicamente sumergido en las silenciosas mareas infinitas azuladas globales.', 'Shirahoshi solloza controlando enormes reyes colosales marinos inmensos protectores bestiales brutales letales masivos sin desear masacres.'], confirmed: true, hot: true
   },
   {
-    title: 'Los Ojos inquebrantables del Rey halcón Mihawk y de Imu-Sama',
-    category: 'Misterios Inexplicables Oculares Físicos', icon: '👁️', color: 'from-red-900 to-yellow-900', border: 'border-red-600', glow: 'shadow-red-500/30',
-    excerpt: 'Aquellas retinas singulares anilladas brillantes e inhumanas peculiares letales penetrantes espadas que adornan atemorizantes la profunda mirada dorada inexpresiva del halcón invencible espadachín Dracule Mihawk se asemejan sospechosísima e inseparablemente y con enorme intriga letal idéntica a los círculos crueles iris mortales divinos carmesí intensos que vislumbramos del soberano infinito oculto global del universo marino estelar mundial místico imponderable (Imu).',
-    evidence: ['Son los dos excepcionales ejemplares vivos milenarios existentes mostrados retratados mundiales oficiales directos portadores inconfundibles puros exactos anatómicos redondos concéntricos hipnóticos oculares letales visuales del sombrío y basto globo terráqueo marítimo sin tener frutos pariente animal exótico visible.'], confirmed: false, hot: true
+    title: 'La Red Line es una Construcción Artificial',
+    category: 'Arquitectura Global', icon: '⛰️', color: 'from-orange-800 to-red-950', border: 'border-orange-600', glow: 'shadow-orange-500/30',
+    excerpt: 'La gigantesca cordillera roja que divide el mundo no es natural. Fue construida por el Gobierno Mundial para separar los mares y controlar el flujo de información y personas.',
+    evidence: ['Su composición es inusualmente uniforme y resistente', 'Alberga a la "Tierra de los Dioses" Mary Geoise en su cima', 'Su destrucción es un paso clave para el "All Blue".'], confirmed: false, hot: true
+  },
+  {
+    title: 'El Reino Antiguo estaba en la Luna',
+    category: 'Origen de la Humanidad', icon: '🌙', color: 'from-blue-200 to-gray-400', border: 'border-blue-300', glow: 'shadow-blue-200/30',
+    excerpt: 'Los grabados en las ruinas lunares que Enel descubrió sugieren que las tres razas aladas (Skypieans, Birkans y Shandians) descendieron de la luna debido a la falta de recursos.',
+    evidence: ['Tecnología robótica avanzada encontrada por Enel en la luna', 'Murales que muestran naves y migraciones estelares', 'Conexión entre el mineral lunar y los Poneglyphs.'], confirmed: false, hot: true
+  },
+  {
+    title: 'Joy Boy era un Gigante de Elbaf',
+    category: 'Personajes Históricos', icon: '🦴', color: 'from-amber-700 to-yellow-900', border: 'border-amber-600', glow: 'shadow-amber-500/30',
+    excerpt: 'El enorme sombrero de paja congelado en Mary Geoise sugiere que su dueño original era de una estatura colosal, probablemente un gigante de la raza de Elbaf.',
+    evidence: ['El tamaño del sombrero en la cámara de Imu', 'La fuerte conexión de Elbaf con la historia del Siglo Vacío', 'La risa de los gigantes y su longevidad.'], confirmed: false, hot: true
+  },
+  {
+    title: 'El One Piece es un "Mensaje de Risa"',
+    category: 'El Gran Tesoro', icon: '😂', color: 'from-yellow-400 to-amber-500', border: 'border-yellow-400', glow: 'shadow-yellow-400/30',
+    excerpt: 'Roger y su tripulación rieron a carcajadas al ver el tesoro. Se especula que el One Piece es una historia cómica o una verdad tan absurda que causa risa inmediata.',
+    evidence: ['Roger llamó a la isla "Laugh Tale"', 'La risotada colectiva de los piratas más fuertes del mundo', 'La conexión con el "Dios de la Risa" Nika.'], confirmed: false, hot: true
+  },
+  {
+    title: 'La Madre Llama y la Energía del Sol',
+    category: 'Tecnología Prohibida', icon: '☀️', color: 'from-yellow-500 to-orange-600', border: 'border-yellow-500', glow: 'shadow-yellow-500/30',
+    excerpt: 'La fuente de energía que Vegapunk intentaba recrear es la misma que alimentaba al Reino Antiguo: un sol artificial limpio e infinito llamado la Madre Llama.',
+    evidence: ['Imu usó una pequeña porción para borrar el Reino de Lulusia', 'La obsesión de Vegapunk con el "Sol"', 'El robot gigante de Egghead que despertó con los Tambores de la Liberación.'], confirmed: true, hot: true
   }
 ];
+

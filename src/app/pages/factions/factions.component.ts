@@ -33,10 +33,14 @@ import { FACTIONS } from '../../data/factions';
               <!-- Glow Effect -->
               <div class="absolute inset-0 scale-150 opacity-0 group-hover:opacity-30 transition-opacity duration-700 blur-3xl rounded-full" [ngClass]="f.bg_gradient.replace('/40', '')"></div>
               
-              <div class="relative w-64 h-64 md:w-96 md:h-96 rounded-full flex items-center justify-center p-4 filter drop-shadow-[0_0_30px_rgba(0,0,0,0.8)] transition-transform duration-1000 group-hover:scale-105 group-hover:rotate-6">
-                <!-- Background pattern behind image to give it substance -->
-                <div class="absolute inset-0 bg-black/60 rounded-full border border-gray-800 shadow-2xl overflow-hidden pointer-events-none"></div>
-                <img [src]="f.jolly_roger" [alt]="f.name" class="relative z-10 max-w-full max-h-full object-contain filter drop-shadow-2xl brightness-110" (error)="$any($event.target).src='https://via.placeholder.com/300/000000/FFFFFF?text=☠️'">
+              <div class="relative w-64 h-64 md:w-96 md:h-96 rounded-full flex items-center justify-center filter drop-shadow-[0_0_50px_rgba(0,0,0,0.9)] transition-all duration-1000 group-hover:scale-105 group-hover:rotate-3 overflow-hidden border-8 border-gray-900 shadow-2xl">
+                <!-- Background pattern / texture -->
+                <div class="absolute inset-0 bg-black/80 pointer-events-none"></div>
+                <div class="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/dark-leather.png')]"></div>
+                
+                <img [src]="f.jolly_roger" [alt]="f.name" 
+                     class="relative z-10 w-full h-full object-cover brightness-110 contrast-110" 
+                     (error)="$any($event.target).src='https://via.placeholder.com/400/000000/FFFFFF?text=☠️'">
               </div>
 
               <!-- Type Tag Overlay -->

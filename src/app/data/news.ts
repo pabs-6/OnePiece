@@ -38,5 +38,26 @@ export const NEWS = [
     title: 'Los Gorosei revelan su verdadera forma', date: '2024', category: 'Manga', icon: '👹',
     description: 'En el clímax del arco de Egghead, las 5 Estrellas Ancianas muestran poderes yokai monstruosos sin paralelo para detener a Nika.',
     tag: 'MÚSICA', tagColor: 'bg-pink-600 text-white', borderColor: 'border-pink-500', hot: true,
+  },
+  {
+    title: 'La Voz de Todas las Cosas: Un Don Raro', date: '2025', category: 'Lore', icon: '👂',
+    description: 'Nuevos análisis en el manga sugieren que la habilidad de Luffy y Momonosuke para escuchar a Zunesha es la clave final para abrir el Siglo Vacío.',
+    tag: 'ANÁLISIS', tagColor: 'bg-yellow-600 text-black', borderColor: 'border-yellow-400', hot: false,
+  },
+  {
+    title: 'Figarland Garling: El Verdugo de God Valley', date: '2024', category: 'Manga', icon: '🌙',
+    description: 'Se revela el pasado del líder de los Caballeros Sagrados. Su conexión con Shanks sacude las bases de la comunidad de teorías.',
+    tag: 'REVELACIÓN', tagColor: 'bg-red-800 text-white', borderColor: 'border-red-700', hot: true,
+  },
+  {
+    title: 'One Piece Day 2025: Expectativas Totales', date: '2025', category: 'Eventos', icon: '🎪',
+    description: 'El evento anual más importante promete nuevos tráilers del Live Action y detalles exclusivos sobre el final del arco de Elbaf.',
+    tag: 'EVENTO', tagColor: 'bg-blue-500 text-white', borderColor: 'border-blue-400', hot: false,
+  },
+  {
+    title: '¿Vuelve Enel? Los indicios en la Luna', date: '2025', category: 'Rumores', icon: '⚡',
+    description: 'Pequeños detalles en las portadas de los capítulos recientes alimentan la esperanza de los fans sobre el regreso del Dios de Skypiea.',
+    tag: 'RUMOR', tagColor: 'bg-purple-500 text-white', borderColor: 'border-purple-400', hot: false,
   }
 ];
+
