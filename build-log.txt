@@ -1,0 +1,20 @@
+[33m❯[39m Building...
+[32m✔[39m Building...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m               [2m | [22m [1mRaw size[22m
+[32mchunk-M3K4HB3X.js[39m  [2m | [22m[2m-[22m                   [2m | [22m  [36m1.00 MB[39m[2m | [22m
+[32mchunk-CIO5I3MV.js[39m  [2m | [22m[2m-[22m                   [2m | [22m[36m257.48 kB[39m[2m | [22m
+[32mstyles.css[39m         [2m | [22m[2mstyles[22m              [2m | [22m [36m64.74 kB[39m[2m | [22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m                [2m | [22m [36m15.42 kB[39m[2m | [22m
+
+[1m [22m                  [2m | [22m[1mInitial total[22m       [2m | [22m  [1m1.34 MB[22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m               [2m | [22m [1mRaw size[22m
+[32mchunk-KT3OEX6C.js[39m  [2m | [22m[2mcharacters-component[22m[2m | [22m [36m44.15 kB[39m[2m | [22m
+[32mchunk-MI732NXA.js[39m  [2m | [22m[2mhome-component[22m      [2m | [22m [36m27.98 kB[39m[2m | [22m
+[32mchunk-AQHW4ZEW.js[39m  [2m | [22m[2mfactions-component[22m  [2m | [22m [36m17.27 kB[39m[2m | [22m
+[32mchunk-ZDRBX67S.js[39m  [2m | [22m[2mtheories-component[22m  [2m | [22m [36m13.33 kB[39m[2m | [22m
+
+Application bundle generation complete. [1.801 seconds] - 2026-03-25T12:00:34.883Z
+
+Output location: C:\Users\mella\Documents\OnePiece\dist\onepiece-wiki
+

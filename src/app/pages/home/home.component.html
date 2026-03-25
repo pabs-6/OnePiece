@@ -1,0 +1,204 @@
+<!-- ===== HERO SECTION ===== -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Ocean background -->
+  <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-blue-950 to-op-dark"></div>
+  <!-- Stars -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div *ngFor="let s of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]"
+      class="absolute rounded-full bg-white animate-pulse-slow"
+      [style.width.px]="(s * 7 % 3) + 1" [style.height.px]="(s * 7 % 3) + 1"
+      [style.top.%]="(s * 37) % 100" [style.left.%]="(s * 53) % 100"
+      [style.animationDelay.s]="(s * 0.4) % 3" [style.opacity]="0.3 + (s % 5) * 0.1"
+    ></div>
+  </div>
+
+  <div class="absolute bottom-0 left-0 right-0 h-32 overflow-hidden">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" class="absolute bottom-0 w-full h-full" style="animation: wave 8s linear infinite; width:200%">
+      <path fill="rgba(13,27,42,0.9)" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L0,120Z"/>
+    </svg>
+  </div>
+
+  <div class="relative z-10 text-center px-4 pt-20 reveal">
+    <div class="inline-flex items-center gap-2 bg-red-900/40 border border-red-700/50 rounded-full px-4 py-2 mb-6 float-badge">
+      <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+      <span class="text-red-300 text-sm font-semibold font-mono">ÚLTIMO CAPÍTULO 1122+</span>
+    </div>
+
+    <h2 class="font-pirate text-6xl md:text-8xl lg:text-9xl font-black mb-4 leading-none">
+      <span class="shimmer-text">ONE</span><br>
+      <span class="text-transparent bg-clip-text bg-gradient-to-b from-red-400 to-red-700">PIECE</span>
+    </h2>
+    <p class="font-mono text-yellow-400 text-sm md:text-lg tracking-[0.3em] mb-4">☠ LA BIBLIA DEL GRAN TESORO ☠</p>
+    <p class="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto mb-10">
+      Una base de datos de 100+ personajes, las tripulaciones del Nuevo Mundo, teorías y la historia oculta de Eiichiro Oda.
+    </p>
+
+    <!-- Stats -->
+    <div class="flex flex-wrap justify-center gap-6 md:gap-10 mb-10">
+      <div class="text-center"><div class="text-4xl font-pirate text-yellow-400 font-bold">100+</div><div class="text-gray-400 text-sm font-mono">Personajes</div></div>
+      <div class="w-px bg-yellow-900 hidden md:block"></div>
+      <div class="text-center"><div class="text-4xl font-pirate text-red-400 font-bold">1100+</div><div class="text-gray-400 text-sm font-mono">Capítulos</div></div>
+      <div class="w-px bg-yellow-900 hidden md:block"></div>
+      <div class="text-center"><div class="text-4xl font-pirate text-blue-400 font-bold">Yonkos</div><div class="text-gray-400 text-sm font-mono">Tripulaciones</div></div>
+    </div>
+
+    <div class="flex justify-center gap-4">
+      <a routerLink="/characters" class="px-8 py-4 bg-gradient-to-r from-yellow-500 to-amber-500 hover:from-yellow-400 text-black font-bold rounded-full transition-all duration-300 hover:scale-105 shadow-gold">⚓ Explorar 100 Personajes</a>
+      <a routerLink="/factions" class="px-8 py-4 border-2 border-red-500 text-red-500 font-bold rounded-full transition-all duration-300 hover:scale-105 hover:bg-red-500/20">🏴‍☠️ Ver Tripulaciones</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NOTICIAS EXTENSAS ===== -->
+<section class="py-24 bg-op-dark relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-16 reveal">
+      <p class="text-red-400 font-mono text-sm tracking-widest mb-2">📰 ÚLTIMAS NOTICIAS</p>
+      <h2 class="font-pirate text-5xl md:text-6xl gradient-text mb-4 section-title">Actualidad del Grand Line</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto text-lg">Entérate de los últimos acontecimientos en torno al fenómeno mundial The One Piece.</p>
+    </div>
+
+    <!-- Carrusel o Grid Extenso de Noticias -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+      <!-- Top 2 News (Bigger Focus) -->
+      <div *ngFor="let item of news.slice(0, 2); let i = index" class="reveal card-hover relative rounded-2xl border border-yellow-600/40 bg-gradient-to-br p-8 transition-transform group" [ngClass]="i === 0 ? 'from-yellow-950/60 to-amber-950/40' : 'from-red-950/60 to-rose-950/40'">
+        <div class="absolute top-4 right-4"><span class="bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full animate-pulse shadow-lg" *ngIf="item.hot">🔥 DESTACADO</span></div>
+        <div class="flex flex-col gap-4">
+          <div class="text-7xl group-hover:scale-110 transition-transform origin-left">{{ item.icon }}</div>
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-xs font-bold px-4 py-1.5 rounded-full shadow-md" [ngClass]="item.tagColor">{{ item.tag }}</span>
+              <span class="text-gray-500 font-mono text-xs uppercase">{{ item.date }} · {{ item.category }}</span>
+            </div>
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 group-hover:text-yellow-400 transition-colors leading-tight">{{ item.title }}</h3>
+            <p class="text-gray-300 text-lg md:text-xl leading-relaxed">{{ item.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rest of the news in a grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div *ngFor="let item of news.slice(2); let i = index" class="reveal card-hover rounded-xl border bg-gray-900/80 p-6 shadow-xl group border-l-4" [ngClass]="item.borderColor" [style.transitionDelay]="(i * 0.1) + 's'">
+        <div class="flex justify-between items-start mb-6">
+          <span class="text-5xl group-hover:rotate-6 transition-transform">{{ item.icon }}</span>
+          <span class="text-xs font-bold px-3 py-1 rounded-full shadow" [ngClass]="item.tagColor">{{ item.tag }}</span>
+        </div>
+        <span class="text-xs text-gray-400 font-mono block mb-3">{{ item.date }} · {{ item.category }}</span>
+        <h3 class="text-xl font-bold text-white mb-3 leading-snug group-hover:text-blue-400 transition-colors">{{ item.title }}</h3>
+        <p class="text-gray-400 text-sm md:text-base leading-relaxed line-clamp-3">{{ item.description }}</p>
+        <div class="mt-4 pt-4 border-t border-gray-800">
+          <a class="text-yellow-500 text-sm font-bold hover:text-yellow-300 cursor-pointer flex items-center gap-2">LEER MÁS <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CURIOSIDADES EXTENSAS ===== -->
+<section class="py-24 bg-gradient-to-t from-black to-op-dark relative overflow-hidden">
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yellow-900/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 relative z-10">
+    <div class="text-center mb-16 reveal">
+      <p class="text-yellow-400 font-mono text-sm tracking-widest mb-2">💡 DATOS QUE NOS VUELAN LA CABEZA</p>
+      <h2 class="font-pirate text-5xl md:text-6xl text-white mb-4 section-title">
+        <span class="gradient-text">Curiosidades</span> Ocultas
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+        El nivel de detalle microscópico e interconectado (foreshadowing) del autor a lo largo de 25 años de publicación.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="reveal card-hover bg-gradient-to-r from-yellow-900/40 to-transparent border-l-4 border-yellow-500 rounded-r-2xl p-8 hover:border-l-8 transition-all duration-300">
+        <h3 class="text-2xl font-bold text-yellow-400 mb-3 flex items-center gap-3">
+          <span class="text-3xl">⏱️</span> El Foreshadowing de Haki en Capítulo 1
+        </h3>
+        <p class="text-gray-300 leading-relaxed text-lg">
+          Shanks espanta al gigantesco monstruo marino Rey del Mar en el primer capítulo con una sola mirada helada. Esto que al principio parecía "intimidación cruel pura", fue revelado 500 capítulos despues explícitamente formalizado metódico con el nombre místico abismal del Rey (Haoshoku Haki).
+        </p>
+      </div>
+
+      <div class="reveal card-hover bg-gradient-to-r from-red-900/40 to-transparent border-l-4 border-red-500 rounded-r-2xl p-8 hover:border-l-8 transition-all duration-300 delay-100">
+        <h3 class="text-2xl font-bold text-red-400 mb-3 flex items-center gap-3">
+          <span class="text-3xl">🫀</span> Sonrisa ante el inminente Abismo
+        </h3>
+        <p class="text-gray-300 leading-relaxed text-lg">
+          Absolutamente todos y cada uno milimétricamente inquebrantable individuo de los imponentes miembros sagrados malditos honorables de la inicial D (Roger, Rouge, Saul, Ace y Luffy resucitado) han mostrado una sonrisita luminosa ridículamente masiva exacta irrefutable a un mero milisegundo antes biológico oficial físico inminente en sus respectivas impactantes aplastantes muertes públicas o supuestas.
+        </p>
+      </div>
+
+      <div class="reveal card-hover bg-gradient-to-r from-blue-900/40 to-transparent border-l-4 border-blue-500 rounded-r-2xl p-8 hover:border-l-8 transition-all duration-300">
+        <h3 class="text-2xl font-bold text-blue-400 mb-3 flex items-center gap-3">
+          <span class="text-3xl">📓</span> El final inmutable del Rey de los Piratas
+        </h3>
+        <p class="text-gray-300 leading-relaxed text-lg">
+          Oda confirmó en incontables SBS directas formales masivas que tiene resguardado fiel e inmodificablemente intocable blindado en su cráneo el preciso último panel visual finalísimo glorioso mundial oficial definitivo exacto con el que la larguísima grandiosa publicación concluirá magistralmente la monumental obra desde su misma primeriza fundación hace valiosos 27 añazos incontables.
+        </p>
+      </div>
+
+      <div class="reveal card-hover bg-gradient-to-r from-purple-900/40 to-transparent border-l-4 border-purple-500 rounded-r-2xl p-8 hover:border-l-8 transition-all duration-300 delay-100">
+        <h3 class="text-2xl font-bold text-purple-400 mb-3 flex items-center gap-3">
+          <span class="text-3xl">🦈</span> La Ironía Divina Temblorosa de Buggy
+        </h3>
+        <p class="text-gray-300 leading-relaxed text-lg">
+          Increíblemente e hilarantemente infalible casual azaroso, Oda ha catapultado formal obligatoria institucional accidental progresiva mundial meteórica la fraudulenta estúpida imagen aterrada llorosa masiva débil del legendario y payaso cobarde a los puestos gubernamentales honorables sagrados intocables de prestigio, empezando por Corsario oficial pacífico y posteriormente ascendiéndolo formalmente como uno innegable de los irremplazables 4 amos Yonkos del Nuevo Globo marino.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAPITULOS IMPORTANTES EXTENSOS ===== -->
+<section class="py-24 bg-gradient-to-b from-op-dark to-slate-950 relative overflow-hidden">
+  <div class="absolute inset-0 block md:hidden bg-opacity-20 pointer-events-none" style="background-image: radial-gradient(#C0392B 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+  <div class="max-w-7xl mx-auto px-4 relative z-10">
+    <div class="text-center mb-16 reveal">
+      <p class="text-red-400 font-mono text-sm tracking-widest mb-2">📖 MOMENTOS HISTÓRICOS Y MASIVOS</p>
+      <h2 class="font-pirate text-5xl md:text-6xl mb-4 section-title text-white">Capítulos <span class="gradient-text">Legendarios</span></h2>
+      <p class="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">Los momentos exactos milimétricos en el anime manga donde el autor literalmente frenó bruscamente y rompió el frenesí comunicativo mundial de gigantesco internet general, inundando todo panel noticiario absoluto.</p>
+    </div>
+
+    <!-- MASONRY AMPLIO -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div *ngFor="let ch of chapters; let i = index" class="reveal card-hover flex flex-col rounded-2xl group border border-gray-800 bg-gray-900 overflow-hidden shadow-2xl" 
+           [ngClass]="{'md:col-span-2 lg:col-span-2': i === 0 || i === 4}"
+           [style.transitionDelay]="(i * 0.1) + 's'">
+        
+        <div class="bg-gradient-to-br p-8 relative overflow-hidden" [ngClass]="ch.color">
+          <!-- Fondo Marca de agua -->
+          <div class="absolute -right-8 -bottom-10 text-9xl font-black font-pirate opacity-10 blur-[2px] transition-transform duration-700 group-hover:scale-125 group-hover:rotate-12">{{ ch.number }}</div>
+          
+          <div class="relative z-10 h-full flex flex-col justify-between">
+            <div class="flex justify-between items-start mb-6 gap-2">
+              <span class="text-xs font-mono font-bold text-white/90 bg-black/40 px-3 py-1 rounded inline-block shadow-inner">▶ ARC: {{ ch.arc | uppercase }}</span>
+              <span class="text-xs font-bold text-white bg-white/20 whitespace-nowrap backdrop-blur-sm shadow border border-white/30 px-3 py-1 rounded-full animate-pulse">{{ ch.impact }}</span>
+            </div>
+            
+            <div class="flex items-center gap-4">
+              <div class="w-16 h-16 rounded-xl bg-white/10 backdrop-blur-md shadow-inner flex items-center justify-center text-4xl group-hover:-translate-y-2 transition-transform duration-500">
+                {{ ch.icon }}
+              </div>
+              <div class="flex-1">
+                <p class="text-white/60 text-xs font-mono font-bold tracking-widest mb-1 shadow-black drop-shadow-md">CAPÍTULO MUNDIAL #{{ ch.number }}</p>
+                <h3 class="text-2xl md:text-3xl font-bold text-white leading-tight drop-shadow-xl">{{ ch.title }}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="p-6 md:p-8 flex flex-col flex-1 bg-gradient-to-b from-gray-900 to-black/90">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse shadow-[0_0_10px_rgba(234,179,8,1)]"></div>
+            <p class="text-xs text-gray-500 font-mono tracking-widest">FECHA ORIGINAL DEL SUCESO: {{ ch.date }}</p>
+          </div>
+          <p class="text-gray-300 text-sm md:text-base leading-relaxed flex-1 border-l-2 border-gray-800 pl-4 py-1 italic hover:border-yellow-500 transition-colors duration-500">
+            "{{ ch.description }}"
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

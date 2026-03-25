@@ -1,0 +1,755 @@
+<!-- Progress Bar -->
+<div class="progress-bar" [style.width.%]="scrollProgress"></div>
+
+<!-- ===== NAVBAR ===== -->
+<nav
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 nav-blur"
+  [class.bg-op-dark]="navScrolled"
+  [class.bg-opacity-95]="navScrolled"
+  [class.border-b]="navScrolled"
+  [class.border-yellow-900]="navScrolled"
+  [ngClass]="navScrolled ? 'py-2 shadow-2xl' : 'py-4'"
+>
+  <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center gap-3 cursor-pointer group" (click)="scrollTo('#hero')">
+      <div class="relative">
+        <span class="text-3xl animate-spin-slow inline-block">☠️</span>
+        <div class="absolute -inset-1 bg-yellow-500/20 rounded-full blur animate-pulse-slow"></div>
+      </div>
+      <div>
+        <h1 class="font-pirate text-xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-500 leading-none">ONE PIECE</h1>
+        <p class="text-xs text-gray-400 font-mono">UNIVERSE DATABASE</p>
+      </div>
+    </div>
+
+    <!-- Desktop Nav -->
+    <ul class="hidden md:flex items-center gap-1">
+      <li *ngFor="let link of navLinks">
+        <a
+          (click)="scrollTo(link.href)"
+          class="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-semibold cursor-pointer transition-all duration-300 hover:text-yellow-400 hover:bg-yellow-500/10"
+          [class.text-yellow-400]="activeSection === link.href.replace('#','')"
+          [class.bg-yellow-500_10]="activeSection === link.href.replace('#','')"
+        >
+          <span>{{ link.icon }}</span>{{ link.label }}
+        </a>
+      </li>
+    </ul>
+
+    <!-- Mobile Menu Button -->
+    <button (click)="menuOpen = !menuOpen" class="md:hidden text-2xl text-yellow-400 relative z-50">
+      <span *ngIf="!menuOpen">☰</span>
+      <span *ngIf="menuOpen">✕</span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    *ngIf="menuOpen"
+    class="md:hidden absolute top-full left-0 right-0 bg-op-dark/95 nav-blur border-t border-yellow-900/50 px-4 py-4"
+  >
+    <ul class="flex flex-col gap-2">
+      <li *ngFor="let link of navLinks">
+        <a
+          (click)="scrollTo(link.href)"
+          class="flex items-center gap-3 px-4 py-3 rounded-lg text-base font-semibold cursor-pointer transition-all duration-300 hover:bg-yellow-500/10 hover:text-yellow-400 text-gray-200"
+        >
+          <span class="text-xl">{{ link.icon }}</span>{{ link.label }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== HERO SECTION ===== -->
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Ocean background -->
+  <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-blue-950 to-op-dark"></div>
+  <!-- Stars -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div *ngFor="let s of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]"
+      class="absolute rounded-full bg-white animate-pulse-slow"
+      [style.width.px]="(s * 7 % 3) + 1"
+      [style.height.px]="(s * 7 % 3) + 1"
+      [style.top.%]="(s * 37) % 100"
+      [style.left.%]="(s * 53) % 100"
+      [style.animationDelay.s]="(s * 0.4) % 3"
+      [style.opacity]="0.3 + (s % 5) * 0.1"
+    ></div>
+  </div>
+
+  <!-- Ocean waves bottom -->
+  <div class="absolute bottom-0 left-0 right-0 h-32 overflow-hidden">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" class="absolute bottom-0 w-full h-full" style="animation: wave 8s linear infinite; width:200%">
+      <path fill="rgba(13,27,42,0.9)" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L0,120Z"/>
+    </svg>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 text-center px-4 pt-20">
+    <!-- Top badge -->
+    <div class="inline-flex items-center gap-2 bg-red-900/40 border border-red-700/50 rounded-full px-4 py-2 mb-6 float-badge">
+      <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+      <span class="text-red-300 text-sm font-semibold font-mono">MANGA EN PUBLICACIÓN · CAPÍTULO 1122+</span>
+    </div>
+
+    <!-- Main title -->
+    <h2 class="font-pirate text-6xl md:text-8xl lg:text-9xl font-black mb-4 leading-none">
+      <span class="shimmer-text">ONE</span>
+      <br>
+      <span class="text-transparent bg-clip-text bg-gradient-to-b from-red-400 to-red-700">PIECE</span>
+    </h2>
+
+    <!-- Subtitle -->
+    <p class="font-mono text-yellow-400 text-sm md:text-lg tracking-[0.3em] mb-4">☠ UNIVERSE DATABASE ☠</p>
+
+    <p class="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-10">
+      La enciclopedia <span class="text-yellow-400 font-bold">más completa</span> sobre el mundo pirata de Eiichiro Oda.
+      Teorías, personajes, capítulos épicos y las últimas noticias del Gran Tesoro.
+    </p>
+
+    <!-- Stats -->
+    <div class="flex flex-wrap justify-center gap-6 md:gap-10 mb-10">
+      <div class="text-center">
+        <div class="text-3xl md:text-4xl font-pirate text-yellow-400 font-bold">530M+</div>
+        <div class="text-gray-400 text-xs md:text-sm font-mono">Copias Vendidas</div>
+      </div>
+      <div class="w-px bg-yellow-900 hidden md:block"></div>
+      <div class="text-center">
+        <div class="text-3xl md:text-4xl font-pirate text-red-400 font-bold">1100+</div>
+        <div class="text-gray-400 text-xs md:text-sm font-mono">Capítulos</div>
+      </div>
+      <div class="w-px bg-yellow-900 hidden md:block"></div>
+      <div class="text-center">
+        <div class="text-3xl md:text-4xl font-pirate text-blue-400 font-bold">27</div>
+        <div class="text-gray-400 text-xs md:text-sm font-mono">Años en Publicación</div>
+      </div>
+      <div class="w-px bg-yellow-900 hidden md:block"></div>
+      <div class="text-center">
+        <div class="text-3xl md:text-4xl font-pirate text-purple-400 font-bold">#1</div>
+        <div class="text-gray-400 text-xs md:text-sm font-mono">Manga Más Vendido</div>
+      </div>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="flex flex-wrap justify-center gap-4">
+      <button
+        (click)="scrollTo('#characters')"
+        class="px-8 py-4 bg-gradient-to-r from-yellow-500 to-amber-500 hover:from-yellow-400 hover:to-amber-400 text-black font-bold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-gold shadow-gold text-base"
+      >
+        ⚓ Explorar Personajes
+      </button>
+      <button
+        (click)="scrollTo('#theories')"
+        class="px-8 py-4 bg-transparent border-2 border-red-500 text-red-400 hover:bg-red-500/20 font-bold rounded-full transition-all duration-300 hover:scale-105 text-base"
+      >
+        🔮 Ver Teorías
+      </button>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="mt-16 flex flex-col items-center gap-2 animate-bounce">
+      <span class="text-gray-500 text-xs font-mono tracking-widest">EXPLORAR</span>
+      <div class="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center pt-2">
+        <div class="w-1.5 h-3 bg-yellow-500 rounded-full animate-bounce"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUOTE BANNER ===== -->
+<section class="relative bg-gradient-to-r from-red-950 via-red-900 to-red-950 py-12 overflow-hidden">
+  <div class="absolute inset-0 opacity-10">
+    <div class="text-9xl font-pirate text-red-300 text-center leading-none mt-2">☠️ ☠️ ☠️ ☠️ ☠️</div>
+  </div>
+  <div class="max-w-4xl mx-auto text-center px-4 relative z-10">
+    <p class="font-pirate text-2xl md:text-4xl text-yellow-300 leading-relaxed italic reveal">
+      "Sigo vivo... porque no te rendiste en ese momento. Por eso no se puede fallar de nuevo."
+    </p>
+    <p class="text-red-400 mt-4 font-semibold font-mono text-sm reveal delay-200">— Roronoa Zoro, Thriller Bark</p>
+  </div>
+</section>
+
+<!-- ===== NOTICIAS ===== -->
+<section id="news" class="py-24 bg-op-dark relative overflow-hidden">
+  <!-- Decorative bg -->
+  <div class="absolute top-0 right-0 w-96 h-96 bg-red-900/20 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 w-80 h-80 bg-yellow-900/15 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center mb-16 reveal">
+      <p class="text-red-400 font-mono text-sm tracking-widest mb-2">📰 ÚLTIMAS NOTICIAS</p>
+      <h2 class="font-pirate text-4xl md:text-5xl gradient-text mb-4 section-title">El Gran Anuncio</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Todo lo que está pasando en el mundo de One Piece: manga, anime, live action y más.</p>
+    </div>
+
+    <!-- Featured News (first) -->
+    <div class="mb-8 reveal">
+      <div class="relative rounded-2xl overflow-hidden border border-yellow-600/40 bg-gradient-to-br from-yellow-950/60 to-amber-950/40 p-8 md:p-10 card-hover group">
+        <div class="absolute top-4 right-4">
+          <span class="bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full animate-pulse">🔥 DESTACADO</span>
+        </div>
+        <div class="flex flex-col md:flex-row gap-6 items-start">
+          <div class="text-7xl">{{ news[0].icon }}</div>
+          <div class="flex-1">
+            <div class="flex flex-wrap items-center gap-3 mb-3">
+              <span class="text-xs font-bold px-3 py-1 rounded-full {{ news[0].tagColor }}">{{ news[0].tag }}</span>
+              <span class="text-gray-500 font-mono text-xs">{{ news[0].date }}</span>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors">{{ news[0].title }}</h3>
+            <p class="text-gray-300 leading-relaxed text-lg">{{ news[0].description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- News Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div
+        *ngFor="let item of news.slice(1); let i = index"
+        class="reveal card-hover rounded-xl overflow-hidden border bg-gradient-to-br from-gray-900/80 to-slate-900/80"
+        [class]="'border-' + (item.borderColor | slice:7)"
+        [style.transitionDelay]="(i * 0.1) + 's'"
+      >
+        <div class="p-6">
+          <div class="flex items-start justify-between mb-4">
+            <span class="text-4xl">{{ item.icon }}</span>
+            <div class="flex flex-col items-end gap-1">
+              <span class="text-xs font-bold px-2 py-0.5 rounded-full" [ngClass]="item.tagColor">{{ item.tag }}</span>
+              <span *ngIf="item.hot" class="text-xs text-red-400 font-mono">🔥 HOT</span>
+            </div>
+          </div>
+          <span class="text-xs text-gray-500 font-mono mb-2 block">{{ item.date }} · {{ item.category }}</span>
+          <h3 class="text-base font-bold text-white mb-2 leading-snug hover:text-yellow-400 cursor-pointer transition-colors">{{ item.title }}</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHARACTERS ===== -->
+<section id="characters" class="py-24 bg-gradient-to-b from-op-dark to-op-navy relative overflow-hidden">
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Header -->
+    <div class="text-center mb-16 reveal">
+      <p class="text-blue-400 font-mono text-sm tracking-widest mb-2">👤 TRIPULACIÓN & ALIADOS</p>
+      <h2 class="font-pirate text-4xl md:text-5xl text-white mb-4 section-title">
+        <span class="gradient-text">Guías de</span> Personajes
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Conoce a fondo a cada miembro de los Piratas del Sombrero de Paja: habilidades, historia y más.</p>
+    </div>
+
+    <!-- Characters Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div
+        *ngFor="let char of characters; let i = index"
+        class="reveal-scale card-hover rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-b from-gray-900 to-slate-950 group cursor-pointer"
+        [style.transitionDelay]="((i % 4) * 0.1) + 's'"
+      >
+        <!-- Character Image -->
+        <div class="relative h-52 overflow-hidden bg-gradient-to-br" [ngClass]="char.color">
+          <img
+            [src]="char.img"
+            [alt]="char.name"
+            class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+            (error)="$any($event.target).src='https://via.placeholder.com/200x200/1a1a2e/F39C12?text=' + char.name"
+          >
+          <!-- Gradient overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent"></div>
+
+          <!-- Bounty badge -->
+          <div class="absolute bottom-3 left-3 right-3">
+            <div class="wanted-poster rounded px-2 py-1 text-center">
+              <p class="text-xs font-bold" style="color:#1a0a00;">RECOMPENSA</p>
+              <p class="text-sm font-black" style="color:#8B1A1A;">฿ {{ char.bounty }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Character Info -->
+        <div class="p-4">
+          <div class="mb-3">
+            <h3 class="font-bold text-white text-base leading-tight group-hover:text-yellow-400 transition-colors">{{ char.name }}</h3>
+            <p class="text-yellow-500 text-xs font-mono italic">{{ char.epithet }}</p>
+            <p class="text-gray-500 text-xs mt-0.5">{{ char.role }}</p>
+          </div>
+
+          <p class="text-gray-400 text-xs leading-relaxed mb-3">{{ char.description | slice:0:120 }}...</p>
+
+          <!-- Power Level -->
+          <div class="mb-3">
+            <div class="flex justify-between text-xs mb-1">
+              <span class="text-gray-500 font-mono">Nivel de Poder</span>
+              <span class="text-yellow-400 font-bold">{{ char.power_level }}/100</span>
+            </div>
+            <div class="h-1.5 bg-gray-800 rounded-full overflow-hidden">
+              <div
+                class="h-full rounded-full transition-all duration-1000"
+                [ngClass]="getPowerColor(char.power_level)"
+                [style.width.%]="char.power_level"
+              ></div>
+            </div>
+          </div>
+
+          <!-- Haki Tags -->
+          <div class="flex flex-wrap gap-1 mb-3">
+            <span *ngFor="let h of char.haki" class="text-xs px-2 py-0.5 bg-purple-900/60 border border-purple-700/50 text-purple-300 rounded-full">{{ h }}</span>
+            <span *ngIf="char.haki.length === 0" class="text-xs px-2 py-0.5 bg-gray-800/60 border border-gray-700/50 text-gray-500 rounded-full">Sin Haki</span>
+          </div>
+
+          <!-- Fruit -->
+          <div class="flex items-start gap-2 bg-black/30 rounded-lg px-3 py-2">
+            <span class="text-base">🍎</span>
+            <p class="text-xs text-gray-400 leading-snug">{{ char.devil_fruit }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THEORIES ===== -->
+<section id="theories" class="py-24 bg-gradient-to-b from-op-navy to-op-dark relative overflow-hidden">
+  <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+    <div class="absolute top-20 left-10 w-72 h-72 bg-purple-900/20 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-yellow-900/15 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Header -->
+    <div class="text-center mb-16 reveal">
+      <p class="text-purple-400 font-mono text-sm tracking-widest mb-2">🔮 ANÁLISIS PROFUNDO</p>
+      <h2 class="font-pirate text-4xl md:text-5xl mb-4 section-title">
+        <span class="gradient-text-red">Las Grandes</span>
+        <span class="text-white"> Teorías</span>
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Las hipótesis más sólidas de la comunidad sobre los misterios más profundos de One Piece.</p>
+    </div>
+
+    <!-- Theory Tabs -->
+    <div class="flex flex-wrap justify-center gap-2 mb-10 reveal">
+      <button
+        *ngFor="let t of theories; let i = index"
+        (click)="setTheory(i)"
+        class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 border"
+        [ngClass]="currentTheory === i
+          ? 'bg-yellow-500 text-black border-yellow-500 scale-105'
+          : 'bg-transparent text-gray-400 border-gray-700 hover:border-yellow-600 hover:text-yellow-400'"
+      >
+        {{ t.icon }} {{ t.title | slice:0:20 }}...
+      </button>
+    </div>
+
+    <!-- Active Theory Card -->
+    <div class="mb-10 reveal">
+      <div
+        class="rounded-2xl overflow-hidden border shadow-2xl"
+        [ngClass]="theories[currentTheory].border + ' ' + theories[currentTheory].glow"
+      >
+        <div class="bg-gradient-to-br p-8 md:p-10" [ngClass]="theories[currentTheory].color">
+          <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+            <div class="flex items-center gap-4">
+              <span class="text-5xl">{{ theories[currentTheory].icon }}</span>
+              <div>
+                <span class="text-xs font-mono text-white/60 uppercase tracking-widest">{{ theories[currentTheory].category }}</span>
+                <h3 class="text-2xl md:text-3xl font-bold text-white">{{ theories[currentTheory].title }}</h3>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <span *ngIf="theories[currentTheory].hot" class="flex items-center gap-1 bg-red-500/30 border border-red-500/50 text-red-300 text-xs px-3 py-1 rounded-full font-bold">
+                🔥 POPULAR
+              </span>
+              <span
+                class="text-xs px-3 py-1 rounded-full font-bold"
+                [ngClass]="theories[currentTheory].confirmed
+                  ? 'bg-green-500/30 border border-green-500/50 text-green-300'
+                  : 'bg-yellow-500/30 border border-yellow-500/50 text-yellow-300'"
+              >
+                {{ theories[currentTheory].confirmed ? '✅ CONFIRMADA' : '❓ TEORÍA' }}
+              </span>
+            </div>
+          </div>
+          <p class="text-white/90 text-base md:text-lg leading-relaxed mb-8">{{ theories[currentTheory].excerpt }}</p>
+
+          <!-- Evidence -->
+          <div class="bg-black/30 rounded-xl p-6">
+            <h4 class="text-yellow-300 font-bold mb-4 font-mono text-sm tracking-wider">⚡ EVIDENCIAS CLAVE</h4>
+            <ul class="space-y-2">
+              <li *ngFor="let ev of theories[currentTheory].evidence" class="flex items-start gap-3 text-white/80 text-sm">
+                <span class="text-yellow-400 text-base flex-shrink-0 mt-0.5">▶</span>
+                {{ ev }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other theories mini cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <ng-container *ngFor="let t of theories; let i = index">
+        <div
+          *ngIf="i !== currentTheory"
+          (click)="setTheory(i)"
+          class="reveal card-hover cursor-pointer rounded-xl border border-white/10 bg-gradient-to-br from-gray-900 to-slate-950 p-5 group"
+          [style.transitionDelay]="(i * 0.12) + 's'"
+        >
+          <div class="flex items-start gap-4">
+            <span class="text-3xl group-hover:scale-110 transition-transform duration-300">{{ t.icon }}</span>
+            <div class="flex-1 min-w-0">
+              <span class="text-xs text-gray-500 font-mono">{{ t.category }}</span>
+              <h4 class="text-white font-bold text-sm leading-snug group-hover:text-yellow-400 transition-colors">{{ t.title }}</h4>
+              <p class="text-gray-500 text-xs mt-1 leading-relaxed">{{ t.excerpt | slice:0:80 }}...</p>
+              <div class="flex gap-2 mt-2">
+                <span *ngIf="t.hot" class="text-xs text-red-400">🔥 Popular</span>
+                <span class="text-xs" [class.text-green-400]="t.confirmed" [class.text-yellow-600]="!t.confirmed">
+                  {{ t.confirmed ? '✅ Confirmada' : '❓ Teoría' }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EPIC QUOTE SECTION ===== -->
+<section class="relative py-16 bg-black overflow-hidden">
+  <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNGMzlDMTIiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
+  <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
+    <div class="text-6xl mb-6 reveal">⚓</div>
+    <blockquote class="reveal delay-100">
+      <p class="font-pirate text-3xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-400 leading-tight mb-6">
+        "Yo tampoco quiero conquistar nada. Simplemente pienso que el hombre con la libertad más alta en el mar ¡ése es el Rey de los Piratas!"
+      </p>
+      <footer class="text-red-400 font-mono text-sm reveal delay-200">— Gol D. Roger</footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ===== CHAPTERS ===== -->
+<section id="chapters" class="py-24 bg-gradient-to-b from-op-dark to-slate-950 relative overflow-hidden">
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-1/3 right-0 w-80 h-80 bg-red-900/20 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/3 left-0 w-64 h-64 bg-blue-900/20 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Header -->
+    <div class="text-center mb-16 reveal">
+      <p class="text-red-400 font-mono text-sm tracking-widest mb-2">📖 ANÁLISIS DETALLADO</p>
+      <h2 class="font-pirate text-4xl md:text-5xl mb-4 section-title text-white">
+        Capítulos <span class="gradient-text">Legendarios</span>
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Los capítulos que definieron el manga y cambiaron la percepción del mundo pirata para siempre.</p>
+    </div>
+
+    <!-- Chapters Masonry -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div
+        *ngFor="let ch of chapters; let i = index"
+        class="reveal card-hover rounded-2xl overflow-hidden group"
+        [class.md:col-span-2]="i === 0"
+        [class.xl:col-span-1]="i === 0"
+        [style.transitionDelay]="(i * 0.15) + 's'"
+      >
+        <!-- Chapter Header -->
+        <div class="bg-gradient-to-br p-6 relative overflow-hidden" [ngClass]="ch.color">
+          <div class="absolute -right-6 -top-6 text-9xl opacity-10 font-pirate">#{{ ch.number }}</div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono text-white/60 bg-black/30 px-2 py-0.5 rounded">ARC: {{ ch.arc }}</span>
+              <span class="text-xs font-bold text-white bg-white/20 px-3 py-1 rounded-full">{{ ch.impact }}</span>
+            </div>
+            <div class="flex items-center gap-3 mb-2">
+              <span class="text-4xl">{{ ch.icon }}</span>
+              <div>
+                <p class="text-white/60 text-xs font-mono">CAPÍTULO {{ ch.number }}</p>
+                <h3 class="text-xl font-bold text-white leading-tight">{{ ch.title }}</h3>
+              </div>
+            </div>
+            <!-- Stars -->
+            <div class="flex items-center gap-1 mt-2">
+              <span *ngFor="let s of getStars(ch.rating)" class="text-yellow-400 text-sm">★</span>
+              <span *ngFor="let s of getEmptyStars(ch.rating)" class="text-gray-600 text-sm">★</span>
+              <span class="text-white/70 text-xs ml-1 font-mono">{{ ch.rating }}/10</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter Body -->
+        <div class="bg-gray-900/80 p-6 border border-white/5 border-t-0 rounded-b-2xl">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></span>
+            <span class="text-xs text-gray-500 font-mono">Publicado: {{ ch.date }}</span>
+          </div>
+          <p class="text-gray-300 text-sm leading-relaxed">{{ ch.description }}</p>
+
+          <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs text-gray-600 font-mono">IMPACTO EN LA HISTORIA</span>
+            <div class="flex items-center gap-1">
+              <div class="w-16 h-1 bg-gray-800 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-yellow-500 to-red-500 rounded-full"
+                  [style.width.%]="ch.rating * 10"></div>
+              </div>
+              <span class="text-yellow-400 text-xs font-bold">{{ ch.rating * 10 }}%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PHILOSOPHY / POWER SYSTEM ===== -->
+<section id="philosophy" class="py-24 bg-gradient-to-b from-slate-950 to-op-dark relative overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-amber-900/10 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Header -->
+    <div class="text-center mb-16 reveal">
+      <p class="text-amber-400 font-mono text-sm tracking-widest mb-2">☯️ SISTEMA DE PODERES</p>
+      <h2 class="font-pirate text-4xl md:text-5xl mb-4 section-title">
+        <span class="gradient-text">El Haki</span>
+        <span class="text-white"> & Las Frutas</span>
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">El sistema de poderes de One Piece es uno de los más elaborados y congruentes del manga.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+      <!-- Haki info -->
+      <div class="reveal-left">
+        <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+          <span class="text-3xl">⚡</span> Los Tres Tipos de Haki
+        </h3>
+        <div class="space-y-4">
+          <div class="bg-gradient-to-r from-purple-900/40 to-transparent border-l-4 border-purple-500 rounded-r-xl p-5 hover:border-l-8 transition-all duration-300">
+            <h4 class="text-purple-300 font-bold mb-1">Haoshoku — Haki del Color del Rey</h4>
+            <p class="text-gray-400 text-sm leading-relaxed">El más raro. Solo 1 en varios millones posee esta capacidad innata. Permite doblegar la voluntad de otros sin tocarlos. En su forma avanzada envuelve ataques con electricidad negra.</p>
+            <div class="flex gap-2 mt-2 flex-wrap">
+              <span class="text-xs bg-purple-900/50 border border-purple-700 text-purple-300 px-2 py-0.5 rounded">Luffy</span>
+              <span class="text-xs bg-purple-900/50 border border-purple-700 text-purple-300 px-2 py-0.5 rounded">Shanks</span>
+              <span class="text-xs bg-purple-900/50 border border-purple-700 text-purple-300 px-2 py-0.5 rounded">Roger</span>
+              <span class="text-xs bg-purple-900/50 border border-purple-700 text-purple-300 px-2 py-0.5 rounded">Big Mom</span>
+              <span class="text-xs bg-purple-900/50 border border-purple-700 text-purple-300 px-2 py-0.5 rounded">Kaido</span>
+            </div>
+          </div>
+          <div class="bg-gradient-to-r from-blue-900/40 to-transparent border-l-4 border-blue-500 rounded-r-xl p-5 hover:border-l-8 transition-all duration-300">
+            <h4 class="text-blue-300 font-bold mb-1">Kenbunshoku — Haki de la Observación</h4>
+            <p class="text-gray-400 text-sm leading-relaxed">Permite detectar la presencia, emociones e intenciones. En su forma avanzada permite ver el futuro (Futura del Futuro), como domina Katakuri y Luffy.</p>
+            <div class="flex gap-2 mt-2 flex-wrap">
+              <span class="text-xs bg-blue-900/50 border border-blue-700 text-blue-300 px-2 py-0.5 rounded">Usopp (más agudo)</span>
+              <span class="text-xs bg-blue-900/50 border border-blue-700 text-blue-300 px-2 py-0.5 rounded">Katakuri</span>
+              <span class="text-xs bg-blue-900/50 border border-blue-700 text-blue-300 px-2 py-0.5 rounded">Luffy</span>
+            </div>
+          </div>
+          <div class="bg-gradient-to-r from-red-900/40 to-transparent border-l-4 border-red-500 rounded-r-xl p-5 hover:border-l-8 transition-all duration-300">
+            <h4 class="text-red-300 font-bold mb-1">Busoshoku — Haki del Armamento</h4>
+            <p class="text-gray-400 text-sm leading-relaxed">Envuelve el cuerpo en armadura invisible que endurece y puede dañar a usuarios de fruta del diablo. En forma avanzada se inyecta dentro del cuerpo del oponente.</p>
+            <div class="flex gap-2 mt-2 flex-wrap">
+              <span class="text-xs bg-red-900/50 border border-red-700 text-red-300 px-2 py-0.5 rounded">Luffy</span>
+              <span class="text-xs bg-red-900/50 border border-red-700 text-red-300 px-2 py-0.5 rounded">Zoro</span>
+              <span class="text-xs bg-red-900/50 border border-red-700 text-red-300 px-2 py-0.5 rounded">Rayleigh</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Devil Fruits -->
+      <div class="reveal-right">
+        <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+          <span class="text-3xl">🍎</span> Frutas del Diablo
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="bg-gradient-to-b from-red-950 to-red-900/30 border border-red-800/50 rounded-xl p-5 text-center card-hover">
+            <div class="text-4xl mb-3">🔥</div>
+            <h4 class="text-red-300 font-bold text-sm mb-2">PARAMECIA</h4>
+            <p class="text-gray-400 text-xs leading-relaxed">La más común. Otorga poderes sobrenaturales que alteran el cuerpo o el entorno. Ej: Luffy (Gomu Gomu), Nami (Clima Tact no tiene), Law (Ope Ope).</p>
+          </div>
+          <div class="bg-gradient-to-b from-blue-950 to-blue-900/30 border border-blue-800/50 rounded-xl p-5 text-center card-hover">
+            <div class="text-4xl mb-3">🦁</div>
+            <h4 class="text-blue-300 font-bold text-sm mb-2">ZOAN</h4>
+            <p class="text-gray-400 text-xs leading-relaxed">Permite transformarse en animales. Las míticas son las más raras y poderosas: Luffy (Nika), Marco (Fénix), Chopper (Humano-Reno).</p>
+          </div>
+          <div class="bg-gradient-to-b from-purple-950 to-purple-900/30 border border-purple-800/50 rounded-xl p-5 text-center card-hover">
+            <div class="text-4xl mb-3">🌊</div>
+            <h4 class="text-purple-300 font-bold text-sm mb-2">LOGIA</h4>
+            <p class="text-gray-400 text-xs leading-relaxed">Convierte al usuario en el elemento. Son casi intocables sin Haki. Ej: Akainu (Magma), Aokiji (Hielo), Enel (Electricidad).</p>
+          </div>
+        </div>
+
+        <!-- Special note -->
+        <div class="mt-6 bg-yellow-900/20 border border-yellow-700/30 rounded-xl p-5">
+          <h4 class="text-yellow-400 font-bold mb-2 text-sm">🌟 El Despertar (Awakening)</h4>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            El <strong class="text-yellow-300">Despertar</strong> es el nivel máximo de una fruta del diablo. Para Paramecia, el usuario puede transformar el entorno. Para Zoan, aumenta exponencialmente las capacidades físicas. Luffy despertó su fruta en Gear 5.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- World Map Timeline -->
+    <div class="reveal">
+      <h3 class="text-2xl font-bold text-white mb-8 text-center flex items-center justify-center gap-3">
+        <span class="text-3xl">🗺️</span> Los Grandes Arcos del Manga
+      </h3>
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="absolute top-6 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-yellow-600 to-transparent hidden md:block"></div>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+          <div *ngFor="let arc of [
+            {name:'East Blue', emoji:'🌊', color:'from-cyan-800'},
+            {name:'Alabasta', emoji:'🌵', color:'from-amber-800'},
+            {name:'Skypiea', emoji:'☁️', color:'from-sky-700'},
+            {name:'Water 7', emoji:'🚂', color:'from-blue-800'},
+            {name:'Marineford', emoji:'⚔️', color:'from-gray-700'},
+            {name:'New World', emoji:'🌋', color:'from-orange-800'},
+            {name:'Wano', emoji:'🏯', color:'from-red-800'},
+            {name:'Egghead', emoji:'🤖', color:'from-indigo-800'},
+            {name:'Elbaf', emoji:'🪓', color:'from-green-800'}
+          ]; let i = index" class="text-center group cursor-pointer">
+            <div class="relative mb-2 flex justify-center">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br border border-white/20 flex items-center justify-center text-xl group-hover:scale-125 transition-transform duration-300 shadow-lg"
+                [ngClass]="arc.color">
+                {{ arc.emoji }}
+              </div>
+            </div>
+            <p class="text-xs text-gray-400 font-semibold group-hover:text-yellow-400 transition-colors text-center">{{ arc.name }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY / WANTED POSTERS ===== -->
+<section class="py-24 bg-op-dark relative overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(192,57,43,0.15)_0%,transparent_70%)] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-16 reveal">
+      <p class="text-red-400 font-mono text-sm tracking-widest mb-2">🏴‍☠️ CARTELES SE BUSCA</p>
+      <h2 class="font-pirate text-4xl md:text-5xl mb-4 section-title gradient-text">Se Busca: Vivo o Muerto</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Las recompensas más altas del mundo pirata. Estos carteles reflejan el nivel de amenaza para el Gobierno Mundial.</p>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+      <div
+        *ngFor="let char of characters.slice(0,10); let i = index"
+        class="reveal-scale group cursor-pointer"
+        [style.transitionDelay]="(i * 0.08) + 's'"
+      >
+        <div class="wanted-poster rounded-lg overflow-hidden transform group-hover:-rotate-2 transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
+          <div class="text-center pt-3 pb-1 px-2">
+            <p class="font-pirate text-xs font-black" style="color:#4a0000; letter-spacing:0.1em;">SE BUSCA</p>
+            <p class="font-pirate text-xs" style="color:#4a0000;">VIVO O MUERTO</p>
+          </div>
+          <div class="relative mx-2 mb-2 overflow-hidden" style="height:140px; background:#8B6914;">
+            <img
+              [src]="char.img"
+              [alt]="char.name"
+              class="w-full h-full object-cover object-top grayscale-[20%]"
+              (error)="$any($event.target).src='https://via.placeholder.com/150x140/8B6914/000000?text=??'"
+            >
+          </div>
+          <div class="text-center px-2 pb-2">
+            <p class="font-pirate text-xs font-bold leading-tight" style="color:#1a0000;">{{ char.name | uppercase }}</p>
+            <div class="border-t border-b mt-1 mb-1 py-1" style="border-color:#8B6914;">
+              <p class="font-mono text-xs font-black" style="color:#8B1A1A;">฿{{ char.bounty }}</p>
+            </div>
+            <p class="text-xs" style="color:#4a1500; font-size:0.55rem;">MARINA MUNDIAL</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL QUOTE ===== -->
+<section class="py-20 bg-gradient-to-b from-op-dark to-black relative overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-yellow-900/10 rounded-full blur-3xl"></div>
+  </div>
+  <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
+    <div class="text-7xl mb-8 animate-bounce reveal">☠️</div>
+    <p class="font-pirate text-3xl md:text-5xl shimmer-text mb-6 leading-tight reveal delay-100">
+      "¡Quiero ser el Hombre más Libre del mar!"
+    </p>
+    <p class="text-gray-400 text-lg font-mono reveal delay-200">— Monkey D. Luffy</p>
+    <div class="mt-12 flex flex-wrap justify-center gap-4 reveal delay-300">
+      <button
+        (click)="scrollTo('#hero')"
+        class="px-8 py-4 bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-500 hover:to-amber-500 text-black font-bold rounded-full transition-all duration-300 hover:scale-105"
+      >
+        ⬆ Volver al Inicio
+      </button>
+      <button
+        (click)="scrollTo('#theories')"
+        class="px-8 py-4 border-2 border-red-600 text-red-400 hover:bg-red-600/20 font-bold rounded-full transition-all duration-300 hover:scale-105"
+      >
+        🔮 Más Teorías
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-black border-t border-yellow-900/30 py-12">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">☠️</span>
+          <span class="font-pirate text-xl gradient-text">ONE PIECE UNIVERSE</span>
+        </div>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          La enciclopedia más completa sobre el manga de Eiichiro Oda. Teorías, análisis, personajes y toda la información que necesitas.
+        </p>
+        <div class="flex gap-4 mt-4">
+          <span class="text-2xl cursor-pointer hover:scale-125 transition-transform duration-300" title="Twitter">🐦</span>
+          <span class="text-2xl cursor-pointer hover:scale-125 transition-transform duration-300" title="Discord">💬</span>
+          <span class="text-2xl cursor-pointer hover:scale-125 transition-transform duration-300" title="YouTube">▶️</span>
+          <span class="text-2xl cursor-pointer hover:scale-125 transition-transform duration-300" title="Reddit">🔴</span>
+        </div>
+      </div>
+      <!-- Links -->
+      <div>
+        <h4 class="text-yellow-500 font-bold mb-4 font-mono text-sm tracking-wider">SECCIONES</h4>
+        <ul class="space-y-2">
+          <li *ngFor="let link of navLinks">
+            <a (click)="scrollTo(link.href)" class="text-gray-500 hover:text-yellow-400 transition-colors cursor-pointer text-sm flex items-center gap-2">
+              <span>{{ link.icon }}</span> {{ link.label }}
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- Info -->
+      <div>
+        <h4 class="text-yellow-500 font-bold mb-4 font-mono text-sm tracking-wider">INFORMACIÓN</h4>
+        <ul class="space-y-2 text-gray-500 text-sm">
+          <li>📅 Actualizado: Marzo 2026</li>
+          <li>📚 Capítulo actual: 1122+</li>
+          <li>🎌 Publicado en Weekly Shonen Jump</li>
+          <li>✍️ Autor: Eiichiro Oda</li>
+          <li>📖 Inicio: 22 de julio 1997</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-yellow-900/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
+      <p class="text-gray-700 text-xs font-mono">
+        One Piece Universe © 2026 · Fan Site · No afiliado con Eiichiro Oda ni Shueisha
+      </p>
+      <p class="text-gray-700 text-xs font-mono">Hecho con ❤️ por la comunidad pirata</p>
+    </div>
+  </div>
+</footer>
