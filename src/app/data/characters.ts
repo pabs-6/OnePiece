@@ -851,6 +851,606 @@ export const CHARACTERS: Character[] = [
     bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Marina (Ex)',
     img: w('Bell-mere_Anime_Infobox.png'), color: 'from-orange-400 to-red-600', border: 'border-orange-300',
     description: 'La madre adoptiva de Nami y Nojiko, que dio su vida por sus hijas.', power_level: 40, haki: []
+  },
+  {
+    id: 151, name: 'Portgas D. Ace', role: 'Comandante de la 2ª División', epithet: '"Puño de Fuego"',
+    bounty: '550,000,000', devil_fruit: 'Mera Mera no Mi', crew: 'Piratas de Barbablanca',
+    img: w('Portgas_D._Ace_Anime_Infobox.png'), color: 'from-orange-600 to-red-700', border: 'border-orange-500',
+    description: 'Hijo biológico del Rey de los Piratas y hermano jurado de Luffy. Dio su vida para proteger a Luffy en Marineford.', power_level: 90, haki: ['Haoshoku', 'Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 152, name: 'Marco', role: 'Comandante de la 1ª División', epithet: '"El Fénix"',
+    bounty: '1,374,000,000', devil_fruit: 'Tori Tori: Modelo Fénix', crew: 'Piratas de Barbablanca',
+    img: w('Marco_Anime_Post_Timeskip_Infobox.png'), color: 'from-cyan-600 to-yellow-600', border: 'border-cyan-500',
+    description: 'Primer comandante y médico jefe de Barbablanca. Sus llamas azules curan cualquier herida.', power_level: 94, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 153, name: 'Jozu', role: 'Comandante de la 3ª División', epithet: '"Diamante Jozu"',
+    bounty: 'Desconocida', devil_fruit: 'Kira Kira no Mi', crew: 'Piratas de Barbablanca',
+    img: w('Jozu_Anime_Infobox.png'), color: 'from-blue-700 to-slate-800', border: 'border-blue-500',
+    description: 'Comandante de vanguardia de Barbablanca. Puede convertir su cuerpo entero en diamante puro.', power_level: 89, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 154, name: 'Vista', role: 'Comandante de la 5ª División', epithet: '"Flor de la Espada"',
+    bounty: 'Desconocida', devil_fruit: 'Ninguna', crew: 'Piratas de Barbablanca',
+    img: w('Vista_Anime_Infobox.png'), color: 'from-indigo-900 to-gray-800', border: 'border-indigo-500',
+    description: 'Uno de los mejores espadachines del mundo, capaz de enfrentarse en igualdad con Dracule Mihawk.', power_level: 89, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 155, name: 'Izo', role: 'Comandante de la 16ª División', epithet: 'Ninguna',
+    bounty: '510,000,000', devil_fruit: 'Ninguna', crew: 'Piratas de Barbablanca',
+    img: w('Izo_Anime_Infobox.png'), color: 'from-pink-600 to-purple-800', border: 'border-pink-500',
+    description: 'Antiguo Samurai de Wano y comandante en el barco de Barbablanca. Utiliza pistolas gemelas.', power_level: 83, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 156, name: 'Thatch', role: 'Comandante de la 4ª División', epithet: 'Ninguna',
+    bounty: 'Desconocida', devil_fruit: 'Ninguna', crew: 'Piratas de Barbablanca',
+    img: w('Thatch_Anime_Infobox.png'), color: 'from-yellow-600 to-orange-700', border: 'border-yellow-500',
+    description: 'Comandante de Barbablanca asesinado a traición por Barbanegra para robar la Yami Yami no Mi.', power_level: 80, haki: ['Busoshoku']
+  },
+  {
+    id: 157, name: 'Benn Beckman', role: 'Vice-Capitán', epithet: 'Ninguna',
+    bounty: 'Desconocida', devil_fruit: 'Ninguna', crew: 'Piratas del Pelirrojo',
+    img: w('Benn_Beckman_Anime_Post_Timeskip_Infobox.png'), color: 'from-gray-700 to-slate-900', border: 'border-gray-500',
+    description: 'La mano derecha de Shanks, considerado el hombre con el coeficiente intelectual más alto del East Blue.', power_level: 95, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 158, name: 'Lucky Roux', role: 'Combatiente Oficial', epithet: 'Ninguna',
+    bounty: 'Desconocida', devil_fruit: 'Ninguna', crew: 'Piratas del Pelirrojo',
+    img: w('Lucky_Roux_Anime_Post_Timeskip_Infobox.png'), color: 'from-green-600 to-emerald-800', border: 'border-green-500',
+    description: 'Oficial de Shanks increíblemente veloz. Fue el primero en disparar un arma en la serie.', power_level: 90, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 159, name: 'Yasopp', role: 'Francotirador Oficial', epithet: '"El Perseguidor"',
+    bounty: 'Desconocida', devil_fruit: 'Ninguna', crew: 'Piratas del Pelirrojo',
+    img: w('Yasopp_Anime_Post_Timeskip_Infobox.png'), color: 'from-yellow-600 to-amber-700', border: 'border-yellow-500',
+    description: 'Padre de Usopp y el tirador estelar de Shanks. Nunca falla en el blanco.', power_level: 89, haki: ['Kenbunshoku', 'Busoshoku']
+  },
+  {
+    id: 160, name: 'Ryokugyu (Aramaki)', role: 'Almirante', epithet: '"Toro Verde"',
+    bounty: 'N/A', devil_fruit: 'Mori Mori no Mi', crew: 'La Marina',
+    img: w('Aramaki_Anime_Infobox.png'), color: 'from-green-800 to-black', border: 'border-green-600',
+    description: 'Almirante implacable capaz de transformarse y absorber nutrientes como un bosque viviente.', power_level: 94, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 161, name: 'Tsuru', role: 'Vicealmirante', epithet: '"La Gran Táctica"',
+    bounty: 'N/A', devil_fruit: 'Washi Washi no Mi', crew: 'La Marina',
+    img: w('Tsuru_Anime_Infobox.png'), color: 'from-blue-200 to-gray-400', border: 'border-blue-300',
+    description: 'Veterana estratega contemporánea de Garp y Sengoku. Lava y cuelga a secar la maldad de los corazones.', power_level: 85, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 162, name: 'Kujaku', role: 'Contraalmirante | SWORD', epithet: 'Ninguna',
+    bounty: 'N/A', devil_fruit: 'Muchi Muchi no Mi', crew: 'La Marina',
+    img: w('Kujaku_Anime_Infobox.png'), color: 'from-pink-400 to-purple-600', border: 'border-pink-300',
+    description: 'Nieta de Tsuru y miembro de SWORD, utiliza un látigo que le permite controlar objetos inanimados.', power_level: 80, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 163, name: 'Prince Grus', role: 'Contraalmirante | SWORD', epithet: 'Ninguna',
+    bounty: 'N/A', devil_fruit: 'Gunyu Gunyu no Mi', crew: 'La Marina',
+    img: w('Prince_Grus_Anime_Infobox.png'), color: 'from-blue-600 to-indigo-800', border: 'border-blue-500',
+    description: 'Comandante de SWORD capaz de manipular la arcilla para forjar soldados golems indestructibles.', power_level: 83, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 164, name: 'Hibari', role: 'Comandante | SWORD', epithet: 'Ninguna',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'La Marina',
+    img: w('Hibari_Anime_Infobox.png'), color: 'from-orange-300 to-orange-500', border: 'border-orange-400',
+    description: 'Habilidosa francotiradora de SWORD que dispara balas especiales congelantes creadas por Vegapunk.', power_level: 76, haki: ['Kenbunshoku']
+  },
+  {
+    id: 165, name: 'Kong', role: 'Comandante en Jefe del Gobierno', epithet: 'Ninguna',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Gobierno Mundial',
+    img: w('Kong_Anime_Infobox.png'), color: 'from-gray-800 to-black', border: 'border-gray-600',
+    description: 'Antiguo almirante de la flota de la marina en los tiempos de Roger. Ahora coordina el CP y la Marina.', power_level: 92, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 166, name: 'Spandam', role: 'Oficial del CP0', epithet: 'Ninguna',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'CP9 / CP0',
+    img: w('Spandam_Anime_Post_Timeskip_Infobox.png'), color: 'from-purple-800 to-gray-900', border: 'border-purple-600',
+    description: 'Cobarde y despiadado ex-director del CP9 que ordenó la destrucción de Enies Lobby.', power_level: 35, haki: []
+  },
+  {
+    id: 167, name: 'Jabra', role: 'Agente del CP9', epithet: 'Ninguna',
+    bounty: 'Desconocida', devil_fruit: 'Inu Inu: Modelo Lobo', crew: 'CP9 / CP0',
+    img: w('Jabra_Anime_Infobox.png'), color: 'from-red-900 to-black', border: 'border-red-700',
+    description: 'Tercer miembro más fuerte del CP9 en su momento, mentiroso compulsivo y rival de Kaku.', power_level: 81, haki: ['Busoshoku']
+  },
+  {
+    id: 168, name: 'Kumadori', role: 'Agente del CP9', epithet: 'Ninguna',
+    bounty: 'Desconocida', devil_fruit: 'Ninguna', crew: 'CP9 / CP0',
+    img: w('Kumadori_Anime_Infobox.png'), color: 'from-pink-700 to-red-950', border: 'border-pink-500',
+    description: 'Actor de kabuki del CP9 que domina el Retorno a la Vida para controlar su pelo como tentáculos.', power_level: 78, haki: []
+  },
+  {
+    id: 169, name: 'Fukuro', role: 'Agente del CP9', epithet: 'Ninguna',
+    bounty: 'Desconocida', devil_fruit: 'Ninguna', crew: 'CP9 / CP0',
+    img: w('Fukuro_Anime_Infobox.png'), color: 'from-green-700 to-teal-900', border: 'border-green-600',
+    description: 'Agente de boca ancha con cremallera que calcula el Douki (nivel físico) de los miembros.', power_level: 76, haki: []
+  },
+  {
+    id: 170, name: 'Carrot', role: 'Líder del Ducado de Mokomo', epithet: 'Ninguna',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Aliado Wano',
+    img: w('Carrot_Anime_Post_Timeskip_Infobox.png'), color: 'from-amber-200 to-amber-400', border: 'border-yellow-400',
+    description: 'Mink conejo de la guardia real de Zou, capaz de transformarse en Sulong bajo la luna llena.', power_level: 82, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 171, name: 'Pedro', role: 'Capitán de los Guardianes (Difunto)', epithet: '"Pedro de las Copas"',
+    bounty: '382,000,000', devil_fruit: 'Ninguna', crew: 'Piratas del Sol (Ex)',
+    img: w('Pedro_Anime_Infobox.png'), color: 'from-amber-800 to-orange-950', border: 'border-amber-600',
+    description: 'Mink jaguar que sacrificó su vida en Whole Cake para salvar a los de Sombrero de Paja.', power_level: 84, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 172, name: 'Pekoms', role: 'Combatiente', epithet: 'Ninguna',
+    bounty: '330,000,000', devil_fruit: 'Kame Kame no Mi', crew: 'Piratas de Big Mom',
+    img: w('Pekoms_Anime_Infobox.png'), color: 'from-yellow-500 to-yellow-800', border: 'border-yellow-400',
+    description: 'Mink león del barco de Big Mom que puede replegarse en un caparazón de tortuga irrompible.', power_level: 81, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 173, name: 'Barón Tamago', role: 'Oficial de Infantería', epithet: 'Ninguna',
+    bounty: '429,000,000', devil_fruit: 'Tama Tama no Mi', crew: 'Piratas de Big Mom',
+    img: w('Tamago_Anime_Infobox.png'), color: 'from-pink-600 to-red-800', border: 'border-pink-500',
+    description: 'Caballero de piernas largas que evoluciona cíclicamente de huevo a polluelo y a gallo.', power_level: 83, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 174, name: 'Charlotte Daifuku', role: 'Oficial', epithet: 'Ninguna',
+    bounty: 'Desconocida', devil_fruit: 'Hoya Hoya no Mi', crew: 'Piratas de Big Mom',
+    img: w('Charlotte_Daifuku_Anime_Infobox.png'), color: 'from-blue-600 to-blue-900', border: 'border-blue-500',
+    description: 'Tercer hijo de Big Mom, capaz de invocar a un genio devastador frotando su propio vientre.', power_level: 86, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 175, name: 'Charlotte Brulee', role: 'Oficial', epithet: 'Ninguna',
+    bounty: 'Desconocida', devil_fruit: 'Mira Mira no Mi', crew: 'Piratas de Big Mom',
+    img: w('Charlotte_Brulee_Anime_Infobox.png'), color: 'from-indigo-800 to-indigo-950', border: 'border-indigo-600',
+    description: 'Hermana de Katakuri, manipula el mundo de los espejos para reflejar o teletransportar ataques.', power_level: 70, haki: []
+  },
+  {
+    id: 176, name: 'Charlotte Amande', role: 'Oficial / Espadachina', epithet: '"La Dama de la Colisión de Hilos"',
+    bounty: 'Desconocida', devil_fruit: 'Ninguna', crew: 'Piratas de Big Mom',
+    img: w('Charlotte_Amande_Anime_Infobox.png'), color: 'from-cyan-800 to-slate-900', border: 'border-cyan-600',
+    description: 'Habilidosa espadachina que utiliza la katana Shirauo para cortar lentamente y torturar.', power_level: 82, haki: ['Busoshoku']
+  },
+  {
+    id: 177, name: "Charlotte Mont-d'Or", role: 'Oficial / Escribano', epithet: '"El Escribano"',
+    bounty: 'Desconocida', devil_fruit: 'Buku Buku no Mi', crew: 'Piratas de Big Mom',
+    img: w('Charlotte_Mont-d%27Or_Anime_Infobox.png'), color: 'from-yellow-700 to-red-800', border: 'border-yellow-600',
+    description: 'Controla el mundo de los libros de Totto Land para encerrar a prisioneros eternamente.', power_level: 80, haki: ['Busoshoku']
+  },
+  {
+    id: 178, name: 'Charlotte Galette', role: 'Oficial', epithet: 'Ninguna',
+    bounty: 'Desconocida', devil_fruit: 'Bata Bata no Mi', crew: 'Piratas de Big Mom',
+    img: w('Charlotte_Galette_Anime_Infobox.png'), color: 'from-purple-600 to-pink-900', border: 'border-purple-500',
+    description: 'Hija de Big Mom capaz de invocar y manipular la mantequilla caliente para inmovilizar enemigos.', power_level: 75, haki: []
+  },
+  {
+    id: 179, name: 'Caesar Clown', role: 'Científico Loco', epithet: '"Gastino"',
+    bounty: '300,000,000', devil_fruit: 'Gasu Gasu no Mi', crew: 'Donquixote Family',
+    img: w('Caesar_Clown_Anime_Infobox.png'), color: 'from-indigo-600 to-blue-800', border: 'border-indigo-500',
+    description: 'Antiguo colega de Vegapunk obsesionado con crear armas de destrucción masiva gaseosas.', power_level: 85, haki: []
+  },
+  {
+    id: 180, name: 'Vergo', role: 'Vicealmirante G5 (Infiltrado)', epithet: '"El Bambú Demonio"',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Donquixote Family',
+    img: w('Vergo_Anime_Infobox.png'), color: 'from-gray-800 to-black', border: 'border-gray-600',
+    description: 'Mano derecha de Doflamingo, se infiltró en la Marina dominando el endurecimiento de Haki corporal.', power_level: 87, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 181, name: 'Monet', role: 'Oficial de Inteligencia (Difunta)', epithet: '"La Mujer Nieve"',
+    bounty: 'Desconocida', devil_fruit: 'Yuki Yuki no Mi', crew: 'Donquixote Family',
+    img: w('Monet_Anime_Infobox.png'), color: 'from-cyan-400 to-green-600', border: 'border-cyan-300',
+    description: 'Arpía aliada de Doflamingo que custodiaba las instalaciones de Punk Hazard.', power_level: 80, haki: []
+  },
+  {
+    id: 182, name: 'Pica', role: 'Líder del Escuadrón Pica', epithet: 'Ninguna',
+    bounty: '99,000,000', devil_fruit: 'Ishi Ishi no Mi', crew: 'Donquixote Family',
+    img: w('Pica_Anime_Infobox.png'), color: 'from-gray-700 to-yellow-800', border: 'border-gray-500',
+    description: 'Gigantesco combatiente que puede absorber y controlar la piedra de todo el reino de Dressrosa.', power_level: 86, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 183, name: 'Diamante', role: 'Líder del Escuadrón Diamante', epithet: '"Héroe del Coliseo"',
+    bounty: '99,000,000', devil_fruit: 'Hira Hira no Mi', crew: 'Donquixote Family',
+    img: w('Diamante_Anime_Infobox.png'), color: 'from-red-600 to-yellow-600', border: 'border-red-500',
+    description: 'Maestro de ceremonias del coliseo, puede hacer ondear cualquier espada o escudo como tela.', power_level: 85, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 184, name: 'Trébol', role: 'Líder del Escuadrón Trébol', epithet: 'Ninguna',
+    bounty: '99,000,000', devil_fruit: 'Beta Beta no Mi', crew: 'Donquixote Family',
+    img: w('Trebol_Anime_Infobox.png'), color: 'from-green-800 to-yellow-900', border: 'border-green-600',
+    description: 'Mugriento asesor de Doflamingo capaz de generar mucosidad pegajosa e inflamable.', power_level: 83, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 185, name: 'Sugar', role: 'Oficial Especial', epithet: 'Ninguna',
+    bounty: 'Desconocida', devil_fruit: 'Hobi Hobi no Mi', crew: 'Donquixote Family',
+    img: w('Sugar_Anime_Infobox.png'), color: 'from-teal-300 to-green-500', border: 'border-teal-400',
+    description: 'Niña eterna cuya fruta convierte al toque a humanos en juguetes borrando sus recuerdos.', power_level: 50, haki: []
+  },
+  {
+    id: 186, name: 'Señor Pink', role: 'Oficial de Combate', epithet: 'Ninguna',
+    bounty: 'Desconocida', devil_fruit: 'Sui Sui no Mi', crew: 'Donquixote Family',
+    img: w('Senor_Pink_Anime_Infobox.png'), color: 'from-pink-500 to-amber-700', border: 'border-pink-400',
+    description: 'El pirata más varonil capaz de nadar libremente a través de paredes y el suelo.', power_level: 80, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 187, name: 'Gladius', role: 'Oficial de Combate', epithet: 'Ninguna',
+    bounty: 'Desconocida', devil_fruit: 'Pamu Pamu no Mi', crew: 'Donquixote Family',
+    img: w('Gladius_Anime_Infobox.png'), color: 'from-blue-700 to-slate-900', border: 'border-blue-500',
+    description: 'Experto en pólvora y detonación corporal capaz de reventar objetos inorgánicos.', power_level: 81, haki: ['Busoshoku']
+  },
+  {
+    id: 188, name: 'Baby 5', role: 'Ex-Oficial de Armamento', epithet: 'Ninguna',
+    bounty: 'Desconocida', devil_fruit: 'Buki Buki no Mi', crew: 'Armada Happo',
+    img: w('Baby_5_Anime_Infobox.png'), color: 'from-indigo-600 to-red-600', border: 'border-indigo-400',
+    description: 'Transforma partes de su cuerpo en cañones o espadas. Se unió a Sai por amor.', power_level: 79, haki: []
+  },
+  {
+    id: 189, name: 'Sai', role: 'Líder 13° de la Armada Happo', epithet: 'Ninguna',
+    bounty: '210,000,000', devil_fruit: 'Ninguna', crew: 'Armada Happo',
+    img: w('Sai_Anime_Infobox.png'), color: 'from-green-700 to-amber-800', border: 'border-green-600',
+    description: 'Heredero de Chinjao. Dominó el choque Hasshoken que deforma escudos con sus patadas.', power_level: 85, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 190, name: 'Don Chinjao', role: 'Ex-Líder 12°', epithet: '"Chinjao el Taladro"',
+    bounty: '542,000,000', devil_fruit: 'Ninguna', crew: 'Armada Happo',
+    img: w('Chinjao_Anime_Infobox.png'), color: 'from-yellow-700 to-amber-950', border: 'border-yellow-600',
+    description: 'Legendario pirata cuya dura cabeza con forma de taladro rompía continentes de hielo.', power_level: 86, haki: ['Haoshoku', 'Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 191, name: 'Leo', role: 'Capitán de los Enanos', epithet: 'Ninguna',
+    bounty: '66,000,000', devil_fruit: 'Nui Nui no Mi', crew: 'Tonta Corps (Tontatta)',
+    img: w('Leo_Anime_Infobox.png'), color: 'from-green-500 to-yellow-600', border: 'border-green-400',
+    description: 'Líder enano increíblemente rápido, capaz de coser físicamente objetos al suelo.', power_level: 80, haki: ['Busoshoku']
+  },
+  {
+    id: 192, name: 'Hajrudin', role: 'Rey Gigante', epithet: '"Mercenario Gigante"',
+    bounty: 'Desconocida', devil_fruit: 'Ninguna', crew: 'Nuevos Piratas Gigantes de Elbaf',
+    img: w('Hajrudin_Anime_Infobox.png'), color: 'from-red-800 to-amber-900', border: 'border-red-600',
+    description: 'Guerrero gigante de Elbaf que busca unificar a todos los gigantes bajo su mando.', power_level: 84, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 193, name: 'Dorry', role: 'Co-Capitán Legendario', epithet: '"El Ogro Azul"',
+    bounty: '100,000,000', devil_fruit: 'Ninguna', crew: 'Piratas del Gigante Guerrero',
+    img: w('Dorry_Anime_Infobox.png'), color: 'from-blue-800 to-cyan-950', border: 'border-blue-600',
+    description: 'Gigante que libró un duelo centenario con Brogy en Little Garden.', power_level: 87, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 194, name: 'Brogy', role: 'Co-Capitán Legendario', epithet: '"El Ogro Rojo"',
+    bounty: '100,000,000', devil_fruit: 'Ninguna', crew: 'Piratas del Gigante Guerrero',
+    img: w('Brogy_Anime_Infobox.png'), color: 'from-red-800 to-red-950', border: 'border-red-600',
+    description: 'Gigante nórdico de gran hacha que peleó 100 años para honrar a los dioses de Elbaf.', power_level: 87, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 195, name: 'Oimo', role: 'Carpintero Gigante', epithet: 'Ninguna',
+    bounty: 'Desconocida', devil_fruit: 'Ninguna', crew: 'Piratas del Gigante Guerrero',
+    img: w('Oimo_Anime_Infobox.png'), color: 'from-yellow-700 to-orange-900', border: 'border-yellow-600',
+    description: 'Gigante reclutado por la Marina con mentiras y posteriormente liberado por Sogeking.', power_level: 78, haki: []
+  },
+  {
+    id: 196, name: 'Kashi', role: 'Guerrero Gigante', epithet: 'Ninguna',
+    bounty: 'Desconocida', devil_fruit: 'Ninguna', crew: 'Piratas del Gigante Guerrero',
+    img: w('Kashi_Anime_Infobox.png'), color: 'from-gray-700 to-amber-900', border: 'border-gray-600',
+    description: 'Guerrero gigante liberado en Enies Lobby junto con Oimo.', power_level: 78, haki: []
+  },
+  {
+    id: 197, name: 'Bellamy', role: 'Ex-Capitán', epithet: '"La Hiena"',
+    bounty: '195,000,000', devil_fruit: 'Bane Bane no Mi', crew: 'Piratas de Bellamy',
+    img: w('Bellamy_Anime_Post_Timeskip_Infobox.png'), color: 'from-yellow-600 to-amber-800', border: 'border-yellow-500',
+    description: 'Pirata elástico que renegaba de los sueños antes de ser derrotado y cambiar de ideales.', power_level: 80, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 198, name: 'Caribou', role: 'Capitán', epithet: '"Pelo Mojado"',
+    bounty: '210,000,000', devil_fruit: 'Numa Numa no Mi', crew: 'Piratas de Caribou',
+    img: w('Caribou_Anime_Infobox.png'), color: 'from-green-800 to-black', border: 'border-green-700',
+    description: 'Pirata del lodo con un cuerpo pantanoso infinito donde oculta todo tipo de contrabando.', power_level: 78, haki: []
+  },
+  {
+    id: 199, name: 'Coribou', role: 'Co-Capitán', epithet: '"Mata-Marines"',
+    bounty: '190,000,000', devil_fruit: 'Ninguna', crew: 'Piratas de Caribou',
+    img: w('Coribou_Anime_Infobox.png'), color: 'from-gray-600 to-green-900', border: 'border-gray-500',
+    description: 'Hermano ingenuo de Caribou, carga una gran pala para enterrar a marinos.', power_level: 74, haki: []
+  },
+  {
+    id: 200, name: 'Kurozumi Orochi', role: 'Shogun (Difunto)', epithet: '"El Tirano de Wano"',
+    bounty: 'N/A', devil_fruit: 'Hebi Hebi: Modelo Yamata no Orochi', crew: 'Piratas de las Bestias',
+    img: w('Kurozumi_Orochi_Anime_Infobox.png'), color: 'from-purple-800 to-indigo-950', border: 'border-purple-600',
+    description: 'Cobarde gobernante que arruinó Wano aliado con Kaido, decapitado en sus múltiples cabezas.', power_level: 80, haki: []
+  },
+  {
+    id: 201, name: 'Kurozumi Kanjuro', role: 'Traidor (Difunto)', epithet: '"Semimaru"',
+    bounty: 'Desconocida', devil_fruit: 'Fude Fude no Mi', crew: 'Aliado Wano',
+    img: w('Kanjuro_Anime_Infobox.png'), color: 'from-pink-800 to-purple-950', border: 'border-pink-600',
+    description: 'Actor del clan Kurozumi infiltrado entre los Envainadas, pinta dibujos realistas mortales.', power_level: 83, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 202, name: 'Raizo', role: 'Ninja Envainada Roja', epithet: '"Raizo de la Niebla"',
+    bounty: 'Desconocida', devil_fruit: 'Maki Maki no Mi', crew: 'Aliado Wano',
+    img: w('Raizo_Anime_Infobox.png'), color: 'from-blue-900 to-gray-900', border: 'border-blue-700',
+    description: 'Ninja ninja leal a Oden capaz de absorber ataques con pergaminos y devolverlos.', power_level: 83, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 203, name: 'Ashura Doji', role: 'Samurai Envainada Roja (Difunto)', epithet: '"Shutenmaru de Kuri"',
+    bounty: 'Desconocida', devil_fruit: 'Ninguna', crew: 'Aliado Wano',
+    img: w('Ashura_Doji_Anime_Infobox.png'), color: 'from-pink-500 to-red-800', border: 'border-pink-400',
+    description: 'El bandido más fuerte de Wano sometido por Oden, poseedor de una esgrima destructiva.', power_level: 87, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 204, name: 'Kozuki Hiyori', role: 'Princesa de Wano', epithet: '"Komurasaki"',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Aliado Wano',
+    img: w('Hiyori_Anime_Infobox.png'), color: 'from-teal-300 to-green-600', border: 'border-teal-400',
+    description: 'Hermana menor de Momonosuke, sobrevivió interpretando a la cortesana Komurasaki.', power_level: 30, haki: []
+  },
+  {
+    id: 205, name: 'Kozuki Toki', role: 'Matriarca (Difunta)', epithet: 'Ninguna',
+    bounty: 'N/A', devil_fruit: 'Toki Toki no Mi', crew: 'Piratas de Roger',
+    img: w('Kozuki_Toki_Anime_Infobox.png'), color: 'from-pink-300 to-purple-500', border: 'border-pink-300',
+    description: 'Esposa de Oden nacida hace 800 años, viajó al futuro para salvar a Momonosuke.', power_level: 35, haki: []
+  },
+  {
+    id: 206, name: 'Shinobu', role: 'Kunoichi de Wano', epithet: '"La Asesina de Hombres"',
+    bounty: 'Desconocida', devil_fruit: 'Juku Juku no Mi', crew: 'Aliado Wano',
+    img: w('Shinobu_Anime_Infobox.png'), color: 'from-pink-300 to-yellow-600', border: 'border-yellow-500',
+    description: 'Valiente ninja que envejece instantáneamente la materia orgánica y el suelo.', power_level: 78, haki: []
+  },
+  {
+    id: 207, name: 'Hyogoro', role: 'Ex-Jefe Yakuza', epithet: '"Hyogoro de la Flor"',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Aliado Wano',
+    img: w('Hyogoro_Anime_Infobox.png'), color: 'from-blue-400 to-slate-600', border: 'border-blue-400',
+    description: 'Antiguo yakuza legendario que enseñó a Luffy el Haki de armadura avanzado (Ryou).', power_level: 80, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 208, name: 'Shaka', role: 'Vegapunk Punk-01 (Difunto)', epithet: '"La Bondad"',
+    bounty: 'N/A', devil_fruit: 'Nomi Nomi no Mi', crew: 'Marina / Egghead',
+    img: w('Shaka_Anime_Infobox.png'), color: 'from-gray-800 to-black', border: 'border-gray-600',
+    description: 'El clon racional de Vegapunk que vestía el casco de la justicia futurista.', power_level: 70, haki: []
+  },
+  {
+    id: 209, name: 'Lilith', role: 'Vegapunk Punk-02', epithet: '"La Maldad"',
+    bounty: 'N/A', devil_fruit: 'Nomi Nomi no Mi', crew: 'Marina / Egghead',
+    img: w('Lilith_Anime_Infobox.png'), color: 'from-pink-400 to-red-600', border: 'border-pink-400',
+    description: 'Clon rebelde y agresivo de Vegapunk que tripula bestias de combate.', power_level: 76, haki: []
+  },
+  {
+    id: 210, name: 'Edison', role: 'Vegapunk Punk-03', epithet: '"El Pensamiento"',
+    bounty: 'N/A', devil_fruit: 'Nomi Nomi no Mi', crew: 'Marina / Egghead',
+    img: w('Edison_Anime_Infobox.png'), color: 'from-blue-300 to-cyan-500', border: 'border-blue-400',
+    description: 'Pequeño robot clon de Vegapunk que procesa ideas e inventos de manera frenética.', power_level: 65, haki: []
+  },
+  {
+    id: 211, name: 'Pythagoras', role: 'Vegapunk Punk-04 (Difunto)', epithet: '"La Sabiduría"',
+    bounty: 'N/A', devil_fruit: 'Nomi Nomi no Mi', crew: 'Marina / Egghead',
+    img: w('Pythagoras_Anime_Infobox.png'), color: 'from-yellow-600 to-yellow-800', border: 'border-yellow-500',
+    description: 'Clon de Vegapunk con aspecto de robot rechoncho que analiza datos masivos.', power_level: 65, haki: []
+  },
+  {
+    id: 212, name: 'Atlas', role: 'Vegapunk Punk-05 (Difunta)', epithet: '"La Ira"',
+    bounty: 'N/A', devil_fruit: 'Nomi Nomi no Mi', crew: 'Marina / Egghead',
+    img: w('Atlas_Anime_Infobox.png'), color: 'from-pink-500 to-purple-700', border: 'border-pink-400',
+    description: 'Gigantesca chica clon de Vegapunk de enorme fuerza física y puños holográficos.', power_level: 82, haki: []
+  },
+  {
+    id: 213, name: 'York', role: 'Vegapunk Punk-06 (Traidora)', epithet: '"La Codicia"',
+    bounty: 'N/A', devil_fruit: 'Nomi Nomi no Mi', crew: 'Gobierno Mundial',
+    img: w('York_Anime_Infobox.png'), color: 'from-yellow-400 to-yellow-600', border: 'border-yellow-400',
+    description: 'Clon de Vegapunk que se alimenta y duerme por el resto, vendió a Stella al Gorosei.', power_level: 60, haki: []
+  },
+  {
+    id: 214, name: 'Gin', role: 'Mano Derecha de Krieg', epithet: '"El Demonio Gin"',
+    bounty: '12,000,000', devil_fruit: 'Ninguna', crew: 'Piratas de Krieg',
+    img: w('Gin_Anime_Infobox.png'), color: 'from-gray-700 to-black', border: 'border-gray-500',
+    description: 'Guerrero leal a Krieg que usa tonfas de hierro pesadas, se enfrentó a Sanji.', power_level: 72, haki: []
+  },
+  {
+    id: 215, name: 'Pearl', role: 'Oficial de Krieg', epithet: '"Muro de Hierro"',
+    bounty: 'Desconocida', devil_fruit: 'Ninguna', crew: 'Piratas de Krieg',
+    img: w('Pearl_Anime_Infobox.png'), color: 'from-orange-500 to-amber-700', border: 'border-orange-500',
+    description: 'Cubierto de escudos metálicos masivos que calienta con fuego si sangra.', power_level: 66, haki: []
+  },
+  {
+    id: 216, name: 'Jango', role: 'Hipnotizador / Recluta Marine', epithet: '"El Hipnotizador Jango"',
+    bounty: '9,000,000 (Ex)', devil_fruit: 'Ninguna', crew: 'La Marina',
+    img: w('Jango_Anime_Post_Timeskip_Infobox.png'), color: 'from-red-800 to-gray-900', border: 'border-red-600',
+    description: 'Antiguo hipnotizador pirata de Kuro que se alistó en la Marina junto a Fullbody.', power_level: 60, haki: []
+  },
+  {
+    id: 217, name: 'Mohji', role: 'Primer Oficial', epithet: '"El Domador"',
+    bounty: 'Desconocida', devil_fruit: 'Ninguna', crew: 'Piratas de Buggy',
+    img: w('Mohji_Anime_Post_Timeskip_Infobox.png'), color: 'from-amber-600 to-orange-800', border: 'border-amber-500',
+    description: 'Oficial de Buggy que combate junto a su león mascota gigante Richie.', power_level: 55, haki: []
+  },
+  {
+    id: 218, name: 'Cabaji', role: 'Jefe de Estado Mayor', epithet: '"El Acróbata"',
+    bounty: 'Desconocida', devil_fruit: 'Ninguna', crew: 'Piratas de Buggy',
+    img: w('Cabaji_Anime_Post_Timeskip_Infobox.png'), color: 'from-blue-600 to-blue-800', border: 'border-blue-500',
+    description: 'Espadachín que combate a monociclo lanzando peonzas y trucos acrobáticos.', power_level: 58, haki: []
+  },
+  {
+    id: 219, name: 'Miss Doublefinger', role: 'Agente Oficial (Zala)', epithet: '"Miss Doublefinger"',
+    bounty: '35,000,000 (Ex)', devil_fruit: 'Toge Toge no Mi', crew: 'Baroque Works',
+    img: w('Zala_Anime_Infobox.png'), color: 'from-purple-800 to-indigo-950', border: 'border-purple-600',
+    description: 'Socia de Mr. 1 capaz de erigir espinas de acero letales en su piel.', power_level: 76, haki: []
+  },
+  {
+    id: 220, name: 'Miss Goldenweek', role: 'Agente Oficial (Marianne)', epithet: '"Miss Goldenweek"',
+    bounty: '29,000,000 (Ex)', devil_fruit: 'Ninguna', crew: 'Baroque Works',
+    img: w('Marianne_Anime_Infobox.png'), color: 'from-yellow-400 to-green-600', border: 'border-yellow-400',
+    description: 'Socia infantil de Mr. 3 que manipula las emociones usando pintura de colores.', power_level: 60, haki: []
+  },
+  {
+    id: 221, name: 'Mr. 4', role: 'Agente Oficial (Babe)', epithet: '"Mr. 4"',
+    bounty: '3,200,000 (Ex)', devil_fruit: 'Ninguna', crew: 'Baroque Works',
+    img: w('Babe_Anime_Infobox.png'), color: 'from-yellow-800 to-amber-950', border: 'border-yellow-700',
+    description: 'Lento bateador de Arabasta que batea bombas de gas disparadas por su cañón-perro Lassoo.', power_level: 70, haki: []
+  },
+  {
+    id: 222, name: 'Miss Merry Christmas', role: 'Agente Oficial (Drophy)', epithet: '"Miss Merry Christmas"',
+    bounty: '14,000,000 (Ex)', devil_fruit: 'Mogu Mogu no Mi', crew: 'Baroque Works',
+    img: w('Drophy_Anime_Infobox.png'), color: 'from-red-600 to-yellow-700', border: 'border-red-500',
+    description: 'Socia hiperactiva de Mr. 4 que excava túneles rápidos como un topo.', power_level: 70, haki: []
+  },
+  {
+    id: 223, name: 'Mr. 5', role: 'Agente Oficial (Gem)', epithet: '"Mr. 5"',
+    bounty: '10,000,000 (Ex)', devil_fruit: 'Bomu Bomu no Mi', crew: 'Baroque Works',
+    img: w('Gem_Anime_Infobox.png'), color: 'from-gray-700 to-black', border: 'border-gray-500',
+    description: 'Pirata capaz de hacer estallar cualquier parte de su cuerpo o su respiración.', power_level: 68, haki: []
+  },
+  {
+    id: 224, name: 'Miss Valentine', role: 'Agente Oficial (Mikita)', epithet: '"Miss Valentine"',
+    bounty: '7,500,000 (Ex)', devil_fruit: 'Kilo Kilo no Mi', crew: 'Baroque Works',
+    img: w('Mikita_Anime_Infobox.png'), color: 'from-yellow-400 to-orange-500', border: 'border-yellow-300',
+    description: 'Socia de Mr. 5 capaz de flotar como una pluma o caer aplastando como 10 toneladas.', power_level: 67, haki: []
+  },
+  {
+    id: 225, name: 'Nefeltari Cobra', role: 'Rey (Difunto)', epithet: 'Rey de Arabasta',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Reino de Arabasta',
+    img: w('Nefeltari_Cobra_Anime_Infobox.png'), color: 'from-blue-200 to-gray-500', border: 'border-blue-400',
+    description: 'Duodécimo monarca de la familia real Nefeltari de Arabasta, asesinado por el Gobierno Mundial.', power_level: 40, haki: []
+  },
+  {
+    id: 226, name: 'Igaram', role: 'Capitán de la Guardia', epithet: '"Mr. 8"',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Reino de Arabasta',
+    img: w('Igaram_Anime_Infobox.png'), color: 'from-pink-400 to-amber-700', border: 'border-pink-500',
+    description: 'Fiel guardaespaldas de Vivi que oculta ametralladoras en sus rizos.', power_level: 68, haki: []
+  },
+  {
+    id: 227, name: 'Karoo', role: 'Mascota Real', epithet: '"Líder de los Superpatos"',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Reino de Arabasta',
+    img: w('Karoo_Anime_Infobox.png'), color: 'from-yellow-400 to-yellow-600', border: 'border-yellow-300',
+    description: 'El veloz e intrépido superpato mascota de Vivi que la salvó en Arabasta.', power_level: 40, haki: []
+  },
+  {
+    id: 228, name: 'Koza', role: 'Líder de la Rebelión', epithet: 'Ninguna',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Reino de Arabasta',
+    img: w('Koza_Anime_Infobox.png'), color: 'from-blue-700 to-indigo-900', border: 'border-blue-500',
+    description: 'Amigo de la infancia de Vivi que lideró erróneamente el alzamiento rebelde contra el Rey.', power_level: 70, haki: []
+  },
+  {
+    id: 229, name: 'Shirahoshi', role: 'Princesa Sirena / Poseidón', epithet: '"Princesa Sirena"',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Reino de Ryugu',
+    img: w('Shirahoshi_Anime_Infobox.png'), color: 'from-pink-300 to-pink-500', border: 'border-pink-400',
+    description: 'Sirena gigante con la habilidad innata de controlar a los colosales Reyes Marinos.', power_level: 90, haki: ['Kenbunshoku']
+  },
+  {
+    id: 230, name: 'Fukaboshi', role: 'Príncipe Tiburón', epithet: 'Ninguna',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Reino de Ryugu',
+    img: w('Fukaboshi_Anime_Infobox.png'), color: 'from-blue-800 to-cyan-900', border: 'border-blue-600',
+    description: 'Hermano mayor de Shirahoshi y valiente comandante gyojin de Wani.', power_level: 80, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 231, name: 'Ryuboshi', role: 'Príncipe Pez Remo', epithet: 'Ninguna',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Reino de Ryugu',
+    img: w('Ryuboshi_Anime_Infobox.png'), color: 'from-blue-400 to-teal-600', border: 'border-blue-300',
+    description: 'Príncipe cantor que combate usando dos katanas ligeras.', power_level: 75, haki: ['Kenbunshoku']
+  },
+  {
+    id: 232, name: 'Manboshi', role: 'Príncipe Pez Luna', epithet: 'Ninguna',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Reino de Ryugu',
+    img: w('Manboshi_Anime_Infobox.png'), color: 'from-orange-400 to-amber-600', border: 'border-orange-500',
+    description: 'Príncipe de Ryugu que danza bailando para alejar el miedo.', power_level: 74, haki: ['Kenbunshoku']
+  },
+  {
+    id: 233, name: 'Madame Shyarly', role: 'Pitonisa Sirena', epithet: 'Ninguna',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Reino de Ryugu',
+    img: w('Shyarly_Anime_Infobox.png'), color: 'from-purple-800 to-black', border: 'border-purple-700',
+    description: 'Dueña del Mermaid Cafe, vio en sus predicciones la destrucción de la Isla por Luffy.', power_level: 50, haki: ['Kenbunshoku']
+  },
+  {
+    id: 234, name: 'Shakuyaku', role: 'Dueña de Bar (Ex-Pirata)', epithet: '"Shakky"',
+    bounty: 'Desconocida', devil_fruit: 'Ninguna', crew: 'Piratas de Rocks (Ex)',
+    img: w('Shakuyaku_Anime_Infobox.png'), color: 'from-gray-700 to-black', border: 'border-gray-500',
+    description: 'Pareja de Rayleigh, una experimentada pirata retirada del grupo de Rocks.', power_level: 88, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 235, name: 'Yorki', role: 'Capitán (Difunto)', epithet: '"Calicó Yorki"',
+    bounty: 'Desconocida', devil_fruit: 'Ninguna', crew: 'Piratas Rumbar',
+    img: w('Yorki_Anime_Infobox.png'), color: 'from-yellow-600 to-amber-800', border: 'border-yellow-500',
+    description: 'El primer capitán de Brook que contrajo una fiebre mortal en el Grand Line.', power_level: 74, haki: []
+  },
+  {
+    id: 236, name: 'Nojiko', role: 'Granjera de Naranjas', epithet: 'Ninguna',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Baratie (Ex)',
+    img: w('Nojiko_Anime_Infobox.png'), color: 'from-blue-200 to-cyan-400', border: 'border-blue-300',
+    description: 'Hermana mayor adoptiva de Nami, cultiva naranjos en la aldea Cocoyasi.', power_level: 30, haki: []
+  },
+  {
+    id: 237, name: 'Genzo', role: 'Sheriff', epithet: 'Ninguna',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Baratie (Ex)',
+    img: w('Genzo_Anime_Infobox.png'), color: 'from-gray-400 to-gray-600', border: 'border-gray-500',
+    description: 'Sheriff y figura paterna de Nami que lleva un molinillo en su gorro para hacerla sonreír.', power_level: 40, haki: []
+  },
+  {
+    id: 238, name: 'Dr. Kureha', role: 'Doctora Centenaria', epithet: '"Doctorine"',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Reino de Sakura',
+    img: w('Kureha_Anime_Infobox.png'), color: 'from-pink-400 to-rose-700', border: 'border-pink-400',
+    description: 'Doctora de 139 años que enseñó medicina avanzada a Tony Tony Chopper.', power_level: 65, haki: []
+  },
+  {
+    id: 239, name: 'Dr. Hiriluk', role: 'Médico Curandero (Difunto)', epithet: 'Ninguna',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Reino de Sakura',
+    img: w('Hiriluk_Anime_Infobox.png'), color: 'from-pink-200 to-rose-400', border: 'border-pink-300',
+    description: 'Malo como médico pero de gran corazón, inspiró a Chopper a curar cualquier enfermedad.', power_level: 45, haki: []
+  },
+  {
+    id: 240, name: 'Kaya', role: 'Estudiante de Medicina', epithet: 'Ninguna',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Piratas Gato Negro (Ex)',
+    img: w('Kaya_Anime_Infobox.png'), color: 'from-yellow-100 to-amber-200', border: 'border-yellow-200',
+    description: 'Chica rica enfermiza de Syrup Town que heredó la fortuna familiar y sueña con sanar a Usopp.', power_level: 20, haki: []
+  },
+  {
+    id: 241, name: 'Kuina', role: 'Espadachina (Difunta)', epithet: 'Ninguna',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Baratie (Ex)',
+    img: w('Kuina_Anime_Infobox.png'), color: 'from-blue-300 to-indigo-500', border: 'border-blue-400',
+    description: 'Rival e inspiración de Zoro en la infancia, derrotada por el destino fatal al caer por unas escaleras.', power_level: 65, haki: []
+  },
+  {
+    id: 242, name: 'Koushirou', role: 'Maestro de Dojo', epithet: 'Ninguna',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Baratie (Ex)',
+    img: w('Koushirou_Anime_Infobox.png'), color: 'from-green-600 to-green-800', border: 'border-green-500',
+    description: 'Padre de Kuina y el primer instructor de espada de Zoro, descendiente del clan Shimotsuki.', power_level: 80, haki: ['Busoshoku']
+  },
+  {
+    id: 243, name: 'Edward Weevil', role: 'Ex-Shichibukai', epithet: '"Barbablanca Jr."',
+    bounty: '480,000,000', devil_fruit: 'Ninguna', crew: 'Cross Guild (Ex)',
+    img: w('Edward_Weevil_Anime_Infobox.png'), color: 'from-yellow-600 to-yellow-900', border: 'border-yellow-500',
+    description: 'Hombre con la fuerza física destructiva del joven Barbablanca, manipulado por Bakkin.', power_level: 92, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 244, name: 'Karasu', role: 'Comandante del Ejército del Norte', epithet: '"Karasu de la Plaga"',
+    bounty: '400,000,000', devil_fruit: 'Susu Susu no Mi', crew: 'Ejército Revolucionario',
+    img: w('Karasu_Anime_Infobox.png'), color: 'from-gray-800 to-black', border: 'border-gray-700',
+    description: 'Revolucionario silencioso capaz de fragmentar su cuerpo en bandadas de cuervos de carbón.', power_level: 89, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 245, name: 'Belo Betty', role: 'Comandante del Ejército del Este', epithet: '"Líder del Estandarte"',
+    bounty: '457,000,000', devil_fruit: 'Kobu Kobu no Mi', crew: 'Ejército Revolucionario',
+    img: w('Belo_Betty_Anime_Infobox.png'), color: 'from-red-600 to-red-800', border: 'border-red-500',
+    description: 'Otorga coraje y fuerza de combate brutal a civiles ondeando su bandera de libertad.', power_level: 87, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 246, name: 'Morley', role: 'Comandante del Ejército del Oeste', epithet: '"Morley del Barro"',
+    bounty: '293,000,000', devil_fruit: 'Oshi Oshi no Mi', crew: 'Ejército Revolucionario',
+    img: w('Morley_Anime_Infobox.png'), color: 'from-amber-600 to-orange-800', border: 'border-amber-500',
+    description: 'Gigante okama que desplaza y moldea la tierra como si fuera arcilla moldeable.', power_level: 86, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 247, name: 'Lindbergh', role: 'Comandante del Ejército del Sur', epithet: 'Ninguna',
+    bounty: '316,000,000', devil_fruit: 'Ninguna', crew: 'Ejército Revolucionario',
+    img: w('Lindbergh_Anime_Infobox.png'), color: 'from-teal-600 to-slate-800', border: 'border-teal-500',
+    description: 'Científico mink gato que inventa armas avanzadas como rayos congelantes y jetpacks.', power_level: 85, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 248, name: 'Hack', role: 'Oficial de Inteligencia', epithet: '"El Centauro de la Armadura"',
+    bounty: 'Desconocida', devil_fruit: 'Ninguna', crew: 'Ejército Revolucionario',
+    img: w('Hack_Anime_Infobox.png'), color: 'from-blue-600 to-indigo-900', border: 'border-blue-500',
+    description: 'Gyojin pez espada instructor del kárate gyojin y gran amigo de Sabo y Koala.', power_level: 80, haki: ['Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 249, name: 'Saint Figarland Garling', role: 'Líder de los Caballeros Sagrados', epithet: '"El Verdugo de God Valley"',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Gobierno Mundial',
+    img: w('Figarland_Garling_Anime_Infobox.png'), color: 'from-red-800 to-black', border: 'border-red-700',
+    description: 'Noble de alta jerarquía y combatiente estelar en God Valley, supuesto familiar de Shanks.', power_level: 96, haki: ['Haoshoku', 'Busoshoku', 'Kenbunshoku']
+  },
+  {
+    id: 250, name: 'Saint Charlos', role: 'Dragón Celestial', epithet: '"Noble Mundial"',
+    bounty: 'N/A', devil_fruit: 'Ninguna', crew: 'Gobierno Mundial',
+    img: w('Charlos_Anime_Infobox.png'), color: 'from-yellow-200 to-orange-300', border: 'border-yellow-400',
+    description: 'Nobles caprichosos protegidos por los Almirantes, recordado por recibir el gran puñetazo de Luffy.', power_level: 5, haki: []
   }
 ];
 

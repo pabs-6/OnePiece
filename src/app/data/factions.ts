@@ -222,5 +222,75 @@ export const FACTIONS: Faction[] = [
     color: 'text-red-800', bg_gradient: 'from-red-950 to-black', leader: 'Dorry y Brogy',
     description: 'Los legendarios gigantes de Elbaf que trajeron terror al mar.',
     key_members: ['Dorry', 'Brogy', 'Oimo', 'Kashi']
+  },
+  {
+    id: 31, name: 'Barto Club', type: 'Tripulación Aliada',
+    jolly_roger: w("Barto_Club_Jolly_Roger.png"),
+    color: 'text-green-500', bg_gradient: 'from-green-900/40 to-black', leader: 'Bartolomeo',
+    description: 'Los fanáticos número uno de los Piratas del Sombrero de Paja, navegando sin navegante bajo la pura fe en Luffy.',
+    key_members: ['Bartolomeo', 'Gambia']
+  },
+  {
+    id: 32, name: 'Piratas Hermosos', type: 'Tripulación Aliada',
+    jolly_roger: w("Beautiful_Pirates_Jolly_Roger.png"),
+    color: 'text-cyan-400', bg_gradient: 'from-cyan-900/40 to-black', leader: 'Cavendish',
+    description: 'Tripulación liderada por el deslumbrante Príncipe Blanco Cavendish y su peligrosa personalidad Hakuba.',
+    key_members: ['Cavendish', 'Suleiman']
+  },
+  {
+    id: 33, name: 'Armada Happo', type: 'Tripulación Aliada',
+    jolly_roger: w("Happo_Navy_Jolly_Roger.png"),
+    color: 'text-amber-500', bg_gradient: 'from-amber-950/40 to-black', leader: 'Sai',
+    description: 'Fuerza armada del País de Kano que domina el estilo de combate Hasshoken, ahora aliada del Sombrero de Paja.',
+    key_members: ['Don Chinjao', 'Sai', 'Baby 5']
+  },
+  {
+    id: 34, name: 'Nuevos Piratas Gigantes de Elbaf', type: 'Tripulación Aliada',
+    jolly_roger: w("New_Giant_Warrior_Pirates_Jolly_Roger.png"),
+    color: 'text-red-700', bg_gradient: 'from-red-900/40 to-black', leader: 'Hajrudin',
+    description: 'Cinco formidables gigantes reviviendo la gloria de la legendaria tripulación de Elbaf.',
+    key_members: ['Hajrudin', 'Stansen', 'Road', 'Goldberg', 'Gerth']
+  },
+  {
+    id: 35, name: 'Tonta Corps (Tontatta)', type: 'Tripulación Aliada',
+    jolly_roger: w("Tontatta_Pirates_Jolly_Roger.png"),
+    color: 'text-yellow-500', bg_gradient: 'from-yellow-900/40 to-black', leader: 'Leo',
+    description: 'La división de pequeños guerreros enanos de Dressrosa increíblemente veloces y fuertes.',
+    key_members: ['Leo', 'Bian', 'Bomba']
+  },
+  {
+    id: 36, name: 'Piratas de Bellamy', type: 'Tripulación Asociada',
+    jolly_roger: w("Bellamy_Pirates'_Jolly_Roger.png"),
+    color: 'text-yellow-600', bg_gradient: 'from-yellow-950/40 to-black', leader: 'Bellamy',
+    description: 'Navegaron bajo el dogma de la Nueva Era de Doflamingo hasta su posterior disolución y redención.',
+    key_members: ['Bellamy', 'Sarquiss']
+  },
+  {
+    id: 37, name: 'Piratas de Foxy', type: 'Piratas de Juegos',
+    jolly_roger: w("Foxy_Pirates'_Jolly_Roger.png"),
+    color: 'text-gray-500', bg_gradient: 'from-gray-900/40 to-black', leader: 'Foxy',
+    description: 'Famosos por desafiar a otras tripulaciones en el Davy Back Fight para robar sus miembros.',
+    key_members: ['Foxy', 'Porche', 'Hamburg']
+  },
+  {
+    id: 38, name: 'Piratas de Caribou', type: 'Tripulación Brutal',
+    jolly_roger: w("Caribou_Pirates'_Jolly_Roger.png"),
+    color: 'text-green-600', bg_gradient: 'from-green-950/40 to-black', leader: 'Caribou',
+    description: 'Piratas crueles conocidos por enterrar vivos a sus enemigos, liderados por los hermanos Caribou y Coribou.',
+    key_members: ['Caribou', 'Coribou']
+  },
+  {
+    id: 39, name: 'Reino de Ryugu', type: 'Reino Isla Gyojin',
+    jolly_roger: w("Ryugu_Kingdom_Crest.png"),
+    color: 'text-blue-400', bg_gradient: 'from-blue-900/40 to-black', leader: 'Neptune',
+    description: 'El pacífico reino submarino situado a 10,000 metros de profundidad, custodiado por la dinastía Neptune.',
+    key_members: ['Neptune', 'Shirahoshi', 'Fukaboshi', 'Ryuboshi', 'Manboshi']
+  },
+  {
+    id: 40, name: 'Reino de Arabasta', type: 'Reino de Desierto',
+    jolly_roger: w("Alabasta_Crest.png"),
+    color: 'text-amber-600', bg_gradient: 'from-amber-900/40 to-black', leader: 'Nefeltari Cobra',
+    description: 'Uno de los reinos fundadores del Gobierno Mundial, leales protectores del Poneglyph de Plutón.',
+    key_members: ['Vivi', 'Nefeltari Cobra', 'Pell', 'Chaka', 'Igaram']
   }
 ];

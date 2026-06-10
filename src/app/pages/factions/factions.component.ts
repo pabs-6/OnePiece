@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FACTIONS } from '../../data/factions';
+import { OpEmojiComponent } from '../../components/op-emoji/op-emoji.component';
 
 @Component({
   selector: 'app-factions',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, OpEmojiComponent],
   template: `
     <section class="pt-32 pb-24 bg-gradient-to-b from-slate-950 to-op-dark min-h-screen relative overflow-hidden">
       <!-- Decoración fondo -->
@@ -56,7 +57,7 @@ import { FACTIONS } from '../../data/factions';
               <div class="mb-8">
                 <p class="text-xs text-gray-500 font-mono tracking-widest mb-2 border-b border-gray-800 pb-2">LÍDER SUPREMO</p>
                 <div class="flex items-center gap-3">
-                  <span class="text-3xl">👑</span>
+                  <op-emoji symbol="👑" class="text-3xl"></op-emoji>
                   <p class="font-bold text-white text-2xl drop-shadow">{{ f.leader }}</p>
                 </div>
               </div>

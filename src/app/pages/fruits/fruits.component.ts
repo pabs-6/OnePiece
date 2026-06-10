@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DEVIL_FRUITS } from '../../data/devil-fruits';
+import { OpEmojiComponent } from '../../components/op-emoji/op-emoji.component';
 
 @Component({
   selector: 'app-fruits',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, OpEmojiComponent],
   template: `
     <section class="pt-32 pb-24 bg-gradient-to-b from-slate-950 to-op-dark min-h-screen relative overflow-hidden">
       <div class="absolute inset-0 pointer-events-none">
@@ -16,7 +17,7 @@ import { DEVIL_FRUITS } from '../../data/devil-fruits';
       <div class="max-w-7xl mx-auto px-4 relative z-10">
         <!-- Header -->
         <div class="text-center mb-20 reveal">
-          <p class="text-purple-400 font-mono text-sm tracking-widest mb-2">🍎 EL SISTEMA DE PODERES</p>
+          <p class="text-purple-400 font-mono text-sm tracking-widest mb-2"><op-emoji symbol="🍎"></op-emoji> EL SISTEMA DE PODERES</p>
           <h2 class="font-pirate text-5xl md:text-7xl text-white mb-6 section-title">
             Frutas del <span class="gradient-text">Diablo</span>
           </h2>
@@ -45,7 +46,7 @@ import { DEVIL_FRUITS } from '../../data/devil-fruits';
             <div class="w-full md:w-1/2 md:px-12">
               <div class="inline-block px-4 py-1 rounded-full text-xs font-mono font-bold mb-4 border"
                    [ngClass]="getTypeStyles(fruit.type)">
-                👉 TIPO {{ fruit.type | uppercase }}
+                <op-emoji symbol="👉"></op-emoji> TIPO {{ fruit.type | uppercase }}
               </div>
               
               <h3 class="text-4xl md:text-5xl font-bold text-white mb-2 leading-tight drop-shadow-lg" [ngClass]="getTextColor(fruit.color)">

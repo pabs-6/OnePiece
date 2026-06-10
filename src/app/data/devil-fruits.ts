@@ -150,6 +150,56 @@ export const DEVIL_FRUITS: DevilFruit[] = [
     id: 27, name: 'Toshi Toshi no Mi', type: 'Paramecia', user: 'Jewelry Bonney',
     img: w('Toshi_Toshi_no_Mi_Infobox.png'), color: 'from-pink-400 to-rose-600',
     description: 'Permite al usuario manipular la edad.'
+  },
+  {
+    id: 28, name: 'Gomu Gomu no Mi', type: 'Paramecia / Zoan', user: 'Monkey D. Luffy',
+    img: w('Gomu_Gomu_no_Mi_Infobox.png'), color: 'from-purple-500 to-red-600',
+    description: 'Otorga al usuario un cuerpo con las propiedades elásticas de la goma. Es la forma encubierta de la legendaria Hito Hito no Mi: Modelo Nika.'
+  },
+  {
+    id: 29, name: 'Kilo Kilo no Mi', type: 'Paramecia', user: 'Miss Valentine',
+    img: w('Kilo_Kilo_no_Mi_Infobox.png'), color: 'from-yellow-400 to-amber-600',
+    description: 'Permite al usuario cambiar su peso corporal a voluntad, variando desde 1 kilogramo hasta las 10 toneladas.'
+  },
+  {
+    id: 30, name: 'Moku Moku no Mi', type: 'Logia', user: 'Smoker',
+    img: w('Moku_Moku_no_Mi_Infobox.png'), color: 'from-gray-400 to-slate-600',
+    description: 'Permite al usuario crear, controlar y transformarse en humo a voluntad, siendo ideal para capturar y asfixiar piratas.'
+  },
+  {
+    id: 31, name: 'Baku Baku no Mi', type: 'Paramecia', user: 'Wapol',
+    img: w('Baku_Baku_no_Mi_Infobox.png'), color: 'from-purple-500 to-indigo-800',
+    description: 'Permite al usuario comer cualquier cosa, desde metal hasta personas, y asimilar los elementos ingeridos para transformar o armar su propio cuerpo.'
+  },
+  {
+    id: 32, name: 'Horu Horu no Mi', type: 'Paramecia', user: 'Emporio Ivankov',
+    img: w('Horu_Horu_no_Mi_Infobox.png'), color: 'from-pink-500 to-purple-800',
+    description: 'Otorga al usuario la capacidad de inyectar hormonas especiales con sus dedos, pudiendo alterar el género, temperatura, pigmentación o curar heridas mortales.'
+  },
+  {
+    id: 33, name: 'Mane Mane no Mi', type: 'Paramecia', user: 'Bentham (Mr. 2)',
+    img: w('Mane_Mane_no_Mi_Infobox.png'), color: 'from-pink-400 to-blue-400',
+    description: 'Permite al usuario transformarse físicamente en cualquier persona a la que haya tocado previamente con su mano derecha.'
+  },
+  {
+    id: 34, name: 'Supa Supa no Mi', type: 'Paramecia', user: 'Daz Bones (Mr. 1)',
+    img: w('Supa_Supa_no_Mi_Infobox.png'), color: 'from-gray-600 to-zinc-800',
+    description: 'Transforma cualquier parte del cuerpo del usuario en hojas de acero extremadamente afiladas, convirtiéndolo en un hombre de acero cortante.'
+  },
+  {
+    id: 35, name: 'Doru Doru no Mi', type: 'Paramecia', user: 'Galdino (Mr. 3)',
+    img: w('Doru_Doru_no_Mi_Infobox.png'), color: 'from-sky-200 to-slate-400',
+    description: 'Permite al usuario secretar cera líquida que se endurece rápidamente hasta volverse tan resistente como el acero, ideal para forjar llaves, armaduras o trampas.'
+  },
+  {
+    id: 36, name: 'Ori Ori no Mi', type: 'Paramecia', user: 'Hina',
+    img: w('Ori_Ori_no_Mi_Infobox.png'), color: 'from-pink-600 to-rose-800',
+    description: 'Permite al usuario generar barras y cepos de hierro negro directamente de su cuerpo para capturar de manera infalible a los delincuentes.'
+  },
+  {
+    id: 37, name: 'Tori Tori no Mi, Modelo: Halcón', type: 'Zoan', user: 'Pell',
+    img: w('Tori_Tori_no_Mi%2C_Model_Falcon_Infobox.png'), color: 'from-yellow-600 to-amber-700',
+    description: 'Permite transformarse en un halcón híbrido o completo, siendo una de las cinco frutas conocidas que otorgan la codiciada capacidad de vuelo libre.'
   }
 ];
 

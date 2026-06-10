@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { THEORIES } from '../../data/theories';
+import { OpEmojiComponent } from '../../components/op-emoji/op-emoji.component';
 
 @Component({
   selector: 'app-theories',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, OpEmojiComponent],
   template: `
     <section class="pt-32 pb-24 bg-gradient-to-b from-op-navy to-op-dark min-h-screen relative overflow-hidden">
       <!-- Background elements -->
@@ -17,7 +18,7 @@ import { THEORIES } from '../../data/theories';
       <div class="max-w-5xl mx-auto px-4 relative z-10">
         <!-- Header -->
         <div class="text-center mb-32 reveal">
-          <p class="text-purple-400 font-mono text-sm tracking-widest mb-2">🔮 TEORÍAS PROFUNDAS Y SECRETOS</p>
+          <p class="text-purple-400 font-mono text-sm tracking-widest mb-2"><op-emoji symbol="🔮"></op-emoji> TEORÍAS PROFUNDAS Y SECRETOS</p>
           <h2 class="font-pirate text-5xl md:text-7xl text-white mb-6 section-title">
             <span class="gradient-text-red">Misterios</span> de Oda
           </h2>
@@ -37,7 +38,7 @@ import { THEORIES } from '../../data/theories';
               <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4 border-b border-gray-800 pb-6">
                 <div class="flex items-center gap-4">
                   <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-4xl shadow-inner bg-gradient-to-br" [ngClass]="t.color">
-                    {{ t.icon }}
+                    <op-emoji [symbol]="t.icon" class="text-4xl"></op-emoji>
                   </div>
                   <div>
                     <span class="text-xs font-mono text-gray-400 tracking-wider uppercase bg-gray-900/50 px-3 py-1 rounded inline-block mb-1">{{ t.category }}</span>
@@ -47,11 +48,11 @@ import { THEORIES } from '../../data/theories';
                 
                 <div class="flex flex-col items-end gap-2">
                   <span *ngIf="t.hot" class="text-xs bg-red-600 text-white font-bold px-4 py-1.5 rounded-full shadow-lg shadow-red-900/50 flex items-center gap-2">
-                    <span class="animate-pulse">🔥</span> POPULAR
+                    <op-emoji symbol="🔥" class="animate-pulse"></op-emoji> POPULAR
                   </span>
                   <span class="text-xs font-bold px-4 py-1.5 rounded-full shadow-lg flex items-center gap-2" 
                         [ngClass]="t.confirmed ? 'bg-green-600 text-white shadow-green-900/50' : 'bg-yellow-600 text-black shadow-yellow-900/50'">
-                    <span>{{ t.confirmed ? '✅' : '❓' }}</span>
+                    <span><op-emoji [symbol]="t.confirmed ? '✅' : '❓'"></op-emoji></span>
                     {{ t.confirmed ? 'CONFIRMADA' : 'NO CONFIRMADA' }}
                   </span>
                 </div>
@@ -68,7 +69,7 @@ import { THEORIES } from '../../data/theories';
                 <!-- Evidence Box -->
                 <div class="bg-gray-900/80 rounded-2xl p-6 border border-gray-800 shadow-inner">
                   <h4 class="text-yellow-400 font-bold mb-4 font-mono text-sm tracking-widest flex items-center gap-2">
-                    <span>⚡</span> PUNTOS DE EVIDENCIA
+                    <span><op-emoji symbol="⚡"></op-emoji></span> PUNTOS DE EVIDENCIA
                   </h4>
                   <ul class="space-y-4">
                     <li *ngFor="let ev of t.evidence" class="flex items-start gap-4">

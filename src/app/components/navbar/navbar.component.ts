@@ -1,11 +1,12 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { OpEmojiComponent } from '../op-emoji/op-emoji.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, OpEmojiComponent],
   template: `
     <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 nav-blur"
          [class.bg-op-dark]="navScrolled" [class.bg-opacity-95]="navScrolled"
@@ -15,7 +16,7 @@ import { RouterModule } from '@angular/router';
         <!-- Logo -->
         <a routerLink="/" class="flex items-center gap-3 cursor-pointer group">
           <div class="relative">
-            <span class="text-3xl animate-spin-slow inline-block">☠️</span>
+            <op-emoji symbol="☠️" class="text-3xl animate-spin-slow inline-block"></op-emoji>
             <div class="absolute -inset-1 bg-yellow-500/20 rounded-full blur animate-pulse-slow"></div>
           </div>
           <div>
@@ -31,7 +32,7 @@ import { RouterModule } from '@angular/router';
                routerLinkActive="text-yellow-400 bg-yellow-500/10"
                [routerLinkActiveOptions]="{exact: link.path === '/'}"
                class="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-semibold cursor-pointer transition-all duration-300 hover:text-yellow-400 hover:bg-yellow-500/10">
-              <span>{{ link.icon }}</span>{{ link.label }}
+              <op-emoji [symbol]="link.icon"></op-emoji>{{ link.label }}
             </a>
           </li>
         </ul>
@@ -47,7 +48,7 @@ import { RouterModule } from '@angular/router';
         <ul class="flex flex-col gap-2">
           <li *ngFor="let link of links">
             <a [routerLink]="link.path" (click)="menuOpen = false" class="flex items-center gap-3 px-4 py-3 rounded-lg text-base font-semibold cursor-pointer transition-all duration-300 hover:bg-yellow-500/10 hover:text-yellow-400 text-gray-200">
-              <span class="text-xl">{{ link.icon }}</span>{{ link.label }}
+              <op-emoji [symbol]="link.icon" class="text-xl"></op-emoji>{{ link.label }}
             </a>
           </li>
         </ul>
