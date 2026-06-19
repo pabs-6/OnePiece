@@ -1,31 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, computed, effect, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
-import { CHARACTERS, Character } from '../../data/characters';
+import { RouterModule, ActivatedRoute, Router } from '@angular/router';
+import { CharacterService, Character } from '../../services/character.service';
 import { OpEmojiComponent } from '../../components/op-emoji/op-emoji.component';
-
-// Alternative image sources per character name keyword
-const FALLBACK_IMAGES: Record<string, string> = {
-  'Luffy':    'https://static.wikia.nocookie.net/onepiece/images/6/6d/Monkey_D._Luffy_Anime_Post_Timeskip_Infobox.png',
-  'Zoro':     'https://static.wikia.nocookie.net/onepiece/images/1/15/Roronoa_Zoro_Anime_Post_Timeskip_Infobox.png',
-  'Nami':     'https://static.wikia.nocookie.net/onepiece/images/1/1c/Nami_Anime_Post_Timeskip_Infobox.png',
-  'Usopp':    'https://static.wikia.nocookie.net/onepiece/images/5/5f/Usopp_Anime_Post_Timeskip_Infobox.png',
-  'Sanji':    'https://static.wikia.nocookie.net/onepiece/images/e/e2/Sanji_Anime_Post_Timeskip_Infobox.png',
-  'Chopper':  'https://static.wikia.nocookie.net/onepiece/images/d/d1/Tony_Tony_Chopper_Anime_Post_Timeskip_Infobox.png',
-  'Robin':    'https://static.wikia.nocookie.net/onepiece/images/5/5c/Nico_Robin_Anime_Post_Timeskip_Infobox.png',
-  'Franky':   'https://static.wikia.nocookie.net/onepiece/images/c/ca/Franky_Anime_Post_Timeskip_Infobox.png',
-  'Brook':    'https://static.wikia.nocookie.net/onepiece/images/8/8e/Brook_Anime_Post_Timeskip_Infobox.png',
-  'Jinbe':    'https://static.wikia.nocookie.net/onepiece/images/a/a3/Jinbe_Anime_Post_Timeskip_Infobox.png',
-};
+import { getPowerColor, getPowerTextColor, nextCharacterImageFallback } from '../../utils/character-visuals';
 
 @Component({
   selector: 'app-characters',
   standalone: true,
-  imports: [CommonModule, OpEmojiComponent],
+  imports: [CommonModule, RouterModule, OpEmojiComponent],
   styles: [`
-    .modal-backdrop { animation: fadeIn 0.25s ease; }
-    .modal-panel    { animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
-    @keyframes fadeIn  { from{opacity:0} to{opacity:1} }
-    @keyframes slideUp { from{opacity:0;transform:translateY(40px) scale(0.97)} to{opacity:1;transform:translateY(0) scale(1)} }
     .img-loading { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
   `],
   template: `
@@ -44,14 +29,16 @@ const FALLBACK_IMAGES: Record<string, string> = {
 
         <!-- Filter / Search -->
         <div class="flex flex-wrap gap-4 justify-center mb-12 reveal delay-100">
-          <input 
-            type="text" 
-            placeholder="Buscar personaje (ej: Luffy, Kaido)..." 
+          <input
+            type="text"
+            placeholder="Buscar personaje (ej: Luffy, Kaido)..."
             class="bg-gray-900/80 border border-gray-700 rounded-full px-6 py-3 text-white w-full max-w-md focus:border-yellow-500 outline-none transition-colors shadow-2xl"
+            [value]="searchTerm()"
             (input)="onSearch($event)"
           >
-          <select 
+          <select
             class="bg-gray-900/80 border border-gray-700 rounded-full px-6 py-3 text-white outline-none focus:border-yellow-500 shadow-2xl cursor-pointer"
+            [value]="selectedFaction()"
             (change)="onFilter($event)"
           >
             <option value="All">Todas las facciones / Roles</option>
@@ -90,20 +77,20 @@ const FALLBACK_IMAGES: Record<string, string> = {
 
         <!-- Results count -->
         <div class="text-center mb-8 reveal">
-          <span class="text-gray-500 font-mono text-sm">Mostrando <strong class="text-yellow-400">{{ filteredCharacters.length }}</strong> de {{ allCharacters.length }} personajes</span>
+          <span class="text-gray-500 font-mono text-sm">Mostrando <strong class="text-yellow-400">{{ filteredCharacters().length }}</strong> de {{ characters().length }} personajes</span>
         </div>
 
         <!-- Characters Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          <div *ngFor="let char of filteredCharacters; let i = index" 
-               class="reveal-scale card-hover rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-b from-gray-900 to-slate-950 group cursor-pointer" 
-               [style.transitionDelay]="((i % 8) * 0.05) + 's'"
-               (click)="openModal(char)">
+          <a *ngFor="let char of filteredCharacters(); let i = index"
+             [routerLink]="['/characters', char.slug]"
+             class="block reveal-scale card-hover rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-b from-gray-900 to-slate-950 group cursor-pointer"
+             [style.transitionDelay]="((i % 8) * 0.05) + 's'">
             <!-- Character Image -->
             <div class="relative h-64 overflow-hidden bg-gradient-to-br img-loading" [ngClass]="char.color">
-              <img [src]="char.img" [alt]="char.name" 
-                   class="w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-110 group-hover:brightness-110" 
-                   (error)="handleError($event, char)">
+              <img [src]="char.img" [alt]="char.name"
+                   class="w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+                   (error)="handleImgError($event, char)">
               <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent"></div>
 
               <!-- Bounty badge -->
@@ -161,156 +148,77 @@ const FALLBACK_IMAGES: Record<string, string> = {
                 <span class="text-yellow-500 text-xs font-bold group-hover:text-yellow-300 transition-colors">→</span>
               </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- No Results -->
-        <div *ngIf="filteredCharacters.length === 0" class="text-center py-32 reveal animation-pulse">
+        <div *ngIf="filteredCharacters().length === 0" class="text-center py-32 reveal animation-pulse">
           <op-emoji symbol="🏜️" class="text-6xl mb-6 block"></op-emoji>
           <h3 class="text-3xl font-bold text-white mb-2">No se encontraron piratas</h3>
           <p class="text-gray-400">Prueba con otro nombre o cambia el filtro de facción.</p>
         </div>
       </div>
     </section>
-
-    <!-- ===== MODAL PERSONAJE ===== -->
-    <div *ngIf="activeChar"
-         class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm"
-         (click)="closeModal()">
-      <div class="modal-panel relative bg-gradient-to-b from-gray-900 to-slate-950 border border-yellow-700/30 rounded-2xl shadow-2xl w-full max-w-xl max-h-[90vh] overflow-y-auto"
-           (click)="$event.stopPropagation()">
-
-        <!-- Close btn -->
-        <button (click)="closeModal()" 
-                class="absolute top-4 right-4 z-20 text-gray-400 hover:text-white bg-gray-800/80 hover:bg-gray-700 rounded-full w-9 h-9 flex items-center justify-center text-xl transition-all hover:scale-110">
-          ✕
-        </button>
-
-        <!-- Character image banner -->
-        <div class="relative h-56 overflow-hidden rounded-t-2xl bg-gradient-to-br" [ngClass]="activeChar!.color">
-          <img [src]="activeChar!.img" [alt]="activeChar!.name" 
-               class="w-full h-full object-cover object-top opacity-80"
-               (error)="handleError($event, activeChar!)">
-          <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20 to-transparent"></div>
-          <div class="absolute bottom-4 left-6 right-12">
-            <p class="text-yellow-400 text-xs font-mono mb-1">{{ activeChar!.epithet }}</p>
-            <h2 class="text-3xl font-pirate font-bold text-white drop-shadow-lg">{{ activeChar!.name }}</h2>
-          </div>
-          <div class="absolute top-4 left-4">
-            <span class="bg-black/50 text-gray-300 text-xs font-mono px-3 py-1 rounded-full border border-gray-700">#{{ activeChar!.id }}</span>
-          </div>
-        </div>
-
-        <!-- Modal body -->
-        <div class="p-6 space-y-5">
-
-          <!-- Badges -->
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-blue-900/50 border border-blue-500/40 text-blue-300 text-xs px-3 py-1.5 rounded-full font-bold">{{ activeChar!.role }}</span>
-            <span class="bg-gray-800 border border-gray-600/40 text-gray-300 text-xs px-3 py-1.5 rounded-full font-bold">{{ activeChar!.crew }}</span>
-          </div>
-
-          <!-- Description -->
-          <p class="text-gray-300 leading-relaxed text-base">{{ activeChar!.description }}</p>
-
-          <!-- Stats Grid -->
-          <div class="grid grid-cols-2 gap-4">
-            <div class="bg-black/40 rounded-xl p-4 border border-white/5">
-              <p class="text-gray-500 text-xs font-mono mb-1">RECOMPENSA</p>
-              <p class="text-yellow-400 font-pirate font-bold text-lg">฿ {{ activeChar!.bounty }}</p>
-            </div>
-            <div class="bg-black/40 rounded-xl p-4 border border-white/5">
-              <p class="text-gray-500 text-xs font-mono mb-2">NIVEL DE PODER</p>
-              <div class="flex items-center gap-2">
-                <div class="flex-1 h-2 bg-gray-800 rounded-full overflow-hidden">
-                  <div class="h-full rounded-full" [ngClass]="getPowerColor(activeChar!.power_level)" [style.width.%]="activeChar!.power_level"></div>
-                </div>
-                <span class="font-bold text-sm" [ngClass]="getPowerTextColor(activeChar!.power_level)">{{ activeChar!.power_level }}</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Devil Fruit -->
-          <div *ngIf="activeChar!.devil_fruit !== 'Ninguna'" 
-               class="flex items-center gap-3 bg-gradient-to-r from-purple-900/40 to-transparent rounded-xl px-4 py-3 border-l-4 border-purple-500">
-            <op-emoji symbol="🍎" class="text-2xl"></op-emoji>
-            <div>
-              <p class="text-gray-500 text-xs font-mono">FRUTA DEL DIABLO</p>
-              <p class="text-purple-300 font-bold">{{ activeChar!.devil_fruit }}</p>
-            </div>
-          </div>
-
-          <!-- Haki -->
-          <div *ngIf="activeChar!.haki.length > 0"
-               class="flex items-start gap-3 bg-gradient-to-r from-red-900/40 to-transparent rounded-xl px-4 py-3 border-l-4 border-red-500">
-            <op-emoji symbol="⚡" class="text-2xl mt-1"></op-emoji>
-            <div>
-              <p class="text-gray-500 text-xs font-mono mb-2">TIPOS DE HAKI</p>
-              <div class="flex flex-wrap gap-2">
-                <span *ngFor="let h of activeChar!.haki" 
-                      class="text-xs text-red-300 bg-red-900/60 px-3 py-1 rounded-full font-bold border border-red-500/30">{{ h }}</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- No powers -->
-          <div *ngIf="activeChar!.devil_fruit === 'Ninguna' && activeChar!.haki.length === 0"
-               class="flex items-center gap-3 bg-gray-800/40 rounded-xl px-4 py-3 border border-gray-700/40">
-            <op-emoji symbol="💪" class="text-2xl"></op-emoji>
-            <p class="text-gray-400 text-sm">Combatiente sin poderes sobrenaturales — fuerza pura.</p>
-          </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="p-5 border-t border-gray-800 flex justify-end">
-          <button (click)="closeModal()"
-                  class="px-6 py-2.5 bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-500 text-black font-bold rounded-full transition-all hover:scale-105 text-sm">
-            Cerrar
-          </button>
-        </div>
-      </div>
-    </div>
   `
 })
-export class CharactersComponent implements OnInit {
-  allCharacters = CHARACTERS;
-  filteredCharacters = CHARACTERS;
-  activeChar: Character | null = null;
-  
-  searchTerm: string = '';
-  selectedFaction: string = 'All';
+export class CharactersComponent {
+  private characterService = inject(CharacterService);
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
 
-  ngOnInit() {
-    this.applyFilters();
-    setTimeout(() => {
-      this.triggerAnimations();
-    }, 100);
-  }
+  characters = toSignal(this.characterService.getAll(), { initialValue: [] });
 
-  onSearch(event: any) {
-    this.searchTerm = event.target.value.toLowerCase();
-    this.applyFilters();
-  }
+  private queryParams = toSignal(this.route.queryParamMap, {
+    initialValue: this.route.snapshot.queryParamMap
+  });
 
-  onFilter(event: any) {
-    this.selectedFaction = event.target.value;
-    this.applyFilters();
-  }
+  searchTerm = computed(() => (this.queryParams().get('search') || '').toLowerCase());
+  selectedFaction = computed(() => this.queryParams().get('faction') || 'All');
 
-  applyFilters() {
-    this.filteredCharacters = this.allCharacters.filter(char => {
-      const matchesSearch = char.name.toLowerCase().includes(this.searchTerm) || 
-                            char.epithet.toLowerCase().includes(this.searchTerm) ||
-                            char.description.toLowerCase().includes(this.searchTerm);
-      
-      const matchesFaction = this.selectedFaction === 'All' || 
-                             char.crew === this.selectedFaction || 
-                             char.role.includes(this.selectedFaction);
-      
+  filteredCharacters = computed(() => {
+    const term = this.searchTerm();
+    const faction = this.selectedFaction();
+
+    return this.characters().filter(char => {
+      const matchesSearch = char.name.toLowerCase().includes(term) ||
+                            char.epithet.toLowerCase().includes(term) ||
+                            char.description.toLowerCase().includes(term);
+
+      const matchesFaction = faction === 'All' ||
+                             char.crew === faction ||
+                             char.role.includes(faction);
+
       return matchesSearch && matchesFaction;
     });
+  });
 
-    setTimeout(() => this.triggerAnimations(), 50);
+  getPowerColor = getPowerColor;
+  getPowerTextColor = getPowerTextColor;
+
+  constructor() {
+    effect(() => {
+      this.filteredCharacters();
+      setTimeout(() => this.triggerAnimations(), 50);
+    });
+  }
+
+  onSearch(event: Event) {
+    const value = (event.target as HTMLInputElement).value;
+    this.updateQueryParams({ search: value || null });
+  }
+
+  onFilter(event: Event) {
+    const value = (event.target as HTMLSelectElement).value;
+    this.updateQueryParams({ faction: value !== 'All' ? value : null });
+  }
+
+  private updateQueryParams(params: Record<string, string | null>) {
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: params,
+      queryParamsHandling: 'merge',
+      replaceUrl: true
+    });
   }
 
   triggerAnimations() {
@@ -319,64 +227,9 @@ export class CharactersComponent implements OnInit {
     });
   }
 
-  openModal(char: Character) {
-    this.activeChar = char;
-    document.body.style.overflow = 'hidden';
-  }
-
-  closeModal() {
-    this.activeChar = null;
-    document.body.style.overflow = '';
-  }
-
-  handleError(event: any, char: Character) {
-    // Try static.wikia.nocookie.net (CDN mirror) first
-    const originalSrc = event.target.src as string;
-    
-    if (originalSrc.includes('onepiece.fandom.com')) {
-      // Extract filename and try the CDN mirror
-      const filename = originalSrc.split('/').pop() || '';
-      event.target.src = `https://static.wikia.nocookie.net/onepiece/images/thumb/${filename}/revision/latest/scale-to-width-down/300`;
-      return;
-    }
-
-    if (originalSrc.includes('static.wikia.nocookie.net')) {
-      // Try a known alternative: via.placeholder styled
-      event.target.src = this.getPlaceholder(char.name, char.color);
-      return;
-    }
-  }
-
-  private getPlaceholder(name: string, color: string): string {
-    // Generate a styled placeholder
-    const bgColors: Record<string, string> = {
-      'from-red': 'C0392B', 'from-green': '27AE60', 'from-blue': '2980B9',
-      'from-yellow': 'F39C12', 'from-purple': '8E44AD', 'from-orange': 'E67E22',
-      'from-pink': 'E91E63', 'from-teal': '00BCD4', 'from-indigo': '3F51B5',
-      'from-gray': '607D8B', 'from-amber': 'FF8F00', 'from-cyan': '00ACC1',
-      'from-violet': '7C3AED', 'from-fuchsia': 'D81B60', 'from-rose': 'E53935',
-      'from-emerald': '2E7D32', 'from-lime': '827717', 'from-sky': '0288D1',
-    };
-    
-    let bg = '1a1a2e';
-    for (const [key, val] of Object.entries(bgColors)) {
-      if (color.includes(key)) { bg = val; break; }
-    }
-    
-    return `https://via.placeholder.com/400x600/${bg}/F39C12?text=${encodeURIComponent(name.split(' ')[0])}`;
-  }
-
-  getPowerColor(n: number): string {
-    if (n >= 95) return 'bg-gradient-to-r from-red-600 to-orange-500';
-    if (n >= 85) return 'bg-gradient-to-r from-orange-500 to-yellow-500';
-    if (n >= 75) return 'bg-gradient-to-r from-yellow-500 to-green-500';
-    return 'bg-gradient-to-r from-blue-500 to-cyan-500';
-  }
-
-  getPowerTextColor(n: number): string {
-    if (n >= 95) return 'text-red-500';
-    if (n >= 85) return 'text-orange-400';
-    if (n >= 75) return 'text-yellow-400';
-    return 'text-blue-400';
+  handleImgError(event: Event, char: Character) {
+    const img = event.target as HTMLImageElement;
+    const next = nextCharacterImageFallback(img.src, char);
+    if (next) img.src = next;
   }
 }

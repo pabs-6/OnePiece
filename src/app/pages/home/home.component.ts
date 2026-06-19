@@ -4,11 +4,12 @@ import { RouterModule } from '@angular/router';
 import { NEWS } from '../../data/news';
 import { CHAPTERS } from '../../data/chapters';
 import { OpEmojiComponent } from '../../components/op-emoji/op-emoji.component';
+import { NewsArticleComponent } from '../../components/news-article/news-article.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterModule, OpEmojiComponent],
+  imports: [CommonModule, RouterModule, OpEmojiComponent, NewsArticleComponent],
   templateUrl: './home.component.html',
   styles: [`
     .modal-backdrop {
