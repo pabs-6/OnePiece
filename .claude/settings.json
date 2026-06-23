@@ -53,7 +53,29 @@
       "Bash(grep -oE \"\\\\\\([0-9]+\\\\\\)$\" /tmp/image-audit.log)",
       "Bash(grep -oE \"\\\\\\([0-9A-Z:]+\\\\\\)$\" /tmp/image-audit.log)",
       "Bash(curl -s -m 10 -A 'Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36' 'https://onepiece.fandom.com/api.php?action=query&titles=File:Kaido_Anime_Infobox.png|File:Monkey_D._Luffy_Anime_Post_Timeskip_Infobox.png&prop=imageinfo&iiprop=url&format=json' -w '\\\\nHTTP_STATUS:%{http_code}\\\\n')",
-      "Bash(node audit-images-api.cjs)"
+      "Bash(node audit-images-api.cjs)",
+      "Bash(chromium-cli --help)",
+      "Bash(npx --no-install playwright --version)",
+      "Bash(npm ls *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:4200/world)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:4200/world/journey)",
+      "Bash(node .tmp-verify-world.mjs)",
+      "Bash(NODE_PATH=\"C:\\\\Users\\\\Ismael\\\\AppData\\\\Local\\\\npm-cache\\\\_npx\\\\e41f203b7505f1fb\\\\node_modules\" node --experimental-loader=data:text/javascript, .tmp-verify-world.mjs)",
+      "Bash(NODE_PATH=\"C:\\\\Users\\\\Ismael\\\\AppData\\\\Local\\\\npm-cache\\\\_npx\\\\e41f203b7505f1fb\\\\node_modules\" node .tmp-verify-world.mjs)",
+      "Bash(ls \"C:\\\\Users\\\\Ismael\\\\AppData\\\\Local\\\\npm-cache\\\\_npx\\\\e41f203b7505f1fb\\\\node_modules\\\\playwright\\\\\" 2>&1)",
+      "Read(//c/Users/Ismael/AppData/Local/npm-cache/_npx/e41f203b7505f1fb/node_modules/**)",
+      "Bash(node .tmp-check-island-images.cjs)",
+      "Bash(node .tmp-verify-journey.mjs)",
+      "Bash(cd \"c:\\\\Users\\\\Ismael\\\\Projects\\\\Personal\\\\OnePieceProject\\\\OnePiece\" && rm -f .tmp-verify-journey.mjs .tmp-journey-*.png && git status --short)",
+      "Bash(find public *)",
+      "Bash(find src/assets -type f)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:4200/img/journey/goingMerry.png)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:4200/img/journey/thousandSunny.png)",
+      "Bash(node .tmp-verify-ship.mjs)",
+      "Bash(node .tmp-verify-dot.mjs)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\Ismael\\Projects\\Personal\\OnePieceProject\\OnePiece"
     ]
   }
 }
