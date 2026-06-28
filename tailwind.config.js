@@ -8,7 +8,7 @@ module.exports = {
       colors: {
         'op-red': '#C0392B',
         'op-gold': '#F39C12',
-        'op-dark': '#0A0A0F',
+        'op-dark': '#0D1319',
         'op-darker': '#050508',
         'op-navy': '#0D1B2A',
         'op-blue': '#1A3A5C',

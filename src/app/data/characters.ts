@@ -8,6 +8,9 @@ export interface Character {
   devil_fruit: string;
   crew: string;
   img: string;
+  /** Icono recortado de la cara, pensado para usos pequeños (p.ej. el bocadillo de la ruta).
+   *  Si no se define, se usa `img` como alternativa. */
+  face?: string;
   color: string;
   border: string;
   description: string;
