@@ -37,16 +37,16 @@ export const JOURNEY_LOCATIONS: JourneyLocation[] = [
   { id: 'orange-town', slug: 'orange-town', name: 'Orange Town', sea: 'East Blue', arcId: 'east-blue', order: 3, major: false, oceanTheme: 'east-blue', image: '/img/journey/orangeTown.png', crewIds: [1, 2, 3] },
   { id: 'syrup-village', slug: 'syrup-village', name: 'Syrup Village', sea: 'East Blue', arcId: 'east-blue', order: 4, major: true, oceanTheme: 'east-blue', image: '/img/journey/syrupVillage.png', crewIds: [1, 2, 3, 4] },
   { id: 'baratie', slug: 'baratie', name: 'Baratie', sea: 'East Blue', arcId: 'east-blue', order: 5, major: true, oceanTheme: 'east-blue', image: '/img/journey/baratie.png', crewIds: [1, 2, 3, 4, 5] },
-  { id: 'arlong-park', slug: 'arlong-park', name: 'Arlong Park', sea: 'East Blue', arcId: 'east-blue', order: 6, major: true, oceanTheme: 'east-blue', crewIds: [1, 2, 3, 4, 5] },
-  { id: 'loguetown', slug: 'loguetown', name: 'Loguetown', sea: 'East Blue', arcId: 'east-blue', order: 7, major: true, oceanTheme: 'east-blue', crewIds: [1, 2, 3, 4, 5] },
+  { id: 'arlong-park', slug: 'arlong-park', name: 'Arlong Park', sea: 'East Blue', arcId: 'east-blue', order: 6, major: true, oceanTheme: 'east-blue', image: '/img/journey/arlongPark.png', crewIds: [1, 2, 3, 4, 5] },
+  { id: 'loguetown', slug: 'loguetown', name: 'Loguetown', sea: 'East Blue', arcId: 'east-blue', order: 7, major: true, oceanTheme: 'east-blue', image: '/img/journey/logueTown.png', crewIds: [1, 2, 3, 4, 5] },
 
   // ===== ENTRADA AL GRAND LINE =====
-  { id: 'reverse-mountain', slug: 'reverse-mountain', name: 'Reverse Mountain', sea: 'Grand Line - Paradise', arcId: 'alabasta', order: 8, major: false, oceanTheme: 'grand-line', crewIds: [1, 2, 3, 4, 5] },
-  { id: 'twin-cape', slug: 'twin-cape', name: 'Twin Cape (Laboon)', sea: 'Grand Line - Paradise', arcId: 'alabasta', order: 9, major: true, oceanTheme: 'grand-line', crewIds: [1, 2, 3, 4, 5] },
+  { id: 'reverse-mountain', slug: 'reverse-mountain', name: 'Reverse Mountain', sea: 'Grand Line - Paradise', arcId: 'alabasta', order: 8, major: false, oceanTheme: 'grand-line', image: '/img/journey/reverseMountain.png', crewIds: [1, 2, 3, 4, 5] },
+  { id: 'twin-cape', slug: 'twin-cape', name: 'Twin Cape (Laboon)', sea: 'Grand Line - Paradise', arcId: 'alabasta', order: 9, major: true, oceanTheme: 'grand-line', image: '/img/journey/cabosGemelos.png', crewIds: [1, 2, 3, 4, 5] },
 
   // ===== ALABASTA ===== (6 Chopper se une en Drum Island, 7 Robin al final de Alabasta)
-  { id: 'whiskey-peak', slug: 'whiskey-peak', name: 'Whiskey Peak', sea: 'Grand Line - Paradise', arcId: 'alabasta', order: 10, major: false, oceanTheme: 'grand-line', crewIds: [1, 2, 3, 4, 5] },
-  { id: 'little-garden', slug: 'little-garden', name: 'Little Garden', sea: 'Grand Line - Paradise', arcId: 'alabasta', order: 11, major: false, oceanTheme: 'grand-line', crewIds: [1, 2, 3, 4, 5] },
+  { id: 'whiskey-peak', slug: 'whiskey-peak', name: 'Whiskey Peak', sea: 'Grand Line - Paradise', arcId: 'alabasta', order: 10, major: false, oceanTheme: 'grand-line', image: '/img/journey/whiskeyPeak.png', crewIds: [1, 2, 3, 4, 5] },
+  { id: 'little-garden', slug: 'little-garden', name: 'Little Garden', sea: 'Grand Line - Paradise', arcId: 'alabasta', order: 11, major: false, oceanTheme: 'grand-line', image: '/img/journey/littleGarden.png', crewIds: [1, 2, 3, 4, 5] },
   { id: 'drum-island', slug: 'drum-island', name: 'Drum Island', sea: 'Grand Line - Paradise', arcId: 'alabasta', order: 12, major: true, oceanTheme: 'grand-line', crewIds: [1, 2, 3, 4, 5, 6] },
   { id: 'alabasta', slug: 'alabasta', name: 'Alabasta', sea: 'Grand Line - Paradise', arcId: 'alabasta', order: 13, major: true, oceanTheme: 'grand-line', image: w('Arabasta_Kingdom_Infobox.png'), crewIds: [1, 2, 3, 4, 5, 6, 7] },
 
