@@ -62,9 +62,9 @@ export class NavbarComponent {
   links = [
     { label: 'Inicio', path: '/', icon: '🏠' },
     { label: 'Personajes (+100)', path: '/characters', icon: '👤' },
-    { label: 'Tripulaciones', path: '/factions', icon: '🏴‍☠️' },
+    { label: 'Facciones', path: '/factions', icon: '🏴‍☠️' },
     { label: 'Frutas del Diablo', path: '/fruits', icon: '🍎' },
-    { label: 'Teorías', path: '/theories', icon: '🔮' },
+    { label: 'Mundo', path: '/world', icon: '🌍' },
   ];
 
   @HostListener('window:scroll', [])

@@ -7,5 +7,6 @@ export const routes: Routes = [
   { path: 'factions', loadComponent: () => import('./pages/factions/factions.component').then(m => m.FactionsComponent) },
   { path: 'fruits', loadComponent: () => import('./pages/fruits/fruits.component').then(m => m.FruitsComponent) },
   { path: 'theories', loadComponent: () => import('./pages/theories/theories.component').then(m => m.TheoriesComponent) },
+  { path: 'world', loadChildren: () => import('./pages/world/world.routes').then(m => m.WORLD_ROUTES) },
   { path: '**', redirectTo: '' }
 ];
