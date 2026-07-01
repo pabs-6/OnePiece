@@ -47,11 +47,11 @@ export const JOURNEY_LOCATIONS: JourneyLocation[] = [
   // ===== ALABASTA ===== (6 Chopper se une en Drum Island, 7 Robin al final de Alabasta)
   { id: 'whiskey-peak', slug: 'whiskey-peak', name: 'Whiskey Peak', sea: 'Grand Line - Paradise', arcId: 'alabasta', order: 10, major: false, oceanTheme: 'grand-line', image: '/img/journey/whiskeyPeak.png', crewIds: [1, 2, 3, 4, 5] },
   { id: 'little-garden', slug: 'little-garden', name: 'Little Garden', sea: 'Grand Line - Paradise', arcId: 'alabasta', order: 11, major: false, oceanTheme: 'grand-line', image: '/img/journey/littleGarden.png', crewIds: [1, 2, 3, 4, 5] },
-  { id: 'drum-island', slug: 'drum-island', name: 'Drum Island', sea: 'Grand Line - Paradise', arcId: 'alabasta', order: 12, major: true, oceanTheme: 'grand-line', crewIds: [1, 2, 3, 4, 5, 6] },
-  { id: 'alabasta', slug: 'alabasta', name: 'Alabasta', sea: 'Grand Line - Paradise', arcId: 'alabasta', order: 13, major: true, oceanTheme: 'grand-line', image: w('Arabasta_Kingdom_Infobox.png'), crewIds: [1, 2, 3, 4, 5, 6, 7] },
+  { id: 'drum-island', slug: 'drum-island', name: 'Drum Island', sea: 'Grand Line - Paradise', arcId: 'alabasta', order: 12, major: true, oceanTheme: 'grand-line', image: '/img/journey/drum.png', crewIds: [1, 2, 3, 4, 5, 6] },
+  { id: 'alabasta', slug: 'alabasta', name: 'Alabasta', sea: 'Grand Line - Paradise', arcId: 'alabasta', order: 13, major: true, oceanTheme: 'grand-line', image: '/img/journey/alabasta.png', crewIds: [1, 2, 3, 4, 5, 6, 7] },
 
   // ===== SKYPIEA =====
-  { id: 'jaya', slug: 'jaya', name: 'Jaya', sea: 'Grand Line - Paradise', arcId: 'skypiea', order: 14, major: true, oceanTheme: 'grand-line', crewIds: [1, 2, 3, 4, 5, 6, 7] },
+  { id: 'jaya', slug: 'jaya', name: 'Jaya', sea: 'Grand Line - Paradise', arcId: 'skypiea', order: 14, major: true, oceanTheme: 'grand-line', image: '/img/journey/jaya.png', crewIds: [1, 2, 3, 4, 5, 6, 7] },
   { id: 'skypiea', slug: 'skypiea', name: 'Skypiea', sea: 'Grand Line - Paradise', arcId: 'skypiea', order: 15, major: true, oceanTheme: 'skypiea', image: w('Skypiea_Infobox.png'), crewIds: [1, 2, 3, 4, 5, 6, 7] },
 
   // ===== WATER SEVEN ===== (Usopp deja temporalmente la tripulación durante Enies Lobby)

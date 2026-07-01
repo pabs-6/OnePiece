@@ -31,9 +31,16 @@ const SHIP_CHANGE_AFTER_STOP_ID = 'enies-lobby';
 
 // El East Blue tiene un mar más claro y turquesa; a partir de Reverse Mountain (entrada al Grand Line)
 // el fondo vuelve al degradado oscuro habitual.
-const EAST_BLUE_WATER_COLOR = '#45CFE7';
-const EAST_BLUE_END_STOP_ID = 'reverse-mountain';
-const DEFAULT_BACKGROUND = 'linear-gradient(180deg, #04263d 0%, #0a4d7a 45%, #136a9e 100%)';
+// Degradado estático que cubre toda la pista de scroll (33 paradas, ~65 vh cada una).
+// Los color-stops se calculan proporcionales: East Blue (paradas 1–8 ≈ 0–22%),
+// transición hacia Grand Line Paradise (22–27%), Grand Line Paradise sólido (27–58%),
+// transición hacia Nuevo Mundo (58–63%), Nuevo Mundo hasta el final (63–100%).
+// Al hacer scroll el viewport actúa de ventana: en los límites de zona se ven los dos colores a la vez.
+const SEA_GRADIENT =
+  'linear-gradient(to bottom,' +
+  '#45CFE7 0%, #45CFE7 22%,' +    // East Blue
+  '#3090CA 27%, #3090CA 58%,' +   // Grand Line Paradise
+  '#04263d 63%, #010c1a 100%)';   // Nuevo Mundo
 
 const CHARACTERS_BY_ID = new Map(CHARACTERS.map(c => [c.id, c]));
 
@@ -41,6 +48,15 @@ const CHARACTERS_BY_ID = new Map(CHARACTERS.map(c => [c.id, c]));
   selector: 'app-journey',
   standalone: true,
   imports: [CommonModule, RouterModule, OpEmojiComponent],
+  styles: [`
+    @keyframes wave-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .wave-1 { animation: wave-scroll 20s linear infinite; }
+    .wave-2 { animation: wave-scroll 13s linear infinite reverse; }
+    .wave-3 { animation: wave-scroll 8s  linear infinite; }
+  `],
   template: `
     <section class="relative min-h-screen bg-op-dark">
 
@@ -55,7 +71,31 @@ const CHARACTERS_BY_ID = new Map(CHARACTERS.map(c => [c.id, c]));
       </div>
 
       <!-- Mar: a partir de aquí (donde empieza la línea discontinua) el fondo varía según la región -->
-      <div class="relative transition-[background] duration-1000 ease-in-out" [style.background]="sectionBackground()">
+      <div class="relative" [style.background]="seaGradient">
+
+        <!-- Oleaje: sticky + height:100vh + margin-bottom:-100vh = sin impacto en layout,
+             siempre visible en viewport mientras se hace scroll por la sección de mar -->
+        <div style="position:sticky; top:0; height:100vh; margin-bottom:-100vh; pointer-events:none; z-index:2; overflow:hidden;">
+          <!-- Capa 1: más lenta, olas grandes -->
+          <div class="wave-1" style="position:absolute; bottom:0; left:0; width:200%; height:80px; opacity:0.08;">
+            <svg viewBox="0 0 2880 80" preserveAspectRatio="none" style="width:100%; height:100%;">
+              <path d="M0,40 C90,0 270,0 360,40 C450,80 630,80 720,40 C810,0 990,0 1080,40 C1170,80 1350,80 1440,40 C1530,0 1710,0 1800,40 C1890,80 2070,80 2160,40 C2250,0 2430,0 2520,40 C2610,80 2790,80 2880,40 L2880,80 L0,80 Z" fill="white"/>
+            </svg>
+          </div>
+          <!-- Capa 2: velocidad media, fase inversa (va en sentido contrario) -->
+          <div class="wave-2" style="position:absolute; bottom:0; left:0; width:200%; height:55px; opacity:0.10;">
+            <svg viewBox="0 0 2880 55" preserveAspectRatio="none" style="width:100%; height:100%;">
+              <path d="M0,27 C90,55 270,55 360,27 C450,0 630,0 720,27 C810,55 990,55 1080,27 C1170,0 1350,0 1440,27 C1530,55 1710,55 1800,27 C1890,0 2070,0 2160,27 C2250,55 2430,55 2520,27 C2610,0 2790,0 2880,27 L2880,55 L0,55 Z" fill="white"/>
+            </svg>
+          </div>
+          <!-- Capa 3: más rápida, olas cortas -->
+          <div class="wave-3" style="position:absolute; bottom:0; left:0; width:200%; height:35px; opacity:0.06;">
+            <svg viewBox="0 0 2880 35" preserveAspectRatio="none" style="width:100%; height:100%;">
+              <path d="M0,17 C60,0 180,0 240,17 C300,35 420,35 480,17 C540,0 660,0 720,17 C780,35 900,35 960,17 C1020,0 1140,0 1200,17 C1260,35 1380,35 1440,17 C1500,0 1620,0 1680,17 C1740,35 1860,35 1920,17 C1980,0 2100,0 2160,17 C2220,35 2340,35 2400,17 C2460,0 2580,0 2640,17 C2700,35 2820,35 2880,17 L2880,35 L0,35 Z" fill="white"/>
+            </svg>
+          </div>
+        </div>
+
         <div class="relative max-w-7xl mx-auto px-4 pb-40">
 
         <!-- Línea discontinua central -->
@@ -129,6 +169,8 @@ export class JourneyComponent implements OnDestroy {
   private journeyService = inject(JourneyService);
   private arcService = inject(ArcService);
 
+  readonly seaGradient = SEA_GRADIENT;
+
   stops = signal<JourneyStop[]>([]);
   activeId = signal<string | null>(null);
   failedIds = signal<Set<string>>(new Set());
@@ -142,13 +184,6 @@ export class JourneyComponent implements OnDestroy {
     return active.order <= changeoverStop.order ? GOING_MERRY : THOUSAND_SUNNY;
   });
 
-  sectionBackground = computed(() => {
-    const all = this.stops();
-    const active = all.find(s => s.id === this.activeId());
-    const eastBlueEndStop = all.find(s => s.id === EAST_BLUE_END_STOP_ID);
-    if (!active || !eastBlueEndStop) return DEFAULT_BACKGROUND;
-    return active.order <= eastBlueEndStop.order ? EAST_BLUE_WATER_COLOR : DEFAULT_BACKGROUND;
-  });
 
   // Las paradas alternan el lado en el que muestran su imagen (par => izquierda, impar => derecha);
   // el bocadillo se coloca siempre en el lado contrario para no solaparse con ella.
