@@ -61,10 +61,13 @@ export class NavbarComponent {
   menuOpen = false;
   links = [
     { label: 'Inicio', path: '/', icon: '🏠' },
-    { label: 'Personajes (+100)', path: '/characters', icon: '👤' },
+    { label: 'Personajes', path: '/characters', icon: '👤' },
     { label: 'Facciones', path: '/factions', icon: '🏴‍☠️' },
-    { label: 'Frutas del Diablo', path: '/fruits', icon: '🍎' },
+    { label: 'Frutas', path: '/fruits', icon: '🍎' },
     { label: 'Mundo', path: '/world', icon: '🌍' },
+    { label: 'Wanted', path: '/wanted', icon: '🎫' },
+    { label: 'Versus', path: '/versus', icon: '⚔️' },
+    { label: 'Haki/Espadas', path: '/haki-meito', icon: '⚡' },
   ];
 
   @HostListener('window:scroll', [])
