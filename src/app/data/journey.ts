@@ -17,6 +17,8 @@ export interface JourneyLocation {
    *  o la separación del grupo en Amazon Lily/Impel Down/Marineford/Rusukaina. */
   crewIds: number[];
   image?: string;
+  /** Imagen alternativa que sustituye a `image` con un fade al hacer hover (p.ej. Long Ring Long Land). */
+  hoverImage?: string;
   description?: string;
 }
 
@@ -52,39 +54,39 @@ export const JOURNEY_LOCATIONS: JourneyLocation[] = [
 
   // ===== SKYPIEA =====
   { id: 'jaya', slug: 'jaya', name: 'Jaya', sea: 'Grand Line - Paradise', arcId: 'skypiea', order: 14, major: true, oceanTheme: 'grand-line', image: '/img/journey/jaya.png', crewIds: [1, 2, 3, 4, 5, 6, 7] },
-  { id: 'skypiea', slug: 'skypiea', name: 'Skypiea', sea: 'Grand Line - Paradise', arcId: 'skypiea', order: 15, major: true, oceanTheme: 'skypiea', image: w('Skypiea_Infobox.png'), crewIds: [1, 2, 3, 4, 5, 6, 7] },
+  { id: 'skypiea', slug: 'skypiea', name: 'Skypiea', sea: 'Grand Line - Paradise', arcId: 'skypiea', order: 15, major: true, oceanTheme: 'skypiea', image: '/img/journey/skypiea.png', crewIds: [1, 2, 3, 4, 5, 6, 7] },
 
   // ===== WATER SEVEN ===== (Usopp deja temporalmente la tripulación durante Enies Lobby)
-  { id: 'long-ring-long-land', slug: 'long-ring-long-land', name: 'Long Ring Long Land', sea: 'Grand Line - Paradise', arcId: 'water-seven-enies-lobby', order: 16, major: false, oceanTheme: 'grand-line', crewIds: [1, 2, 3, 4, 5, 6, 7] },
-  { id: 'water-seven', slug: 'water-seven', name: 'Water Seven', sea: 'Grand Line - Paradise', arcId: 'water-seven-enies-lobby', order: 17, major: true, oceanTheme: 'grand-line', image: w('Water_7_Infobox.png'), crewIds: [1, 2, 3, 4, 5, 6, 7] },
-  { id: 'enies-lobby', slug: 'enies-lobby', name: 'Enies Lobby', sea: 'Grand Line - Paradise', arcId: 'water-seven-enies-lobby', order: 18, major: true, oceanTheme: 'grand-line', crewIds: [1, 2, 3, 5, 6, 7] },
+  { id: 'long-ring-long-land', slug: 'long-ring-long-land', name: 'Long Ring Long Land', sea: 'Grand Line - Paradise', arcId: 'water-seven-enies-lobby', order: 16, major: false, oceanTheme: 'grand-line', image: '/img/journey/longRingLongLand1.png', hoverImage: '/img/journey/longRingLongLand2.png', crewIds: [1, 2, 3, 4, 5, 6, 7] },
+  { id: 'water-seven', slug: 'water-seven', name: 'Water Seven', sea: 'Grand Line - Paradise', arcId: 'water-seven-enies-lobby', order: 17, major: true, oceanTheme: 'grand-line', image: '/img/journey/w7.png', crewIds: [1, 2, 3, 4, 5, 6, 7] },
+  { id: 'enies-lobby', slug: 'enies-lobby', name: 'Enies Lobby', sea: 'Grand Line - Paradise', arcId: 'water-seven-enies-lobby', order: 18, major: true, oceanTheme: 'grand-line', image: '/img/journey/eniesLobby.png', crewIds: [1, 2, 3, 5, 6, 7] },
 
   // ===== THRILLER BARK (representa también el Florian Triangle) ===== Usopp regresa; 8 Franky y 9 Brook se unen
-  { id: 'thriller-bark', slug: 'thriller-bark', name: 'Thriller Bark', sea: 'Grand Line - Paradise', arcId: 'thriller-bark', order: 19, major: true, oceanTheme: 'florian-triangle', image: w('Thriller_Bark_Infobox.png'), crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9] },
+  { id: 'thriller-bark', slug: 'thriller-bark', name: 'Thriller Bark', sea: 'Grand Line - Paradise', arcId: 'thriller-bark', order: 19, major: true, oceanTheme: 'florian-triangle', image: '/img/journey/thrillerBark.png', crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9] },
 
   // ===== SUMMIT WAR ===== (la tripulación se separa: solo Luffy llega hasta Marineford)
-  { id: 'sabaody-archipelago', slug: 'sabaody-archipelago', name: 'Sabaody Archipelago', sea: 'Grand Line - Paradise', arcId: 'marineford', order: 20, major: true, oceanTheme: 'grand-line', crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9] },
-  { id: 'amazon-lily', slug: 'amazon-lily', name: 'Amazon Lily', sea: 'Grand Line - Paradise', arcId: 'marineford', order: 21, major: true, oceanTheme: 'grand-line', crewIds: [1] },
-  { id: 'impel-down', slug: 'impel-down', name: 'Impel Down', sea: 'Grand Line - Paradise', arcId: 'marineford', order: 22, major: true, oceanTheme: 'grand-line', crewIds: [1] },
-  { id: 'marineford', slug: 'marineford', name: 'Marineford', sea: 'Grand Line - Paradise', arcId: 'marineford', order: 23, major: true, oceanTheme: 'grand-line', image: w('Marine_Headquarters_Infobox.png'), crewIds: [1] },
-  { id: 'rusukaina', slug: 'rusukaina', name: 'Rusukaina', sea: 'Grand Line - Paradise', arcId: 'marineford', order: 24, major: false, oceanTheme: 'grand-line', crewIds: [1] },
+  { id: 'sabaody-archipelago', slug: 'sabaody-archipelago', name: 'Sabaody Archipelago', sea: 'Grand Line - Paradise', arcId: 'marineford', order: 20, major: true, oceanTheme: 'grand-line', image: '/img/journey/sabaody.png', crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9] },
+  { id: 'amazon-lily', slug: 'amazon-lily', name: 'Amazon Lily', sea: 'Grand Line - Paradise', arcId: 'marineford', order: 21, major: true, oceanTheme: 'grand-line', image: '/img/journey/amazonLily.png', crewIds: [1] },
+  { id: 'impel-down', slug: 'impel-down', name: 'Impel Down', sea: 'Grand Line - Paradise', arcId: 'marineford', order: 22, major: true, oceanTheme: 'grand-line', image: '/img/journey/impelDown.png', crewIds: [1] },
+  { id: 'marineford', slug: 'marineford', name: 'Marineford', sea: 'Grand Line - Paradise', arcId: 'marineford', order: 23, major: true, oceanTheme: 'grand-line', image: '/img/journey/marineford.png', crewIds: [1] },
+  { id: 'rusukaina', slug: 'rusukaina', name: 'Rusukaina', sea: 'Grand Line - Paradise', arcId: 'marineford', order: 24, major: false, oceanTheme: 'grand-line', image: '/img/journey/rusukaina.png', crewIds: [1] },
 
   // ===== REUNIÓN ===== (la tripulación completa se reagrupa)
-  { id: 'sabaody-archipelago-reunion', slug: 'sabaody-archipelago-reunion', name: 'Sabaody Archipelago (Reencuentro)', sea: 'Grand Line - Paradise', arcId: 'fishman-island', order: 25, major: true, oceanTheme: 'grand-line', crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9] },
+  { id: 'sabaody-archipelago-reunion', slug: 'sabaody-archipelago-reunion', name: 'Sabaody Archipelago (Reencuentro)', sea: 'Grand Line - Paradise', arcId: 'fishman-island', order: 25, major: true, oceanTheme: 'grand-line', image: '/img/journey/sabaody.png', crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9] },
 
-  // ===== NUEVO MUNDO ===== (10 Jinbe se incorpora desde Fish-Man Island)
-  { id: 'fishman-island', slug: 'fishman-island', name: 'Fish-Man Island', sea: 'Grand Line - New World', arcId: 'fishman-island', order: 26, major: true, oceanTheme: 'underwater', image: w('Fish-Man_Island_Infobox.png'), crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
-  { id: 'punk-hazard', slug: 'punk-hazard', name: 'Punk Hazard', sea: 'Grand Line - New World', arcId: 'dressrosa', order: 27, major: false, oceanTheme: 'new-world', crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
-  { id: 'dressrosa', slug: 'dressrosa', name: 'Dressrosa', sea: 'Grand Line - New World', arcId: 'dressrosa', order: 28, major: true, oceanTheme: 'new-world', image: w('Dressrosa_Infobox.png'), crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
-  { id: 'zou', slug: 'zou', name: 'Zou', sea: 'Grand Line - New World', arcId: 'whole-cake-island', order: 29, major: true, oceanTheme: 'new-world', crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
+  // ===== NUEVO MUNDO =====
+  { id: 'fishman-island', slug: 'fishman-island', name: 'Fish-Man Island', sea: 'Grand Line - New World', arcId: 'fishman-island', order: 26, major: true, oceanTheme: 'underwater', image: '/img/journey/fishMan.png', crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9] },
+  { id: 'punk-hazard', slug: 'punk-hazard', name: 'Punk Hazard', sea: 'Grand Line - New World', arcId: 'dressrosa', order: 27, major: false, oceanTheme: 'new-world', image: '/img/journey/punkHazard.png', crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9] },
+  { id: 'dressrosa', slug: 'dressrosa', name: 'Dressrosa', sea: 'Grand Line - New World', arcId: 'dressrosa', order: 28, major: true, oceanTheme: 'new-world', image: '/img/journey/dressrosa.png', crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9] },
+  { id: 'zou', slug: 'zou', name: 'Zou', sea: 'Grand Line - New World', arcId: 'whole-cake-island', order: 29, major: true, oceanTheme: 'new-world', image: '/img/journey/zuneshaZou.png', crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9] },
 
   // ===== WHOLE CAKE =====
-  { id: 'whole-cake-island', slug: 'whole-cake-island', name: 'Whole Cake Island', sea: 'Grand Line - New World', arcId: 'whole-cake-island', order: 30, major: true, oceanTheme: 'new-world', image: w('Whole_Cake_Island_Infobox.png'), crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
+  { id: 'whole-cake-island', slug: 'whole-cake-island', name: 'Whole Cake Island', sea: 'Grand Line - New World', arcId: 'whole-cake-island', order: 30, major: true, oceanTheme: 'new-world', image: '/img/journey/wholeCakeIsland.png', crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9] },
 
-  // ===== WANO =====
-  { id: 'wano-country', slug: 'wano-country', name: 'Wano Country', sea: 'Grand Line - New World', arcId: 'wano-kuni', order: 31, major: true, oceanTheme: 'new-world', image: w('Wano_Country_Infobox.png'), crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
+  // ===== WANO ===== (10 Jinbe se incorpora)
+  { id: 'wano-country', slug: 'wano-country', name: 'Wano Country', sea: 'Grand Line - New World', arcId: 'wano-kuni', order: 31, major: true, oceanTheme: 'new-world', image: '/img/journey/wano.png', crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
 
   // ===== FINAL SAGA =====
-  { id: 'egghead', slug: 'egghead', name: 'Egghead', sea: 'Grand Line - New World', arcId: 'egghead', order: 32, major: true, oceanTheme: 'new-world', image: w('Egghead_Infobox.png'), crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
-  { id: 'elbaf', slug: 'elbaf', name: 'Elbaf', sea: 'Grand Line - New World', arcId: 'elbaf', order: 33, major: true, oceanTheme: 'new-world', crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
+  { id: 'egghead', slug: 'egghead', name: 'Egghead', sea: 'Grand Line - New World', arcId: 'egghead', order: 32, major: true, oceanTheme: 'new-world', image: '/img/journey/egghead.png', crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
+  { id: 'elbaf', slug: 'elbaf', name: 'Elbaf', sea: 'Grand Line - New World', arcId: 'elbaf', order: 33, major: true, oceanTheme: 'new-world', image: '/img/journey/elbaf.png', crewIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
 ];

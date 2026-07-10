@@ -25,61 +25,61 @@ export const CHARACTERS: Character[] = [
   {
     id: 1, name: 'Monkey D. Luffy', slug: 'monkey-d-luffy', role: 'Capitán | Yonko', epithet: '"Sombrero de Paja"',
     bounty: '3,000,000,000', devil_fruit: 'Hito Hito no Mi: Modelo Nika', crew: 'Piratas del Sombrero de Paja',
-    img: w('Monkey_D._Luffy_Anime_Post_Timeskip_Infobox.png'), color: 'from-red-600 to-red-900', border: 'border-red-500',
+    img: w('Monkey_D._Luffy_Anime_Post_Timeskip_Infobox.png'), face: '/img/journey/luffy.png', color: 'from-red-600 to-red-900', border: 'border-red-500',
     description: 'El protagonista que sueña con ser el Rey de los Piratas.', power_level: 95, haki: ['Haoshoku', 'Kenbunshoku', 'Busoshoku']
   },
   {
     id: 2, name: 'Roronoa Zoro', slug: 'roronoa-zoro', role: 'Espadachín | Vice-Capitán', epithet: '"El Cazador de Piratas"',
     bounty: '1,111,000,000', devil_fruit: 'Ninguna', crew: 'Piratas del Sombrero de Paja',
-    img: w('Roronoa_Zoro_Anime_Post_Timeskip_Infobox.png'), color: 'from-green-600 to-green-900', border: 'border-green-500',
+    img: w('Roronoa_Zoro_Anime_Post_Timeskip_Infobox.png'), face: '/img/journey/zoro.png', color: 'from-green-600 to-green-900', border: 'border-green-500',
     description: 'El espadachín del estilo de tres espadas. Sueña con superar a Dracule Mihawk y ser el mejor del mundo.', power_level: 91, haki: ['Kenbunshoku', 'Busoshoku', 'Haoshoku']
   },
   {
     id: 3, name: 'Nami', slug: 'nami', role: 'Navegante', epithet: '"La Gata Ladrona"',
     bounty: '366,000,000', devil_fruit: 'Ninguna', crew: 'Piratas del Sombrero de Paja',
-    img: w('Nami_Anime_Post_Timeskip_Infobox.png'), color: 'from-orange-500 to-orange-800', border: 'border-orange-500',
+    img: w('Nami_Anime_Post_Timeskip_Infobox.png'), face: '/img/journey/nami.png', color: 'from-orange-500 to-orange-800', border: 'border-orange-500',
     description: 'Ex-ladrona de piratas, ahora la brillante navegante del barco.', power_level: 70, haki: []
   },
   {
     id: 4, name: 'Usopp', slug: 'usopp', role: 'Francotirador', epithet: '"Dios Usopp"',
     bounty: '500,000,000', devil_fruit: 'Ninguna', crew: 'Piratas del Sombrero de Paja',
-    img: w('Usopp_Anime_Post_Timeskip_Infobox.png'), color: 'from-yellow-700 to-yellow-900', border: 'border-yellow-600',
+    img: w('Usopp_Anime_Post_Timeskip_Infobox.png'), face: '/img/journey/usopp.png', color: 'from-yellow-700 to-yellow-900', border: 'border-yellow-600',
     description: 'El francotirador cobarde del grupo cuyo sueño es convertirse en un valiente guerrero del mar.', power_level: 72, haki: ['Kenbunshoku']
   },
   {
     id: 5, name: 'Sanji', slug: 'sanji', role: 'Cocinero', epithet: '"Pierna Negra"',
     bounty: '1,032,000,000', devil_fruit: 'Ninguna', crew: 'Piratas del Sombrero de Paja',
-    img: w('Sanji_Anime_Post_Timeskip_Infobox.png'), color: 'from-blue-600 to-blue-900', border: 'border-blue-500',
+    img: w('Sanji_Anime_Post_Timeskip_Infobox.png'), face: '/img/journey/sanji.png', color: 'from-blue-600 to-blue-900', border: 'border-blue-500',
     description: 'El cocinero y príncipe del Germa Kingdom. Pelea solo con sus piernas.', power_level: 89, haki: ['Kenbunshoku', 'Busoshoku']
   },
   {
     id: 6, name: 'Tony Tony Chopper', slug: 'tony-tony-chopper', role: 'Médico', epithet: '"El Amante del Algodón de Azúcar"',
     bounty: '1,000', devil_fruit: 'Hito Hito no Mi', crew: 'Piratas del Sombrero de Paja',
-    img: w('Tony_Tony_Chopper_Anime_Post_Timeskip_Infobox.png'), color: 'from-pink-500 to-pink-800', border: 'border-pink-500',
+    img: w('Tony_Tony_Chopper_Anime_Post_Timeskip_Infobox.png'), face: '/img/journey/chopper.png', color: 'from-pink-500 to-pink-800', border: 'border-pink-500',
     description: 'Un reno que comió la fruta humana. Su sueño es crear una cura universal.', power_level: 75, haki: []
   },
   {
     id: 7, name: 'Nico Robin', slug: 'nico-robin', role: 'Arqueóloga', epithet: '"Niña Demonio"',
     bounty: '930,000,000', devil_fruit: 'Hana Hana no Mi', crew: 'Piratas del Sombrero de Paja',
-    img: w('Nico_Robin_Anime_Post_Timeskip_Infobox.png'), color: 'from-purple-600 to-purple-900', border: 'border-purple-500',
+    img: w('Nico_Robin_Anime_Post_Timeskip_Infobox.png'), face: '/img/journey/robin.png', color: 'from-purple-600 to-purple-900', border: 'border-purple-500',
     description: 'Superviviente de Ohara y la única en el mundo capaz de leer descifrar Poneglyphs.', power_level: 82, haki: ['Busoshoku', 'Kenbunshoku']
   },
   {
     id: 8, name: 'Franky', slug: 'franky', role: 'Carpintero', epithet: '"El Cyborg"',
     bounty: '394,000,000', devil_fruit: 'Ninguna', crew: 'Piratas del Sombrero de Paja',
-    img: w('Franky_Anime_Post_Timeskip_Infobox.png'), color: 'from-cyan-600 to-cyan-900', border: 'border-cyan-500',
+    img: w('Franky_Anime_Post_Timeskip_Infobox.png'), face: '/img/journey/franky.png', color: 'from-cyan-600 to-cyan-900', border: 'border-cyan-500',
     description: 'El genio de la construcción que creó el Thousand Sunny.', power_level: 80, haki: []
   },
   {
     id: 9, name: 'Brook', slug: 'brook', role: 'Músico', epithet: '"Rey del Soul"',
     bounty: '383,000,000', devil_fruit: 'Yomi Yomi no Mi', crew: 'Piratas del Sombrero de Paja',
-    img: w('Brook_Anime_Post_Timeskip_Infobox.png'), color: 'from-gray-600 to-gray-900', border: 'border-gray-500',
+    img: w('Brook_Anime_Post_Timeskip_Infobox.png'), face: '/img/journey/brook.png', color: 'from-gray-600 to-gray-900', border: 'border-gray-500',
     description: 'Un esqueleto resucitado por el poder de su fruta. Prometió regresar con Laboon.', power_level: 78, haki: ['Busoshoku']
   },
   {
     id: 10, name: 'Jinbe', slug: 'jinbe', role: 'Timonel', epithet: '"El Caballero del Mar"',
     bounty: '1,100,000,000', devil_fruit: 'Ninguna', crew: 'Piratas del Sombrero de Paja',
-    img: w('Jinbe_Anime_Infobox.png'), color: 'from-blue-700 to-blue-900', border: 'border-blue-700',
+    img: w('Jinbe_Anime_Infobox.png'), face: '/img/journey/jimbei.png', color: 'from-blue-700 to-blue-900', border: 'border-blue-700',
     description: 'Antiguo Shichibukai y miembro de los Piratas del Sol. Renunció a los de Big Mom para seguir a Luffy.', power_level: 85, haki: ['Kenbunshoku', 'Busoshoku']
   },
   

@@ -13,6 +13,7 @@ interface JourneyStop {
   name: string;
   order: number;
   image?: string;
+  hoverImage?: string;
   color: string;
   icon: string;
   crewIds: number[];
@@ -42,6 +43,12 @@ const SEA_GRADIENT =
   '#3090CA 27%, #3090CA 58%,' +   // Grand Line Paradise
   '#04263d 63%, #010c1a 100%)';   // Nuevo Mundo
 
+// Genera un patrón de olas tileable (mismo periodo en x que en el borde derecho del path)
+// para usarlo como background-image repetido en ambos ejes: así las olas cubren todo
+// el alto del fondo en vez de solo una franja abajo.
+const waveTile = (path: string, viewBox: string) =>
+  `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='${viewBox}'><path d='${path}' fill='white'/></svg>`)}")`;
+
 const CHARACTERS_BY_ID = new Map(CHARACTERS.map(c => [c.id, c]));
 
 @Component({
@@ -49,13 +56,12 @@ const CHARACTERS_BY_ID = new Map(CHARACTERS.map(c => [c.id, c]));
   standalone: true,
   imports: [CommonModule, RouterModule, OpEmojiComponent],
   styles: [`
-    @keyframes wave-scroll {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .wave-1 { animation: wave-scroll 20s linear infinite; }
-    .wave-2 { animation: wave-scroll 13s linear infinite reverse; }
-    .wave-3 { animation: wave-scroll 8s  linear infinite; }
+    @keyframes wave-bg-scroll-1 { from { background-position: 0 0; } to { background-position: -720px 0; } }
+    @keyframes wave-bg-scroll-2 { from { background-position: 0 0; } to { background-position: -720px 0; } }
+    @keyframes wave-bg-scroll-3 { from { background-position: 0 0; } to { background-position: -480px 0; } }
+    .wave-bg-1 { animation: wave-bg-scroll-1 20s linear infinite; }
+    .wave-bg-2 { animation: wave-bg-scroll-2 13s linear infinite reverse; }
+    .wave-bg-3 { animation: wave-bg-scroll-3 8s  linear infinite; }
   `],
   template: `
     <section class="relative min-h-screen bg-op-dark">
@@ -74,26 +80,19 @@ const CHARACTERS_BY_ID = new Map(CHARACTERS.map(c => [c.id, c]));
       <div class="relative" [style.background]="seaGradient">
 
         <!-- Oleaje: sticky + height:100vh + margin-bottom:-100vh = sin impacto en layout,
-             siempre visible en viewport mientras se hace scroll por la sección de mar -->
+             siempre visible en viewport mientras se hace scroll por la sección de mar.
+             Las 3 capas cubren todo el alto (background-repeat tileado), quedando SIEMPRE
+             detrás de paradas/textos (z-10) gracias a su z-index más bajo. -->
         <div style="position:sticky; top:0; height:100vh; margin-bottom:-100vh; pointer-events:none; z-index:2; overflow:hidden;">
           <!-- Capa 1: más lenta, olas grandes -->
-          <div class="wave-1" style="position:absolute; bottom:0; left:0; width:200%; height:80px; opacity:0.08;">
-            <svg viewBox="0 0 2880 80" preserveAspectRatio="none" style="width:100%; height:100%;">
-              <path d="M0,40 C90,0 270,0 360,40 C450,80 630,80 720,40 C810,0 990,0 1080,40 C1170,80 1350,80 1440,40 C1530,0 1710,0 1800,40 C1890,80 2070,80 2160,40 C2250,0 2430,0 2520,40 C2610,80 2790,80 2880,40 L2880,80 L0,80 Z" fill="white"/>
-            </svg>
-          </div>
+          <div class="wave-bg-1" [style.backgroundImage]="waveBg1"
+               style="position:absolute; inset:0; background-repeat:repeat; background-size:720px 80px; opacity:0.08;"></div>
           <!-- Capa 2: velocidad media, fase inversa (va en sentido contrario) -->
-          <div class="wave-2" style="position:absolute; bottom:0; left:0; width:200%; height:55px; opacity:0.10;">
-            <svg viewBox="0 0 2880 55" preserveAspectRatio="none" style="width:100%; height:100%;">
-              <path d="M0,27 C90,55 270,55 360,27 C450,0 630,0 720,27 C810,55 990,55 1080,27 C1170,0 1350,0 1440,27 C1530,55 1710,55 1800,27 C1890,0 2070,0 2160,27 C2250,55 2430,55 2520,27 C2610,0 2790,0 2880,27 L2880,55 L0,55 Z" fill="white"/>
-            </svg>
-          </div>
+          <div class="wave-bg-2" [style.backgroundImage]="waveBg2"
+               style="position:absolute; inset:0; background-repeat:repeat; background-size:720px 55px; opacity:0.10;"></div>
           <!-- Capa 3: más rápida, olas cortas -->
-          <div class="wave-3" style="position:absolute; bottom:0; left:0; width:200%; height:35px; opacity:0.06;">
-            <svg viewBox="0 0 2880 35" preserveAspectRatio="none" style="width:100%; height:100%;">
-              <path d="M0,17 C60,0 180,0 240,17 C300,35 420,35 480,17 C540,0 660,0 720,17 C780,35 900,35 960,17 C1020,0 1140,0 1200,17 C1260,35 1380,35 1440,17 C1500,0 1620,0 1680,17 C1740,35 1860,35 1920,17 C1980,0 2100,0 2160,17 C2220,35 2340,35 2400,17 C2460,0 2580,0 2640,17 C2700,35 2820,35 2880,17 L2880,35 L0,35 Z" fill="white"/>
-            </svg>
-          </div>
+          <div class="wave-bg-3" [style.backgroundImage]="waveBg3"
+               style="position:absolute; inset:0; background-repeat:repeat; background-size:480px 35px; opacity:0.06;"></div>
         </div>
 
         <div class="relative max-w-7xl mx-auto px-4 pb-40">
@@ -121,7 +120,7 @@ const CHARACTERS_BY_ID = new Map(CHARACTERS.map(c => [c.id, c]));
                 </div>
                 @for (member of activeCrew(); track member.id) {
                   <img [src]="member.face" [alt]="member.name" [title]="member.name"
-                       class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full object-cover border-2 border-op-red shadow">
+                       class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full object-cover">
                 }
               </div>
             </div>
@@ -146,9 +145,16 @@ const CHARACTERS_BY_ID = new Map(CHARACTERS.map(c => [c.id, c]));
                  [ngClass]="activeId() === stop.id ? 'scale-110 opacity-100' : 'scale-[0.85] opacity-60'">
 
               @if (stop.image && !failedIds().has(stop.id)) {
-                <img [src]="stop.image" [alt]="stop.name"
-                     (error)="onImgError(stop.id)"
-                     class="w-full aspect-[4/3] object-cover rounded-2xl">
+                <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden group">
+                  <img [src]="stop.image" [alt]="stop.name"
+                       (error)="onImgError(stop.id)"
+                       class="absolute inset-0 w-full h-full object-contain"
+                       [ngClass]="stop.hoverImage ? 'transition-opacity duration-1000 ease-in-out group-hover:opacity-0' : ''">
+                  @if (stop.hoverImage) {
+                    <img [src]="stop.hoverImage" [alt]="stop.name"
+                         class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
+                  }
+                </div>
               } @else {
                 <div class="w-full aspect-[4/3] rounded-2xl border-2 border-white/10 flex items-center justify-center text-6xl bg-gradient-to-br"
                      [ngClass]="stop.color">
@@ -170,6 +176,10 @@ export class JourneyComponent implements OnDestroy {
   private arcService = inject(ArcService);
 
   readonly seaGradient = SEA_GRADIENT;
+
+  readonly waveBg1 = waveTile('M0,40 C90,0 270,0 360,40 C450,80 630,80 720,40 L720,80 L0,80 Z', '0 0 720 80');
+  readonly waveBg2 = waveTile('M0,27 C90,55 270,55 360,27 C450,0 630,0 720,27 L720,55 L0,55 Z', '0 0 720 55');
+  readonly waveBg3 = waveTile('M0,17 C60,0 180,0 240,17 C300,35 420,35 480,17 L480,35 L0,35 Z', '0 0 480 35');
 
   stops = signal<JourneyStop[]>([]);
   activeId = signal<string | null>(null);
@@ -222,6 +232,7 @@ export class JourneyComponent implements OnDestroy {
             name: loc.name,
             order: loc.order,
             image: loc.image,
+            hoverImage: loc.hoverImage,
             color: arc?.color ?? 'from-gray-700 to-gray-900',
             icon: arc?.icon ?? '🗺️',
             crewIds: loc.crewIds,

@@ -64,6 +64,8 @@ export class WorldHubComponent implements OnInit {
     { title: 'Ruta de los Mugiwara', description: 'El viaje de la tripulación, mar a mar, isla a isla, desde el East Blue hasta el Nuevo Mundo.', icon: '🗺️', color: 'from-blue-700 to-blue-950', path: '/world/journey' },
     { title: 'Islas', description: 'El atlas completo del mundo de One Piece, mar por mar.', icon: '🏝️', color: 'from-teal-700 to-teal-950' },
     { title: 'Sagas', description: 'Las 12 grandes sagas que estructuran toda la historia.', icon: '📖', color: 'from-amber-700 to-amber-950', path: '/world/sagas' },
+    { title: 'Barcos', description: 'Los navíos legendarios que han surcado el Grand Line, del Going Merry al Moby Dick.', icon: '⛵', color: 'from-cyan-700 to-cyan-950', path: '/world/ships' },
+    { title: 'One Piece Card Game', description: 'Líderes, DON!! y mazos iniciales del juego de cartas coleccionables oficial.', icon: '🃏', color: 'from-red-700 to-indigo-950', path: '/world/card-game' },
     { title: 'Cronología', description: 'El orden de lectura y publicación de cada arco de la serie.', icon: '⏳', color: 'from-violet-700 to-violet-950' },
     { title: 'Películas', description: 'El cine de One Piece, dentro y fuera del canon principal.', icon: '🎬', color: 'from-red-700 to-red-950', path: '/world/movies' },
     { title: 'Openings y Endings', description: 'La banda sonora del anime que ha acompañado cada arco.', icon: '🎵', color: 'from-pink-700 to-rose-950', path: '/world/soundtrack' },
