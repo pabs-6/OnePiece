@@ -98,6 +98,12 @@ export class CharacterDetailCardComponent {
   handleImgError(event: Event) {
     const img = event.target as HTMLImageElement;
     const next = nextCharacterImageFallback(img.src, this.character);
-    if (next) img.src = next;
+    if (next) {
+      if (next.startsWith('data:')) {
+        img.classList.remove('object-cover', 'object-top');
+        img.classList.add('object-contain');
+      }
+      img.src = next;
+    }
   }
 }

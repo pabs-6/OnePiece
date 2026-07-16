@@ -12,19 +12,33 @@ function getPlaceholderImage(name: string, color: string): string {
   for (const [key, val] of Object.entries(PLACEHOLDER_BG_BY_COLOR)) {
     if (color.includes(key)) { bg = val; break; }
   }
-  return `https://via.placeholder.com/400x600/${bg}/F39C12?text=${encodeURIComponent(name.split(' ')[0])}`;
+  const initials = name.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase();
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
+      <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#${bg};stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <rect width="400" height="600" fill="url(#grad)" />
+      <path d="M200 150 L200 400 M150 250 L250 250 M150 380 Q200 430 250 380" stroke="#f59e0b" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.15" />
+      <circle cx="200" cy="130" r="15" stroke="#f59e0b" stroke-width="8" fill="none" opacity="0.15" />
+      <text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-family="'Cinzel', serif" font-size="72" font-weight="bold" fill="#f59e0b" letter-spacing="2">${initials}</text>
+      <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="'Inter', sans-serif" font-size="22" font-weight="600" fill="#e2e8f0">${name}</text>
+      <text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-size="12" fill="#64748b" letter-spacing="1">WANTED DEAD OR ALIVE</text>
+    </svg>
+  `.trim().replace(/\n/g, '').replace(/"/g, "'");
+
+  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
 }
 
-// Tries the wikia CDN mirror first, then a generated placeholder. Returns null once both fallbacks are exhausted.
+// If the wiki URL fails, immediately show the SVG placeholder so no character is ever imageless.
 export function nextCharacterImageFallback(currentSrc: string, character: { name: string; color: string }): string | null {
-  if (currentSrc.includes('onepiece.fandom.com')) {
-    const filename = currentSrc.split('/').pop() || '';
-    return `https://static.wikia.nocookie.net/onepiece/images/thumb/${filename}/revision/latest/scale-to-width-down/300`;
-  }
-  if (currentSrc.includes('static.wikia.nocookie.net')) {
-    return getPlaceholderImage(character.name, character.color);
-  }
-  return null;
+  // data: URIs (our SVG placeholders) should never fail
+  if (currentSrc.startsWith('data:')) return null;
+  // Any failed external URL → show SVG placeholder immediately
+  return getPlaceholderImage(character.name, character.color);
 }
 
 export function getPowerColor(n: number): string {

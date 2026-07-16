@@ -35,6 +35,20 @@ import { OpEmojiComponent } from '../op-emoji/op-emoji.component';
               <op-emoji [symbol]="link.icon"></op-emoji>{{ link.label }}
             </a>
           </li>
+
+          <!-- Ko-fi Button (Desktop) -->
+          <li class="ml-2">
+            <a href="https://ko-fi.com/TU_USUARIO_KOFI"
+               target="_blank"
+               rel="noopener noreferrer"
+               id="kofi-btn-desktop"
+               class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg"
+               style="background: linear-gradient(135deg, #FF5E5B 0%, #FF8C42 100%); color: white; box-shadow: 0 0 15px rgba(255,94,91,0.3);"
+               title="Apoya el proyecto en Ko-fi">
+              <span style="font-size:1rem;">☕</span>
+              <span>Apóyame</span>
+            </a>
+          </li>
         </ul>
 
         <!-- Mobile Menu Button -->
@@ -49,6 +63,22 @@ import { OpEmojiComponent } from '../op-emoji/op-emoji.component';
           <li *ngFor="let link of links">
             <a [routerLink]="link.path" (click)="menuOpen = false" class="flex items-center gap-3 px-4 py-3 rounded-lg text-base font-semibold cursor-pointer transition-all duration-300 hover:bg-yellow-500/10 hover:text-yellow-400 text-gray-200">
               <op-emoji [symbol]="link.icon" class="text-xl"></op-emoji>{{ link.label }}
+            </a>
+          </li>
+          <!-- Ko-fi (Mobile) -->
+          <li class="mt-2 pt-2 border-t border-yellow-900/30">
+            <a href="https://ko-fi.com/TU_USUARIO_KOFI"
+               target="_blank"
+               rel="noopener noreferrer"
+               id="kofi-btn-mobile"
+               (click)="menuOpen = false"
+               class="flex items-center gap-3 px-4 py-3 rounded-lg text-base font-bold transition-all duration-300"
+               style="background: linear-gradient(135deg, rgba(255,94,91,0.15), rgba(255,140,66,0.15)); border: 1px solid rgba(255,94,91,0.3); color: #FF8C42;">
+              <span class="text-xl">☕</span>
+              <div>
+                <div>Apoya el Proyecto</div>
+                <div class="text-xs font-normal opacity-70">Ko-fi · ¡Invítame un café!</div>
+              </div>
             </a>
           </li>
         </ul>

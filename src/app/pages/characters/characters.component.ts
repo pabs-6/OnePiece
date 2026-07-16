@@ -90,7 +90,8 @@ import { getPowerColor, getPowerTextColor, nextCharacterImageFallback } from '..
             <div class="relative h-64 overflow-hidden bg-gradient-to-br img-loading" [ngClass]="char.color">
               <img [src]="char.img" [alt]="char.name"
                    class="w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
-                   (error)="handleImgError($event, char)">
+                   (error)="handleImgError($event, char)"
+                   (load)="onImgLoad($event)">
               <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent"></div>
 
               <!-- Bounty badge -->
@@ -230,6 +231,19 @@ export class CharactersComponent {
   handleImgError(event: Event, char: Character) {
     const img = event.target as HTMLImageElement;
     const next = nextCharacterImageFallback(img.src, char);
-    if (next) img.src = next;
+    if (next) {
+      // If falling back to SVG placeholder, use object-contain so initials render fully
+      if (next.startsWith('data:')) {
+        img.classList.remove('object-cover', 'object-top');
+        img.classList.add('object-contain');
+      }
+      img.src = next;
+    }
+  }
+
+  onImgLoad(event: Event) {
+    const img = event.target as HTMLImageElement;
+    // Remove loading shimmer from parent when image loads
+    img.parentElement?.classList.remove('img-loading');
   }
 }

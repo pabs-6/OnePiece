@@ -5,11 +5,12 @@ import { NEWS } from '../../data/news';
 import { CHAPTERS } from '../../data/chapters';
 import { OpEmojiComponent } from '../../components/op-emoji/op-emoji.component';
 import { NewsArticleComponent } from '../../components/news-article/news-article.component';
+import { AdBannerComponent } from '../../components/ad-banner/ad-banner.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterModule, OpEmojiComponent, NewsArticleComponent],
+  imports: [CommonModule, RouterModule, OpEmojiComponent, NewsArticleComponent, AdBannerComponent],
   templateUrl: './home.component.html',
   styles: [`
     .modal-backdrop {
