@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "audit:images": "node audit-images-api.cjs",
+    "audit:wiki-aliases": "node scripts/find-wiki-mismatches.cjs"
   },
   "private": true,
   "packageManager": "npm@10.9.4",

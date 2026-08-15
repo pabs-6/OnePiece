@@ -3,6 +3,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 import { CharacterService, Character } from '../../services/character.service';
+import { CharacterImageService } from '../../services/character-image.service';
 import { OpEmojiComponent } from '../../components/op-emoji/op-emoji.component';
 import { getPowerColor, getPowerTextColor, nextCharacterImageFallback } from '../../utils/character-visuals';
 
@@ -24,7 +25,7 @@ import { getPowerColor, getPowerTextColor, nextCharacterImageFallback } from '..
           <h2 class="font-pirate text-5xl md:text-6xl text-white mb-4 section-title">
             <span class="gradient-text">Enciclopedia</span> de Personajes
           </h2>
-          <p class="text-gray-400 max-w-2xl mx-auto">250+ personajes clave de One Piece: Mugiwaras, Yonkos, Shichibukai, Marines y villanos del Gobierno Mundial. Haz clic en cualquier personaje para ver más detalles.</p>
+          <p class="text-gray-400 max-w-2xl mx-auto">Enciclopedia completa con {{ characters().length }} personajes de One Piece obtenidos de la API oficial. Mugiwaras, Yonkos, Marines, Revolucionarios y más. Haz clic en cualquier personaje para ver más detalles.</p>
         </div>
 
         <!-- Filter / Search -->
@@ -164,6 +165,7 @@ import { getPowerColor, getPowerTextColor, nextCharacterImageFallback } from '..
 })
 export class CharactersComponent {
   private characterService = inject(CharacterService);
+  private imageService = inject(CharacterImageService);
   private route = inject(ActivatedRoute);
   private router = inject(Router);
 
@@ -230,9 +232,23 @@ export class CharactersComponent {
 
   handleImgError(event: Event, char: Character) {
     const img = event.target as HTMLImageElement;
+    if (img.dataset['wikiResolved']) {
+      this.applyFallback(img, char);
+      return;
+    }
+    img.dataset['wikiResolved'] = '1';
+    this.imageService.resolveImage(char.name).subscribe(url => {
+      if (url) {
+        img.src = url;
+      } else {
+        this.applyFallback(img, char);
+      }
+    });
+  }
+
+  private applyFallback(img: HTMLImageElement, char: Character) {
     const next = nextCharacterImageFallback(img.src, char);
     if (next) {
-      // If falling back to SVG placeholder, use object-contain so initials render fully
       if (next.startsWith('data:')) {
         img.classList.remove('object-cover', 'object-top');
         img.classList.add('object-contain');

@@ -33,11 +33,34 @@ function getPlaceholderImage(name: string, color: string): string {
   return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
 }
 
-// If the wiki URL fails, immediately show the SVG placeholder so no character is ever imageless.
+const WIKI_SUFFIXES = [
+  '_Anime_Post_Timeskip_Infobox.png',
+  '_Anime_Infobox.png',
+  '_Manga_Infobox.png',
+  '_Infobox.png'
+];
+
+function getWikiFileBase(name: string): string {
+  let clean = name.split('/')[0].trim().replace(/ /g, '_');
+  clean = clean.replace(/_([A-Z])_/g, '_$1._');
+  return clean.replace(/[^\w.]/g, '_');
+}
+
+function buildWikiUrl(base: string, suffix: string): string {
+  return `https://onepiece.fandom.com/wiki/Special:FilePath/${base}${suffix}`;
+}
+
+// Try alternate wiki filename patterns before falling back to SVG placeholder.
 export function nextCharacterImageFallback(currentSrc: string, character: { name: string; color: string }): string | null {
-  // data: URIs (our SVG placeholders) should never fail
   if (currentSrc.startsWith('data:')) return null;
-  // Any failed external URL → show SVG placeholder immediately
+
+  const base = getWikiFileBase(character.name);
+
+  for (const suffix of WIKI_SUFFIXES) {
+    const url = buildWikiUrl(base, suffix);
+    if (url !== currentSrc) return url;
+  }
+
   return getPlaceholderImage(character.name, character.color);
 }
 

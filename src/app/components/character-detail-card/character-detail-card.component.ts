@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Character } from '../../services/character.service';
+import { CharacterImageService } from '../../services/character-image.service';
 import { OpEmojiComponent } from '../op-emoji/op-emoji.component';
 import {
   getPowerColor as powerColor,
@@ -57,13 +58,33 @@ import {
         </div>
       </div>
 
+      <!-- API Info: size, age, status -->
+      <div *ngIf="character.size || character.age || character.status" class="grid grid-cols-3 gap-3">
+        <div *ngIf="character.size" class="bg-black/40 rounded-xl p-3 border border-white/5 text-center">
+          <p class="text-gray-500 text-[10px] font-mono mb-1">ALTURA</p>
+          <p class="text-white font-bold text-sm">{{ character.size }}</p>
+        </div>
+        <div *ngIf="character.age" class="bg-black/40 rounded-xl p-3 border border-white/5 text-center">
+          <p class="text-gray-500 text-[10px] font-mono mb-1">EDAD</p>
+          <p class="text-white font-bold text-sm">{{ character.age }}</p>
+        </div>
+        <div *ngIf="character.status" class="bg-black/40 rounded-xl p-3 border border-white/5 text-center">
+          <p class="text-gray-500 text-[10px] font-mono mb-1">ESTADO</p>
+          <p class="text-white font-bold text-sm">{{ character.status }}</p>
+        </div>
+      </div>
+
       <!-- Devil Fruit -->
       <div *ngIf="character.devil_fruit !== 'Ninguna'"
            class="flex items-center gap-3 bg-gradient-to-r from-purple-900/40 to-transparent rounded-xl px-4 py-3 border-l-4 border-purple-500">
-        <op-emoji symbol="🍎" class="text-2xl"></op-emoji>
+        <img *ngIf="character.fruit_img" [src]="character.fruit_img" [alt]="character.devil_fruit"
+             class="w-12 h-12 object-contain rounded-lg bg-black/30">
+        <op-emoji *ngIf="!character.fruit_img" symbol="🍎" class="text-2xl"></op-emoji>
         <div>
           <p class="text-gray-500 text-xs font-mono">FRUTA DEL DIABLO</p>
           <p class="text-purple-300 font-bold">{{ character.devil_fruit }}</p>
+          <p *ngIf="character.fruit_type" class="text-purple-400/70 text-xs mt-0.5">{{ character.fruit_type }}</p>
+          <p *ngIf="character.fruit_description" class="text-gray-400 text-xs mt-1 leading-relaxed line-clamp-3">{{ character.fruit_description }}</p>
         </div>
       </div>
 
@@ -92,11 +113,27 @@ import {
 export class CharacterDetailCardComponent {
   @Input({ required: true }) character!: Character;
 
+  private imageService = inject(CharacterImageService);
   readonly getPowerColor = powerColor;
   readonly getPowerTextColor = powerTextColor;
 
   handleImgError(event: Event) {
     const img = event.target as HTMLImageElement;
+    if (img.dataset['wikiResolved']) {
+      this.applyFallback(img);
+      return;
+    }
+    img.dataset['wikiResolved'] = '1';
+    this.imageService.resolveImage(this.character.name).subscribe(url => {
+      if (url) {
+        img.src = url;
+      } else {
+        this.applyFallback(img);
+      }
+    });
+  }
+
+  private applyFallback(img: HTMLImageElement) {
     const next = nextCharacterImageFallback(img.src, this.character);
     if (next) {
       if (next.startsWith('data:')) {

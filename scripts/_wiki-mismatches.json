@@ -1,0 +1,1826 @@
+Fetching API characters...
+Analyzing 786 characters...
+Direct batch 1/16
+Direct batch 2/16
+Direct batch 3/16
+Direct batch 4/16
+Direct batch 5/16
+Direct batch 6/16
+Direct batch 7/16
+Direct batch 8/16
+Direct batch 9/16
+Direct batch 10/16
+Direct batch 11/16
+Direct batch 12/16
+Direct batch 13/16
+Direct batch 14/16
+Direct batch 15/16
+Direct batch 16/16
+
+Direct hits: 526/786. Searching 260 via opensearch...
+  Search 1/260...
+  Search 21/260...
+  Search 41/260...
+  Search 61/260...
+  Search 81/260...
+  Search 101/260...
+  Search 121/260...
+  Search 141/260...
+  Search 161/260...
+  Search 181/260...
+  Search 201/260...
+  Search 221/260...
+  Search 241/260...
+
+=== RESULTS ===
+Direct image found: 526
+Name mismatches (need alias): 220
+No image found anywhere: 40
+{
+  "mismatches": [
+    {
+      "id": 381,
+      "apiName": "1er Doyen",
+      "wikiTitle": "Five Elders",
+      "aliasKey": "1er doyen"
+    },
+    {
+      "id": 310,
+      "apiName": "A.O",
+      "wikiTitle": "A O",
+      "aliasKey": "a.o"
+    },
+    {
+      "id": 79,
+      "apiName": "Aladdin",
+      "wikiTitle": "Aladine",
+      "aliasKey": "aladdin"
+    },
+    {
+      "id": 217,
+      "apiName": "Alpagaman",
+      "wikiTitle": "Alpacaman",
+      "aliasKey": "alpagaman"
+    },
+    {
+      "id": 324,
+      "apiName": "Arhur",
+      "wikiTitle": "Arthur",
+      "aliasKey": "arhur"
+    },
+    {
+      "id": 32,
+      "apiName": "Baggy / Le Clown",
+      "wikiTitle": "Tightrope Walking Funan Bros",
+      "aliasKey": "baggy"
+    },
+    {
+      "id": 257,
+      "apiName": "Barbe Rose",
+      "wikiTitle": "Rose (World Seeker)",
+      "aliasKey": "barbe rose"
+    },
+    {
+      "id": 401,
+      "apiName": "Bas",
+      "wikiTitle": "Baskerville",
+      "aliasKey": "bas"
+    },
+    {
+      "id": 25,
+      "apiName": "Bee Anne",
+      "wikiTitle": "Beegirl",
+      "aliasKey": "bee anne"
+    },
+    {
+      "id": 489,
+      "apiName": "Belmer",
+      "wikiTitle": "Bell-mère",
+      "aliasKey": "belmer"
+    },
+    {
+      "id": 86,
+      "apiName": "Ben Beckmann",
+      "wikiTitle": "Benn Beckman",
+      "aliasKey": "ben beckmann"
+    },
+    {
+      "id": 737,
+      "apiName": "Bins",
+      "wikiTitle": "Binz",
+      "aliasKey": "bins"
+    },
+    {
+      "id": 436,
+      "apiName": "Brandnew",
+      "wikiTitle": "Brannew",
+      "aliasKey": "brandnew"
+    },
+    {
+      "id": 512,
+      "apiName": "Broggy",
+      "wikiTitle": "Brogy",
+      "aliasKey": "broggy"
+    },
+    {
+      "id": 377,
+      "apiName": "Buffallo",
+      "wikiTitle": "Buffalo",
+      "aliasKey": "buffallo"
+    },
+    {
+      "id": 705,
+      "apiName": "Bulter",
+      "wikiTitle": "Merry",
+      "aliasKey": "bulter"
+    },
+    {
+      "id": 605,
+      "apiName": "Caborage",
+      "wikiTitle": "One Piece in France",
+      "aliasKey": "caborage"
+    },
+    {
+      "id": 637,
+      "apiName": "Calgara",
+      "wikiTitle": "Kalgara",
+      "aliasKey": "calgara"
+    },
+    {
+      "id": 669,
+      "apiName": "Canard",
+      "wikiTitle": "Karoo",
+      "aliasKey": "canard"
+    },
+    {
+      "id": 608,
+      "apiName": "Cancelot",
+      "wikiTitle": "Concelot",
+      "aliasKey": "cancelot"
+    },
+    {
+      "id": 488,
+      "apiName": "Canne",
+      "wikiTitle": "Yakuza Kasen",
+      "aliasKey": "canne"
+    },
+    {
+      "id": 484,
+      "apiName": "Carotte",
+      "wikiTitle": "Carrot",
+      "aliasKey": "carotte"
+    },
+    {
+      "id": 267,
+      "apiName": "CB Galant",
+      "wikiTitle": "CB Gallant",
+      "aliasKey": "cb galant"
+    },
+    {
+      "id": 691,
+      "apiName": "César Clown",
+      "wikiTitle": "Caesar Clown",
+      "aliasKey": "césar clown"
+    },
+    {
+      "id": 387,
+      "apiName": "Charloss",
+      "wikiTitle": "Rosward Charlos",
+      "aliasKey": "charloss"
+    },
+    {
+      "id": 122,
+      "apiName": "Charlotte Broyée",
+      "wikiTitle": "Charlotte Broyé",
+      "aliasKey": "charlotte broyée"
+    },
+    {
+      "id": 137,
+      "apiName": "Charlotte Cannelle",
+      "wikiTitle": "Candelle",
+      "aliasKey": "charlotte cannelle"
+    },
+    {
+      "id": 129,
+      "apiName": "Charlotte Corn Starch",
+      "wikiTitle": "Charlotte Cornstarch",
+      "aliasKey": "charlotte corn starch"
+    },
+    {
+      "id": 120,
+      "apiName": "Charlotte Crème",
+      "wikiTitle": "Kuri Kuri no Mi",
+      "aliasKey": "charlotte crème"
+    },
+    {
+      "id": 97,
+      "apiName": "Charlotte Dent-de-chien",
+      "wikiTitle": "One Piece in France",
+      "aliasKey": "charlotte dent-de-chien"
+    },
+    {
+      "id": 176,
+      "apiName": "Charlotte Dolce",
+      "wikiTitle": "Charlotte Dolce and Dragée",
+      "aliasKey": "charlotte dolce"
+    },
+    {
+      "id": 125,
+      "apiName": "Charlotte Dosmarché",
+      "wikiTitle": "Charlotte Dosmarche",
+      "aliasKey": "charlotte dosmarché"
+    },
+    {
+      "id": 177,
+      "apiName": "Charlotte Dragée",
+      "wikiTitle": "Charlotte Dolce and Dragée",
+      "aliasKey": "charlotte dragée"
+    },
+    {
+      "id": 110,
+      "apiName": "Charlotte Flampée",
+      "wikiTitle": "Charlotte Flampe",
+      "aliasKey": "charlotte flampée"
+    },
+    {
+      "id": 152,
+      "apiName": "Charlotte Mapple",
+      "wikiTitle": "Charlotte Maple",
+      "aliasKey": "charlotte mapple"
+    },
+    {
+      "id": 112,
+      "apiName": "Charlotte Mondé",
+      "wikiTitle": "Charlotte Mondée",
+      "aliasKey": "charlotte mondé"
+    },
+    {
+      "id": 106,
+      "apiName": "Charlotte Mont d’Or",
+      "wikiTitle": "Charlotte Mont-d'Or",
+      "aliasKey": "charlotte mont d’or"
+    },
+    {
+      "id": 151,
+      "apiName": "Charlotte Mucre",
+      "wikiTitle": "Charlotte Myukuru",
+      "aliasKey": "charlotte mucre"
+    },
+    {
+      "id": 165,
+      "apiName": "Charlotte Muscade",
+      "wikiTitle": "Charlotte Nutmeg",
+      "aliasKey": "charlotte muscade"
+    },
+    {
+      "id": 167,
+      "apiName": "Charlotte Muscadelle",
+      "wikiTitle": "Charlotte Custard",
+      "aliasKey": "charlotte muscadelle"
+    },
+    {
+      "id": 169,
+      "apiName": "Charlotte Muscadette",
+      "wikiTitle": "Charlotte Fuyumeg",
+      "aliasKey": "charlotte muscadette"
+    },
+    {
+      "id": 166,
+      "apiName": "Charlotte Muscadia",
+      "wikiTitle": "Charlotte Moscato",
+      "aliasKey": "charlotte muscadia"
+    },
+    {
+      "id": 168,
+      "apiName": "Charlotte Muscadine",
+      "wikiTitle": "Charlotte Mascarpone",
+      "aliasKey": "charlotte muscadine"
+    },
+    {
+      "id": 164,
+      "apiName": "Charlotte Newgo",
+      "wikiTitle": "Charlotte Decuplets",
+      "aliasKey": "charlotte newgo"
+    },
+    {
+      "id": 160,
+      "apiName": "Charlotte Newichi",
+      "wikiTitle": "Charlotte Decuplets",
+      "aliasKey": "charlotte newichi"
+    },
+    {
+      "id": 161,
+      "apiName": "Charlotte Newji",
+      "wikiTitle": "Charlotte Decuplets",
+      "aliasKey": "charlotte newji"
+    },
+    {
+      "id": 162,
+      "apiName": "Charlotte Newsan",
+      "wikiTitle": "Charlotte Decuplets",
+      "aliasKey": "charlotte newsan"
+    },
+    {
+      "id": 104,
+      "apiName": "Charlotte Opéra",
+      "wikiTitle": "Charlotte Opera",
+      "aliasKey": "charlotte opéra"
+    },
+    {
+      "id": 67,
+      "apiName": "Charlotte Pets",
+      "wikiTitle": "Charlotte Brûlée",
+      "aliasKey": "charlotte pets"
+    },
+    {
+      "id": 80,
+      "apiName": "Charlotte Praliné",
+      "wikiTitle": "Charlotte Praline",
+      "aliasKey": "charlotte praliné"
+    },
+    {
+      "id": 100,
+      "apiName": "Charlotte Slurp",
+      "wikiTitle": "Charlotte Perospero",
+      "aliasKey": "charlotte slurp"
+    },
+    {
+      "id": 159,
+      "apiName": "Charlotte Yu Yuan",
+      "wikiTitle": "Charlotte Yuen",
+      "aliasKey": "charlotte yu yuan"
+    },
+    {
+      "id": 121,
+      "apiName": "Charlotte Zuccoto",
+      "wikiTitle": "Charlotte Zuccotto",
+      "aliasKey": "charlotte zuccoto"
+    },
+    {
+      "id": 606,
+      "apiName": "Chavipère",
+      "wikiTitle": "One Piece in France",
+      "aliasKey": "chavipère"
+    },
+    {
+      "id": 629,
+      "apiName": "Chef Shandia",
+      "wikiTitle": "Shandia Chief",
+      "aliasKey": "chef shandia"
+    },
+    {
+      "id": 502,
+      "apiName": "Clover",
+      "wikiTitle": "Clou D. Clover",
+      "aliasKey": "clover"
+    },
+    {
+      "id": 273,
+      "apiName": "Colonel Mugren",
+      "wikiTitle": "Mugren",
+      "aliasKey": "colonel mugren"
+    },
+    {
+      "id": 421,
+      "apiName": "Comir",
+      "wikiTitle": "Comil",
+      "aliasKey": "comir"
+    },
+    {
+      "id": 664,
+      "apiName": "Corbeau",
+      "wikiTitle": "One Piece in France",
+      "aliasKey": "corbeau"
+    },
+    {
+      "id": 427,
+      "apiName": "Dalmatien",
+      "wikiTitle": "Dalmatian",
+      "aliasKey": "dalmatien"
+    },
+    {
+      "id": 83,
+      "apiName": "Das Bones",
+      "wikiTitle": "Daz Bonez",
+      "aliasKey": "das bones"
+    },
+    {
+      "id": 180,
+      "apiName": "Delœuf",
+      "wikiTitle": "One Piece in France",
+      "aliasKey": "delœuf"
+    },
+    {
+      "id": 350,
+      "apiName": "Demaro Black",
+      "wikiTitle": "Demalo Black",
+      "aliasKey": "demaro black"
+    },
+    {
+      "id": 291,
+      "apiName": "Diamond Joz",
+      "wikiTitle": "Jozu",
+      "aliasKey": "diamond joz"
+    },
+    {
+      "id": 513,
+      "apiName": "Dolton",
+      "wikiTitle": "Dalton",
+      "aliasKey": "dolton"
+    },
+    {
+      "id": 365,
+      "apiName": "Don Quijote Doflamingo",
+      "wikiTitle": "Donquixote Pirates",
+      "aliasKey": "don quijote doflamingo"
+    },
+    {
+      "id": 498,
+      "apiName": "Don Quijote Homing",
+      "wikiTitle": "Donquixote Homing",
+      "aliasKey": "don quijote homing"
+    },
+    {
+      "id": 389,
+      "apiName": "Don Quijote Myosgard",
+      "wikiTitle": "Donquixote Mjosgard",
+      "aliasKey": "don quijote myosgard"
+    },
+    {
+      "id": 443,
+      "apiName": "Don Quijote Rosinante",
+      "wikiTitle": "Donquixote Rosinante",
+      "aliasKey": "don quijote rosinante"
+    },
+    {
+      "id": 263,
+      "apiName": "Dringo",
+      "wikiTitle": "Doringo",
+      "aliasKey": "dringo"
+    },
+    {
+      "id": 84,
+      "apiName": "Edward Weeble",
+      "wikiTitle": "Edward Weevil",
+      "aliasKey": "edward weeble"
+    },
+    {
+      "id": 693,
+      "apiName": "El Gorago",
+      "wikiTitle": "Goro Goro no Mi",
+      "aliasKey": "el gorago"
+    },
+    {
+      "id": 278,
+      "apiName": "Elio",
+      "wikiTitle": "Erio",
+      "aliasKey": "elio"
+    },
+    {
+      "id": 660,
+      "apiName": "Ener",
+      "wikiTitle": "Enel",
+      "aliasKey": "ener"
+    },
+    {
+      "id": 59,
+      "apiName": "Eustass Kidd",
+      "wikiTitle": "Eustass Kid",
+      "aliasKey": "eustass kidd"
+    },
+    {
+      "id": 78,
+      "apiName": "Ficher Tiger",
+      "wikiTitle": "Fisher Tiger",
+      "aliasKey": "ficher tiger"
+    },
+    {
+      "id": 305,
+      "apiName": "Frères DeCalvan",
+      "wikiTitle": "Decalvan Brothers",
+      "aliasKey": "frères decalvan"
+    },
+    {
+      "id": 683,
+      "apiName": "Fukuro",
+      "wikiTitle": "Fukurou",
+      "aliasKey": "fukuro"
+    },
+    {
+      "id": 395,
+      "apiName": "Funckfreed",
+      "wikiTitle": "Funkfreed",
+      "aliasKey": "funckfreed"
+    },
+    {
+      "id": 624,
+      "apiName": "Gan Forr",
+      "wikiTitle": "Gan Fall",
+      "aliasKey": "gan forr"
+    },
+    {
+      "id": 709,
+      "apiName": "Général Gasparde",
+      "wikiTitle": "Gasparde",
+      "aliasKey": "général gasparde"
+    },
+    {
+      "id": 547,
+      "apiName": "Gonbei",
+      "wikiTitle": "Gonbe",
+      "aliasKey": "gonbei"
+    },
+    {
+      "id": 337,
+      "apiName": "Great Micheal",
+      "wikiTitle": "Great Michael",
+      "aliasKey": "great micheal"
+    },
+    {
+      "id": 391,
+      "apiName": "Guernica",
+      "wikiTitle": "Guernika",
+      "aliasKey": "guernica"
+    },
+    {
+      "id": 601,
+      "apiName": "Guncho",
+      "wikiTitle": "Gancho",
+      "aliasKey": "guncho"
+    },
+    {
+      "id": 41,
+      "apiName": "Gyn",
+      "wikiTitle": "Gin",
+      "aliasKey": "gyn"
+    },
+    {
+      "id": 231,
+      "apiName": "Hacha",
+      "wikiTitle": "Hatcha",
+      "aliasKey": "hacha"
+    },
+    {
+      "id": 504,
+      "apiName": "Haguar D. Sauro",
+      "wikiTitle": "Jaguar D. Saul",
+      "aliasKey": "haguar d. sauro"
+    },
+    {
+      "id": 185,
+      "apiName": "Héra",
+      "wikiTitle": "Hera",
+      "aliasKey": "héra"
+    },
+    {
+      "id": 444,
+      "apiName": "Hermep",
+      "wikiTitle": "Helmeppo",
+      "aliasKey": "hermep"
+    },
+    {
+      "id": 575,
+      "apiName": "Higurashi Kurozumi",
+      "wikiTitle": "Kurozumi Higurashi",
+      "aliasKey": "higurashi kurozumi"
+    },
+    {
+      "id": 515,
+      "apiName": "Hiluluk",
+      "wikiTitle": "Hiriluk",
+      "aliasKey": "hiluluk"
+    },
+    {
+      "id": 393,
+      "apiName": "Hittori",
+      "wikiTitle": "Sekai wa Hitori ja Nakatta",
+      "aliasKey": "hittori"
+    },
+    {
+      "id": 563,
+      "apiName": "Hiyori Kozuki",
+      "wikiTitle": "Kouzuki Hiyori",
+      "aliasKey": "hiyori kozuki"
+    },
+    {
+      "id": 651,
+      "apiName": "Hoé",
+      "wikiTitle": "Jack",
+      "aliasKey": "hoé"
+    },
+    {
+      "id": 198,
+      "apiName": "Holdem",
+      "wikiTitle": "Holed'em",
+      "aliasKey": "holdem"
+    },
+    {
+      "id": 642,
+      "apiName": "Hotori",
+      "wikiTitle": "Hotori and Kotori",
+      "aliasKey": "hotori"
+    },
+    {
+      "id": 580,
+      "apiName": "Hyogoro",
+      "wikiTitle": "Hyougoro",
+      "aliasKey": "hyogoro"
+    },
+    {
+      "id": 363,
+      "apiName": "Hyozo",
+      "wikiTitle": "Hyouzou",
+      "aliasKey": "hyozo"
+    },
+    {
+      "id": 537,
+      "apiName": "Icebarg",
+      "wikiTitle": "Iceburg",
+      "aliasKey": "icebarg"
+    },
+    {
+      "id": 620,
+      "apiName": "Ichiji Vinsmoke",
+      "wikiTitle": "Vinsmoke Ichiji",
+      "aliasKey": "ichiji vinsmoke"
+    },
+    {
+      "id": 380,
+      "apiName": "Im Sama",
+      "wikiTitle": "Nerona Imu",
+      "aliasKey": "im sama"
+    },
+    {
+      "id": 566,
+      "apiName": "Izo",
+      "wikiTitle": "Izou",
+      "aliasKey": "izo"
+    },
+    {
+      "id": 680,
+      "apiName": "Jabura",
+      "wikiTitle": "Jabra",
+      "aliasKey": "jabura"
+    },
+    {
+      "id": 556,
+      "apiName": "Jarl",
+      "wikiTitle": "Jarul",
+      "aliasKey": "jarl"
+    },
+    {
+      "id": 494,
+      "apiName": "Johny",
+      "wikiTitle": "Johnny",
+      "aliasKey": "johny"
+    },
+    {
+      "id": 371,
+      "apiName": "Jora",
+      "wikiTitle": "Giolla",
+      "aliasKey": "jora"
+    },
+    {
+      "id": 555,
+      "apiName": "Jorl",
+      "wikiTitle": "Jorul",
+      "aliasKey": "jorl"
+    },
+    {
+      "id": 617,
+      "apiName": "Judge Vinsmoke",
+      "wikiTitle": "Vinsmoke Judge",
+      "aliasKey": "judge vinsmoke"
+    },
+    {
+      "id": 558,
+      "apiName": "Kaashii",
+      "wikiTitle": "Kashii",
+      "aliasKey": "kaashii"
+    },
+    {
+      "id": 187,
+      "apiName": "Kaido",
+      "wikiTitle": "Kaidou",
+      "aliasKey": "kaido"
+    },
+    {
+      "id": 450,
+      "apiName": "Kaiser Moustache",
+      "wikiTitle": "Stainless",
+      "aliasKey": "kaiser moustache"
+    },
+    {
+      "id": 524,
+      "apiName": "Kaloo",
+      "wikiTitle": "One Piece in Portugal",
+      "aliasKey": "kaloo"
+    },
+    {
+      "id": 573,
+      "apiName": "Kanjuro Kurozumi",
+      "wikiTitle": "Kurozumi Kanjuro",
+      "aliasKey": "kanjuro kurozumi"
+    },
+    {
+      "id": 773,
+      "apiName": "Karazu",
+      "wikiTitle": "Karasu",
+      "aliasKey": "karazu"
+    },
+    {
+      "id": 656,
+      "apiName": "Keimi",
+      "wikiTitle": "Camie",
+      "aliasKey": "keimi"
+    },
+    {
+      "id": 403,
+      "apiName": "Kerville",
+      "wikiTitle": "Baskerville",
+      "aliasKey": "kerville"
+    },
+    {
+      "id": 564,
+      "apiName": "Kinémon",
+      "wikiTitle": "Kin'emon",
+      "aliasKey": "kinémon"
+    },
+    {
+      "id": 543,
+      "apiName": "Kiwi",
+      "wikiTitle": "Mozu and Kiwi",
+      "aliasKey": "kiwi"
+    },
+    {
+      "id": 441,
+      "apiName": "Kobby",
+      "wikiTitle": "Koby",
+      "aliasKey": "kobby"
+    },
+    {
+      "id": 474,
+      "apiName": "Koshiro",
+      "wikiTitle": "Shimotsuki Koushirou",
+      "aliasKey": "koshiro"
+    },
+    {
+      "id": 643,
+      "apiName": "Kotori",
+      "wikiTitle": "Hotori and Kotori",
+      "aliasKey": "kotori"
+    },
+    {
+      "id": 473,
+      "apiName": "Kozaburo Shimotsuki",
+      "wikiTitle": "Shimotsuki Kouzaburou",
+      "aliasKey": "kozaburo shimotsuki"
+    },
+    {
+      "id": 475,
+      "apiName": "Kuina",
+      "wikiTitle": "Shimotsuki Kuina",
+      "aliasKey": "kuina"
+    },
+    {
+      "id": 252,
+      "apiName": "Lafitte",
+      "wikiTitle": "Laffitte",
+      "aliasKey": "lafitte"
+    },
+    {
+      "id": 634,
+      "apiName": "Laki",
+      "wikiTitle": "Raki",
+      "aliasKey": "laki"
+    },
+    {
+      "id": 676,
+      "apiName": "Lassou",
+      "wikiTitle": "Lassoo",
+      "aliasKey": "lassou"
+    },
+    {
+      "id": 53,
+      "apiName": "Laura",
+      "wikiTitle": "Charlotte Lola",
+      "aliasKey": "laura"
+    },
+    {
+      "id": 23,
+      "apiName": "Léo",
+      "wikiTitle": "Leo",
+      "aliasKey": "léo"
+    },
+    {
+      "id": 308,
+      "apiName": "Little Oz Junior",
+      "wikiTitle": "Little Oars Jr.",
+      "aliasKey": "little oz junior"
+    },
+    {
+      "id": 525,
+      "apiName": "Longs-Cils",
+      "wikiTitle": "One Piece in France",
+      "aliasKey": "longs-cils"
+    },
+    {
+      "id": 87,
+      "apiName": "Lucky Roo",
+      "wikiTitle": "Lucky Roux",
+      "aliasKey": "lucky roo"
+    },
+    {
+      "id": 286,
+      "apiName": "Madaisky Mizuta",
+      "wikiTitle": "Mizuta Madaisuki",
+      "aliasKey": "madaisky mizuta"
+    },
+    {
+      "id": 649,
+      "apiName": "Mamboshi",
+      "wikiTitle": "Manboshi",
+      "aliasKey": "mamboshi"
+    },
+    {
+      "id": 602,
+      "apiName": "Manshelly",
+      "wikiTitle": "Mansherry",
+      "aliasKey": "manshelly"
+    },
+    {
+      "id": 247,
+      "apiName": "Marchall D. Teach / Barbe Noire",
+      "wikiTitle": "Marshall D. Teach",
+      "aliasKey": "marchall d. teach"
+    },
+    {
+      "id": 623,
+      "apiName": "Marco",
+      "wikiTitle": "Polo Marco",
+      "aliasKey": "marco"
+    },
+    {
+      "id": 73,
+      "apiName": "Margaret",
+      "wikiTitle": "Marguerite",
+      "aliasKey": "margaret"
+    },
+    {
+      "id": 274,
+      "apiName": "Max Marks",
+      "wikiTitle": "MAX Marx",
+      "aliasKey": "max marks"
+    },
+    {
+      "id": 309,
+      "apiName": "Mc Guy",
+      "wikiTitle": "McGuy",
+      "aliasKey": "mc guy"
+    },
+    {
+      "id": 409,
+      "apiName": "Minotaure",
+      "wikiTitle": "Minotaurus",
+      "aliasKey": "minotaure"
+    },
+    {
+      "id": 412,
+      "apiName": "Minozèbre",
+      "wikiTitle": "One Piece in France",
+      "aliasKey": "minozèbre"
+    },
+    {
+      "id": 707,
+      "apiName": "Mobambi",
+      "wikiTitle": "Mobanby",
+      "aliasKey": "mobambi"
+    },
+    {
+      "id": 43,
+      "apiName": "Montblanc Cricket",
+      "wikiTitle": "Mont Blanc Cricket",
+      "aliasKey": "montblanc cricket"
+    },
+    {
+      "id": 497,
+      "apiName": "Montblanc Norland",
+      "wikiTitle": "Mont Blanc Noland",
+      "aliasKey": "montblanc norland"
+    },
+    {
+      "id": 35,
+      "apiName": "Morge",
+      "wikiTitle": "One Piece in France",
+      "aliasKey": "morge"
+    },
+    {
+      "id": 542,
+      "apiName": "Mozu",
+      "wikiTitle": "Mozu and Kiwi",
+      "aliasKey": "mozu"
+    },
+    {
+      "id": 510,
+      "apiName": "Mr 9",
+      "wikiTitle": "Mr. 9",
+      "aliasKey": "mr 9"
+    },
+    {
+      "id": 269,
+      "apiName": "Mr Momora",
+      "wikiTitle": "Mr. Momora",
+      "aliasKey": "mr momora"
+    },
+    {
+      "id": 729,
+      "apiName": "Musshul",
+      "wikiTitle": "Musshuru",
+      "aliasKey": "musshul"
+    },
+    {
+      "id": 184,
+      "apiName": "Napoléon",
+      "wikiTitle": "Napoleon",
+      "aliasKey": "napoléon"
+    },
+    {
+      "id": 621,
+      "apiName": "Niji Vinsmoke",
+      "wikiTitle": "Vinsmoke Niji",
+      "aliasKey": "niji vinsmoke"
+    },
+    {
+      "id": 636,
+      "apiName": "Nora",
+      "wikiTitle": "Nola",
+      "aliasKey": "nora"
+    },
+    {
+      "id": 658,
+      "apiName": "Octy",
+      "wikiTitle": "Episode 39",
+      "aliasKey": "octy"
+    },
+    {
+      "id": 560,
+      "apiName": "Oden Kozuki",
+      "wikiTitle": "Kouzuki Oden",
+      "aliasKey": "oden kozuki"
+    },
+    {
+      "id": 482,
+      "apiName": "Oignon",
+      "wikiTitle": "One Piece in France",
+      "aliasKey": "oignon"
+    },
+    {
+      "id": 638,
+      "apiName": "Om",
+      "wikiTitle": "Uta no Uta: ONE PIECE FILM RED",
+      "aliasKey": "om"
+    },
+    {
+      "id": 754,
+      "apiName": "Orlombus",
+      "wikiTitle": "Orlumbus",
+      "aliasKey": "orlombus"
+    },
+    {
+      "id": 572,
+      "apiName": "Orochi Kurozumi",
+      "wikiTitle": "Kurozumi Orochi",
+      "aliasKey": "orochi kurozumi"
+    },
+    {
+      "id": 723,
+      "apiName": "Papa",
+      "wikiTitle": "Ochanoma Papa",
+      "aliasKey": "papa"
+    },
+    {
+      "id": 538,
+      "apiName": "Pauly",
+      "wikiTitle": "Paulie",
+      "aliasKey": "pauly"
+    },
+    {
+      "id": 539,
+      "apiName": "Peeply Lulu",
+      "wikiTitle": "Peepley Lulu",
+      "aliasKey": "peeply lulu"
+    },
+    {
+      "id": 483,
+      "apiName": "Piment",
+      "wikiTitle": "One Piece in France",
+      "aliasKey": "piment"
+    },
+    {
+      "id": 58,
+      "apiName": "Pingouin",
+      "wikiTitle": "One Piece in France",
+      "aliasKey": "pingouin"
+    },
+    {
+      "id": 47,
+      "apiName": "Porché",
+      "wikiTitle": "Porche",
+      "aliasKey": "porché"
+    },
+    {
+      "id": 201,
+      "apiName": "Pouilleux",
+      "wikiTitle": "Babanuki",
+      "aliasKey": "pouilleux"
+    },
+    {
+      "id": 183,
+      "apiName": "Prométhée",
+      "wikiTitle": "Prometheus",
+      "aliasKey": "prométhée"
+    },
+    {
+      "id": 434,
+      "apiName": "Pudding",
+      "wikiTitle": "Charlotte Pudding",
+      "aliasKey": "pudding"
+    },
+    {
+      "id": 763,
+      "apiName": "Punk 01 - Shaka",
+      "wikiTitle": "Vegapunk",
+      "aliasKey": "punk 01 - shaka"
+    },
+    {
+      "id": 764,
+      "apiName": "Punk 02 - Lilith",
+      "wikiTitle": "Vegapunk",
+      "aliasKey": "punk 02 - lilith"
+    },
+    {
+      "id": 765,
+      "apiName": "Punk 03 - Edison",
+      "wikiTitle": "Vegapunk",
+      "aliasKey": "punk 03 - edison"
+    },
+    {
+      "id": 766,
+      "apiName": "Punk 04 - Pythagoras",
+      "wikiTitle": "Vegapunk",
+      "aliasKey": "punk 04 - pythagoras"
+    },
+    {
+      "id": 767,
+      "apiName": "Punk 05 - Atlas",
+      "wikiTitle": "Vegapunk",
+      "aliasKey": "punk 05 - atlas"
+    },
+    {
+      "id": 768,
+      "apiName": "Punk 06 - York",
+      "wikiTitle": "Vegapunk",
+      "aliasKey": "punk 06 - york"
+    },
+    {
+      "id": 619,
+      "apiName": "Reiju Vinsmoke",
+      "wikiTitle": "Vinsmoke Reiju",
+      "aliasKey": "reiju vinsmoke"
+    },
+    {
+      "id": 594,
+      "apiName": "Riku Dold III",
+      "wikiTitle": "Riku Doldo III",
+      "aliasKey": "riku dold iii"
+    },
+    {
+      "id": 591,
+      "apiName": "Rock",
+      "wikiTitle": "Yeti Cool Brothers",
+      "aliasKey": "rock"
+    },
+    {
+      "id": 454,
+      "apiName": "Ronz",
+      "wikiTitle": "Lonz",
+      "aliasKey": "ronz"
+    },
+    {
+      "id": 386,
+      "apiName": "Roswald",
+      "wikiTitle": "Rosward Rosward",
+      "aliasKey": "roswald"
+    },
+    {
+      "id": 576,
+      "apiName": "Ryuma Shimotsuki",
+      "wikiTitle": "Shimotsuki Ryuma",
+      "aliasKey": "ryuma shimotsuki"
+    },
+    {
+      "id": 574,
+      "apiName": "Semimaru Kurozumi",
+      "wikiTitle": "Kurozumi Semimaru",
+      "aliasKey": "semimaru kurozumi"
+    },
+    {
+      "id": 373,
+      "apiName": "Señor Pink",
+      "wikiTitle": "Senor Pink",
+      "aliasKey": "señor pink"
+    },
+    {
+      "id": 388,
+      "apiName": "Sharlia",
+      "wikiTitle": "Rosward Shalria",
+      "aliasKey": "sharlia"
+    },
+    {
+      "id": 196,
+      "apiName": "Sheep’s Head",
+      "wikiTitle": "Sheepshead",
+      "aliasKey": "sheep’s head"
+    },
+    {
+      "id": 249,
+      "apiName": "Shiliew",
+      "wikiTitle": "Shiryu",
+      "aliasKey": "shiliew"
+    },
+    {
+      "id": 45,
+      "apiName": "Shojo",
+      "wikiTitle": "Shoujou",
+      "aliasKey": "shojo"
+    },
+    {
+      "id": 284,
+      "apiName": "Smack",
+      "wikiTitle": "Yujo wa Ban'noyaku",
+      "aliasKey": "smack"
+    },
+    {
+      "id": 214,
+      "apiName": "Snakeman",
+      "wikiTitle": "Snakeman (Gifter)",
+      "aliasKey": "snakeman"
+    },
+    {
+      "id": 618,
+      "apiName": "Sora Vinsmoke",
+      "wikiTitle": "Vinsmoke Sora",
+      "aliasKey": "sora vinsmoke"
+    },
+    {
+      "id": 301,
+      "apiName": "Speed Jill",
+      "wikiTitle": "Speed Jiru",
+      "aliasKey": "speed jill"
+    },
+    {
+      "id": 306,
+      "apiName": "Squardo",
+      "wikiTitle": "Squard",
+      "aliasKey": "squardo"
+    },
+    {
+      "id": 463,
+      "apiName": "Stelly",
+      "wikiTitle": "Sterry",
+      "aliasKey": "stelly"
+    },
+    {
+      "id": 559,
+      "apiName": "Sukiyaki Kozuki",
+      "wikiTitle": "Kouzuki Sukiyaki",
+      "aliasKey": "sukiyaki kozuki"
+    },
+    {
+      "id": 433,
+      "apiName": "T. Bone",
+      "wikiTitle": "T Bone",
+      "aliasKey": "t. bone"
+    },
+    {
+      "id": 585,
+      "apiName": "Tama",
+      "wikiTitle": "Kurozumi Tama",
+      "aliasKey": "tama"
+    },
+    {
+      "id": 749,
+      "apiName": "Tenguyama Hitetsu",
+      "wikiTitle": "Kouzuki Sukiyaki",
+      "aliasKey": "tenguyama hitetsu"
+    },
+    {
+      "id": 561,
+      "apiName": "Toki Kozuki",
+      "wikiTitle": "Kouzuki Toki",
+      "aliasKey": "toki kozuki"
+    },
+    {
+      "id": 6,
+      "apiName": "Tony-Tony Chopper",
+      "wikiTitle": "Tony Tony Chopper",
+      "aliasKey": "tony-tony chopper"
+    },
+    {
+      "id": 366,
+      "apiName": "Trébol",
+      "wikiTitle": "Trebol",
+      "aliasKey": "trébol"
+    },
+    {
+      "id": 200,
+      "apiName": "Trouduc",
+      "wikiTitle": "Daifugo",
+      "aliasKey": "trouduc"
+    },
+    {
+      "id": 250,
+      "apiName": "Van Auger",
+      "wikiTitle": "Van Augur",
+      "aliasKey": "van auger"
+    },
+    {
+      "id": 761,
+      "apiName": "Végapunk",
+      "wikiTitle": "Vegapunk",
+      "aliasKey": "végapunk"
+    },
+    {
+      "id": 785,
+      "apiName": "Vegapunk “Atlas”",
+      "wikiTitle": "Vegapunk",
+      "aliasKey": "vegapunk “atlas”"
+    },
+    {
+      "id": 783,
+      "apiName": "Vegapunk “Edison”",
+      "wikiTitle": "Vegapunk",
+      "aliasKey": "vegapunk “edison”"
+    },
+    {
+      "id": 782,
+      "apiName": "Vegapunk “Lilith”",
+      "wikiTitle": "Vegapunk",
+      "aliasKey": "vegapunk “lilith”"
+    },
+    {
+      "id": 784,
+      "apiName": "Vegapunk “Pythagoras”",
+      "wikiTitle": "Vegapunk",
+      "aliasKey": "vegapunk “pythagoras”"
+    },
+    {
+      "id": 781,
+      "apiName": "Vegapunk “Shaka”",
+      "wikiTitle": "Vegapunk",
+      "aliasKey": "vegapunk “shaka”"
+    },
+    {
+      "id": 786,
+      "apiName": "Vegapunk “York”",
+      "wikiTitle": "Vegapunk",
+      "aliasKey": "vegapunk “york”"
+    },
+    {
+      "id": 437,
+      "apiName": "Verygood",
+      "wikiTitle": "Very Good",
+      "aliasKey": "verygood"
+    },
+    {
+      "id": 223,
+      "apiName": "Wa-Nyudo",
+      "wikiTitle": "Wanyudo",
+      "aliasKey": "wa-nyudo"
+    },
+    {
+      "id": 400,
+      "apiName": "Wanzé",
+      "wikiTitle": "Wanze",
+      "aliasKey": "wanzé"
+    },
+    {
+      "id": 193,
+      "apiName": "Who’s Who",
+      "wikiTitle": "Who's-Who",
+      "aliasKey": "who’s who"
+    },
+    {
+      "id": 630,
+      "apiName": "Wiper",
+      "wikiTitle": "Wyper",
+      "aliasKey": "wiper"
+    },
+    {
+      "id": 449,
+      "apiName": "X-Drake",
+      "wikiTitle": "X Drake",
+      "aliasKey": "x-drake"
+    },
+    {
+      "id": 88,
+      "apiName": "Yassop",
+      "wikiTitle": "Yasopp",
+      "aliasKey": "yassop"
+    },
+    {
+      "id": 577,
+      "apiName": "Yasui Shimotsuki",
+      "wikiTitle": "Shimotsuki Yasuie",
+      "aliasKey": "yasui shimotsuki"
+    },
+    {
+      "id": 622,
+      "apiName": "Yonji Vinsmoke",
+      "wikiTitle": "Vinsmoke Yonji",
+      "aliasKey": "yonji vinsmoke"
+    },
+    {
+      "id": 541,
+      "apiName": "Zanbai",
+      "wikiTitle": "Zambai",
+      "aliasKey": "zanbai"
+    },
+    {
+      "id": 735,
+      "apiName": "Zéphyr",
+      "wikiTitle": "Z",
+      "aliasKey": "zéphyr"
+    },
+    {
+      "id": 603,
+      "apiName": "Zunesh",
+      "wikiTitle": "Zunesha",
+      "aliasKey": "zunesh"
+    }
+  ],
+  "aliases": {
+    "1er doyen": "Five Elders",
+    "a.o": "A O",
+    "aladdin": "Aladine",
+    "alpagaman": "Alpacaman",
+    "arhur": "Arthur",
+    "baggy": "Tightrope Walking Funan Bros",
+    "barbe rose": "Rose (World Seeker)",
+    "bas": "Baskerville",
+    "bee anne": "Beegirl",
+    "belmer": "Bell-mère",
+    "ben beckmann": "Benn Beckman",
+    "bins": "Binz",
+    "brandnew": "Brannew",
+    "broggy": "Brogy",
+    "buffallo": "Buffalo",
+    "bulter": "Merry",
+    "caborage": "One Piece in France",
+    "calgara": "Kalgara",
+    "canard": "Karoo",
+    "cancelot": "Concelot",
+    "canne": "Yakuza Kasen",
+    "carotte": "Carrot",
+    "cb galant": "CB Gallant",
+    "césar clown": "Caesar Clown",
+    "charloss": "Rosward Charlos",
+    "charlotte broyée": "Charlotte Broyé",
+    "charlotte cannelle": "Candelle",
+    "charlotte corn starch": "Charlotte Cornstarch",
+    "charlotte crème": "Kuri Kuri no Mi",
+    "charlotte dent-de-chien": "One Piece in France",
+    "charlotte dolce": "Charlotte Dolce and Dragée",
+    "charlotte dosmarché": "Charlotte Dosmarche",
+    "charlotte dragée": "Charlotte Dolce and Dragée",
+    "charlotte flampée": "Charlotte Flampe",
+    "charlotte mapple": "Charlotte Maple",
+    "charlotte mondé": "Charlotte Mondée",
+    "charlotte mont d’or": "Charlotte Mont-d'Or",
+    "charlotte mucre": "Charlotte Myukuru",
+    "charlotte muscade": "Charlotte Nutmeg",
+    "charlotte muscadelle": "Charlotte Custard",
+    "charlotte muscadette": "Charlotte Fuyumeg",
+    "charlotte muscadia": "Charlotte Moscato",
+    "charlotte muscadine": "Charlotte Mascarpone",
+    "charlotte newgo": "Charlotte Decuplets",
+    "charlotte newichi": "Charlotte Decuplets",
+    "charlotte newji": "Charlotte Decuplets",
+    "charlotte newsan": "Charlotte Decuplets",
+    "charlotte opéra": "Charlotte Opera",
+    "charlotte pets": "Charlotte Brûlée",
+    "charlotte praliné": "Charlotte Praline",
+    "charlotte slurp": "Charlotte Perospero",
+    "charlotte yu yuan": "Charlotte Yuen",
+    "charlotte zuccoto": "Charlotte Zuccotto",
+    "chavipère": "One Piece in France",
+    "chef shandia": "Shandia Chief",
+    "clover": "Clou D. Clover",
+    "colonel mugren": "Mugren",
+    "comir": "Comil",
+    "corbeau": "One Piece in France",
+    "dalmatien": "Dalmatian",
+    "das bones": "Daz Bonez",
+    "delœuf": "One Piece in France",
+    "demaro black": "Demalo Black",
+    "diamond joz": "Jozu",
+    "dolton": "Dalton",
+    "don quijote doflamingo": "Donquixote Pirates",
+    "don quijote homing": "Donquixote Homing",
+    "don quijote myosgard": "Donquixote Mjosgard",
+    "don quijote rosinante": "Donquixote Rosinante",
+    "dringo": "Doringo",
+    "edward weeble": "Edward Weevil",
+    "el gorago": "Goro Goro no Mi",
+    "elio": "Erio",
+    "ener": "Enel",
+    "eustass kidd": "Eustass Kid",
+    "ficher tiger": "Fisher Tiger",
+    "frères decalvan": "Decalvan Brothers",
+    "fukuro": "Fukurou",
+    "funckfreed": "Funkfreed",
+    "gan forr": "Gan Fall",
+    "général gasparde": "Gasparde",
+    "gonbei": "Gonbe",
+    "great micheal": "Great Michael",
+    "guernica": "Guernika",
+    "guncho": "Gancho",
+    "gyn": "Gin",
+    "hacha": "Hatcha",
+    "haguar d. sauro": "Jaguar D. Saul",
+    "héra": "Hera",
+    "hermep": "Helmeppo",
+    "higurashi kurozumi": "Kurozumi Higurashi",
+    "hiluluk": "Hiriluk",
+    "hittori": "Sekai wa Hitori ja Nakatta",
+    "hiyori kozuki": "Kouzuki Hiyori",
+    "hoé": "Jack",
+    "holdem": "Holed'em",
+    "hotori": "Hotori and Kotori",
+    "hyogoro": "Hyougoro",
+    "hyozo": "Hyouzou",
+    "icebarg": "Iceburg",
+    "ichiji vinsmoke": "Vinsmoke Ichiji",
+    "im sama": "Nerona Imu",
+    "izo": "Izou",
+    "jabura": "Jabra",
+    "jarl": "Jarul",
+    "johny": "Johnny",
+    "jora": "Giolla",
+    "jorl": "Jorul",
+    "judge vinsmoke": "Vinsmoke Judge",
+    "kaashii": "Kashii",
+    "kaido": "Kaidou",
+    "kaiser moustache": "Stainless",
+    "kaloo": "One Piece in Portugal",
+    "kanjuro kurozumi": "Kurozumi Kanjuro",
+    "karazu": "Karasu",
+    "keimi": "Camie",
+    "kerville": "Baskerville",
+    "kinémon": "Kin'emon",
+    "kiwi": "Mozu and Kiwi",
+    "kobby": "Koby",
+    "koshiro": "Shimotsuki Koushirou",
+    "kotori": "Hotori and Kotori",
+    "kozaburo shimotsuki": "Shimotsuki Kouzaburou",
+    "kuina": "Shimotsuki Kuina",
+    "lafitte": "Laffitte",
+    "laki": "Raki",
+    "lassou": "Lassoo",
+    "laura": "Charlotte Lola",
+    "léo": "Leo",
+    "little oz junior": "Little Oars Jr.",
+    "longs-cils": "One Piece in France",
+    "lucky roo": "Lucky Roux",
+    "madaisky mizuta": "Mizuta Madaisuki",
+    "mamboshi": "Manboshi",
+    "manshelly": "Mansherry",
+    "marchall d. teach": "Marshall D. Teach",
+    "marco": "Polo Marco",
+    "margaret": "Marguerite",
+    "max marks": "MAX Marx",
+    "mc guy": "McGuy",
+    "minotaure": "Minotaurus",
+    "minozèbre": "One Piece in France",
+    "mobambi": "Mobanby",
+    "montblanc cricket": "Mont Blanc Cricket",
+    "montblanc norland": "Mont Blanc Noland",
+    "morge": "One Piece in France",
+    "mozu": "Mozu and Kiwi",
+    "mr 9": "Mr. 9",
+    "mr momora": "Mr. Momora",
+    "musshul": "Musshuru",
+    "napoléon": "Napoleon",
+    "niji vinsmoke": "Vinsmoke Niji",
+    "nora": "Nola",
+    "octy": "Episode 39",
+    "oden kozuki": "Kouzuki Oden",
+    "oignon": "One Piece in France",
+    "om": "Uta no Uta: ONE PIECE FILM RED",
+    "orlombus": "Orlumbus",
+    "orochi kurozumi": "Kurozumi Orochi",
+    "papa": "Ochanoma Papa",
+    "pauly": "Paulie",
+    "peeply lulu": "Peepley Lulu",
+    "piment": "One Piece in France",
+    "pingouin": "One Piece in France",
+    "porché": "Porche",
+    "pouilleux": "Babanuki",
+    "prométhée": "Prometheus",
+    "pudding": "Charlotte Pudding",
+    "punk 01 - shaka": "Vegapunk",
+    "punk 02 - lilith": "Vegapunk",
+    "punk 03 - edison": "Vegapunk",
+    "punk 04 - pythagoras": "Vegapunk",
+    "punk 05 - atlas": "Vegapunk",
+    "punk 06 - york": "Vegapunk",
+    "reiju vinsmoke": "Vinsmoke Reiju",
+    "riku dold iii": "Riku Doldo III",
+    "rock": "Yeti Cool Brothers",
+    "ronz": "Lonz",
+    "roswald": "Rosward Rosward",
+    "ryuma shimotsuki": "Shimotsuki Ryuma",
+    "semimaru kurozumi": "Kurozumi Semimaru",
+    "señor pink": "Senor Pink",
+    "sharlia": "Rosward Shalria",
+    "sheep’s head": "Sheepshead",
+    "shiliew": "Shiryu",
+    "shojo": "Shoujou",
+    "smack": "Yujo wa Ban'noyaku",
+    "snakeman": "Snakeman (Gifter)",
+    "sora vinsmoke": "Vinsmoke Sora",
+    "speed jill": "Speed Jiru",
+    "squardo": "Squard",
+    "stelly": "Sterry",
+    "sukiyaki kozuki": "Kouzuki Sukiyaki",
+    "t. bone": "T Bone",
+    "tama": "Kurozumi Tama",
+    "tenguyama hitetsu": "Kouzuki Sukiyaki",
+    "toki kozuki": "Kouzuki Toki",
+    "tony-tony chopper": "Tony Tony Chopper",
+    "trébol": "Trebol",
+    "trouduc": "Daifugo",
+    "van auger": "Van Augur",
+    "végapunk": "Vegapunk",
+    "vegapunk “atlas”": "Vegapunk",
+    "vegapunk “edison”": "Vegapunk",
+    "vegapunk “lilith”": "Vegapunk",
+    "vegapunk “pythagoras”": "Vegapunk",
+    "vegapunk “shaka”": "Vegapunk",
+    "vegapunk “york”": "Vegapunk",
+    "verygood": "Very Good",
+    "wa-nyudo": "Wanyudo",
+    "wanzé": "Wanze",
+    "who’s who": "Who's-Who",
+    "wiper": "Wyper",
+    "x-drake": "X Drake",
+    "yassop": "Yasopp",
+    "yasui shimotsuki": "Shimotsuki Yasuie",
+    "yonji vinsmoke": "Vinsmoke Yonji",
+    "zanbai": "Zambai",
+    "zéphyr": "Z",
+    "zunesh": "Zunesha"
+  },
+  "noImage": [
+    {
+      "id": 94,
+      "apiName": "Howling Dab",
+      "directTitle": "Howling Dab",
+      "searchTitle": "Epithet"
+    },
+    {
+      "id": 140,
+      "apiName": "Charlotte Mélisée",
+      "directTitle": "Charlotte Mélisée",
+      "searchTitle": null
+    },
+    {
+      "id": 181,
+      "apiName": "Boddin",
+      "directTitle": "Boddin",
+      "searchTitle": null
+    },
+    {
+      "id": 205,
+      "apiName": "Plouf",
+      "directTitle": "Plouf",
+      "searchTitle": null
+    },
+    {
+      "id": 215,
+      "apiName": "Rabitman",
+      "directTitle": "Rabitman",
+      "searchTitle": null
+    },
+    {
+      "id": 216,
+      "apiName": "Sarehebi",
+      "directTitle": "Sarehebi",
+      "searchTitle": null
+    },
+    {
+      "id": 218,
+      "apiName": "Tatouman",
+      "directTitle": "Tatouman",
+      "searchTitle": null
+    },
+    {
+      "id": 222,
+      "apiName": "Nuré-Onna",
+      "directTitle": "Nuré-Onna",
+      "searchTitle": null
+    },
+    {
+      "id": 243,
+      "apiName": "Tohomé",
+      "directTitle": "Tohomé",
+      "searchTitle": null
+    },
+    {
+      "id": 244,
+      "apiName": "Yazaémon",
+      "directTitle": "Yazaémon",
+      "searchTitle": null
+    },
+    {
+      "id": 276,
+      "apiName": "Bankro",
+      "directTitle": "Bankro",
+      "searchTitle": null
+    },
+    {
+      "id": 280,
+      "apiName": "Jacsonbaner",
+      "directTitle": "Jacsonbaner",
+      "searchTitle": null
+    },
+    {
+      "id": 287,
+      "apiName": "Mawaritovsky Mizuta",
+      "directTitle": "Mawaritovsky Mizuta",
+      "searchTitle": null
+    },
+    {
+      "id": 333,
+      "apiName": "Wakkem",
+      "directTitle": "Wakkem",
+      "searchTitle": null
+    },
+    {
+      "id": 347,
+      "apiName": "Barbos Bruneriguez / Barbe Brune",
+      "directTitle": "Barbos Bruneriguez",
+      "searchTitle": null
+    },
+    {
+      "id": 382,
+      "apiName": "2e Doyen",
+      "directTitle": "2e Doyen",
+      "searchTitle": null
+    },
+    {
+      "id": 383,
+      "apiName": "3e Doyen",
+      "directTitle": "3e Doyen",
+      "searchTitle": null
+    },
+    {
+      "id": 384,
+      "apiName": "4e Doyen",
+      "directTitle": "4e Doyen",
+      "searchTitle": null
+    },
+    {
+      "id": 385,
+      "apiName": "5e Doyen",
+      "directTitle": "5e Doyen",
+      "searchTitle": null
+    },
+    {
+      "id": 402,
+      "apiName": "And",
+      "directTitle": "And",
+      "searchTitle": "And"
+    },
+    {
+      "id": 411,
+      "apiName": "Minorhinocéros",
+      "directTitle": "Minorhinocéros",
+      "searchTitle": null
+    },
+    {
+      "id": 413,
+      "apiName": "Minochihuabua",
+      "directTitle": "Minochihuabua",
+      "searchTitle": null
+    },
+    {
+      "id": 435,
+      "apiName": "Jenfétro",
+      "directTitle": "Jenfétro",
+      "searchTitle": null
+    },
+    {
+      "id": 455,
+      "apiName": "Dohn Deynon",
+      "directTitle": "Dohn Deynon",
+      "searchTitle": null
+    },
+    {
+      "id": 464,
+      "apiName": "Sally Entoilette",
+      "directTitle": "Sally Entoilette",
+      "searchTitle": null
+    },
+    {
+      "id": 478,
+      "apiName": "Gaimone",
+      "directTitle": "Gaimone",
+      "searchTitle": null
+    },
+    {
+      "id": 529,
+      "apiName": "Bourdon Jr.",
+      "directTitle": "Bourdon Jr.",
+      "searchTitle": null
+    },
+    {
+      "id": 530,
+      "apiName": "Kentarôs",
+      "directTitle": "Kentarôs",
+      "searchTitle": null
+    },
+    {
+      "id": 548,
+      "apiName": "Yokozuma",
+      "directTitle": "Yokozuma",
+      "searchTitle": null
+    },
+    {
+      "id": 553,
+      "apiName": "Héraclès",
+      "directTitle": "Héraclès",
+      "searchTitle": null
+    },
+    {
+      "id": 562,
+      "apiName": "Mononosuké Kozuki",
+      "directTitle": "Mononosuké Kozuki",
+      "searchTitle": null
+    },
+    {
+      "id": 584,
+      "apiName": "Yatappé",
+      "directTitle": "Yatappé",
+      "searchTitle": null
+    },
+    {
+      "id": 588,
+      "apiName": "Baboumaru",
+      "directTitle": "Baboumaru",
+      "searchTitle": null
+    },
+    {
+      "id": 604,
+      "apiName": "Bêgis Khan",
+      "directTitle": "Bêgis Khan",
+      "searchTitle": null
+    },
+    {
+      "id": 607,
+      "apiName": "Sicilion",
+      "directTitle": "Sicilion",
+      "searchTitle": null
+    },
+    {
+      "id": 652,
+      "apiName": "Mégalo",
+      "directTitle": "Mégalo",
+      "searchTitle": null
+    },
+    {
+      "id": 653,
+      "apiName": "Ministre Sénestre",
+      "directTitle": "Ministre Sénestre",
+      "searchTitle": null
+    },
+    {
+      "id": 654,
+      "apiName": "Ministre Dextre",
+      "directTitle": "Ministre Dextre",
+      "searchTitle": null
+    },
+    {
+      "id": 678,
+      "apiName": "Gemme",
+      "directTitle": "Gemme",
+      "searchTitle": null
+    },
+    {
+      "id": 779,
+      "apiName": "Imu Neronna",
+      "directTitle": "Imu Neronna",
+      "searchTitle": null
+    }
+  ]
+}

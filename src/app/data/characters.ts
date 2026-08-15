@@ -16,6 +16,13 @@ export interface Character {
   description: string;
   power_level: number;
   haki: string[];
+  /** Campos enriquecidos desde la API */
+  size?: string;
+  age?: string;
+  status?: string;
+  fruit_type?: string;
+  fruit_description?: string;
+  fruit_img?: string;
 }
 
 const w = (filename: string) => `https://onepiece.fandom.com/wiki/Special:FilePath/${filename}`;
